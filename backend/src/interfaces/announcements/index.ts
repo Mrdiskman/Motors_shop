@@ -1,6 +1,17 @@
 import { IUser } from "../users";
 
-export interface IAnnouncementRequest {
+
+export interface IAnnouncement {
+    model: string
+    type: string;
+    description: string;
+    km: number;
+    year: number;  
+    price: number;
+    user: IUser;
+}
+
+export interface IAnnouncementCreate {
     model: string
     type: string;
     description?: string;
@@ -9,7 +20,6 @@ export interface IAnnouncementRequest {
     price: number;
     user: IUser;
 }
-
 
 export interface IAnnouncementUpdate {
     model?: string
