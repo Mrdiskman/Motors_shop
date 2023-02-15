@@ -6,28 +6,28 @@ export class User {
   @PrimaryColumn("uuid")
   readonly id: string;
 
-  @Column()
+  @Column({nullable:false})
   name: string;
 
-  @Column()
+  @Column({unique:true, nullable:false})
   email: string;
 
-  @Column()
+  @Column({unique:true})
   cpf: string;
 
-  @Column()
+  @Column({nullable:false})
   phone: string;
 
-  @Column()
+  @Column({nullable:false})
   dateOfBirth: string;
 
-  @Column()
+  @Column({nullable:false})
   descripition: string;
 
-  @Column()
+  @Column({nullable:false})
   seller: boolean;
 
-  @Column()
+  @Column({nullable:false})
   password: string;
 
   @Column({ default: new Date() })
