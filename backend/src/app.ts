@@ -1,4 +1,5 @@
 import express, { NextFunction, Response, Request} from "express"
+import "express-async-errors";
 import { AppError } from "./errors/appError"
 const app = express()
 
