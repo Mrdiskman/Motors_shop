@@ -1,4 +1,4 @@
-import { IUser } from "./users.interface";
+import { IUser } from "../users";
 
 export interface IAnnouncementRequest {
     model: string
@@ -18,5 +18,5 @@ export interface IAnnouncementUpdate {
     km?: number;
     year?: number;  
     price?: number;
-    user?: IUser; //keep User field?
+    user?: IUser; 
 }

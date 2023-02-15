@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne  } from "typeorm";
 import { v4 as uuid } from "uuid";
 
-import { User } from "./user.entity";
+import { User } from "../users";
 
 @Entity("announcements")
 
