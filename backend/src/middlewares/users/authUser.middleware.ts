@@ -21,6 +21,7 @@ export const authUser = async (
         req.idUser = decoded.id;
       }
     );
+
     next();
   } catch (err) {
     if (err instanceof AppError) {
