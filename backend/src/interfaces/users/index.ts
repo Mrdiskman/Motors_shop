@@ -30,6 +30,8 @@ export interface IUserLogin{
 export interface IUserUpdate{
     name?: string,
     email?: string,
-    password?: string,
-    number:string, 
+    cpf?:string,
+    phone?:string,
+    dateOfBirth?:string,
+    descripition?:string,
 }
