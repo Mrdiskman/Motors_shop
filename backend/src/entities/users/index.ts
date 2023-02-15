@@ -1,6 +1,6 @@
-import { Entity, Column, PrimaryColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, OneToOne, JoinColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
-
+import { Address } from "../address";
 @Entity()
 export class User {
   @PrimaryColumn("uuid")
@@ -32,6 +32,10 @@ export class User {
 
   @Column({ default: new Date() })
   register: Date;
+
+  @OneToOne(() => Address)
+  @JoinColumn()
+  address: Address;
 
   constructor() {
     if (!this.id) {
