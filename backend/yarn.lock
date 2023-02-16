@@ -328,6 +328,11 @@ get-intrinsic@^1.0.2:
     has "^1.0.3"
     has-symbols "^1.0.3"
 
+gitignore@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/gitignore/-/gitignore-0.7.0.tgz#062173df62344a572dfd76d98b59c45108562739"
+  integrity sha512-6iE891OyeYQYVvdoWI/hcxDWJ0sOngSpIRadxLoYbsnZdqWIUsEfx+IrOpW3d/zWBA/eKYvs6ZZx6ogz2wEGoQ==
+
 glob@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/glob/-/glob-8.1.0.tgz#d388f656593ef708ee3e34640fdfb99a9fd1c33e"
