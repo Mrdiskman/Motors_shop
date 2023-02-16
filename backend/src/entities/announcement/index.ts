@@ -27,6 +27,9 @@ export class Announcement{
     @Column({ type:"float" })
     price: number;
 
+    @Column({default:"true"})
+    isActive: boolean;
+
     @ManyToOne(() => User, {
         eager: true,
     })

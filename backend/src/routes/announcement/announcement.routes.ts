@@ -9,9 +9,10 @@ const announcementsRoutes = Router();
 
 announcementsRoutes.post(
   "/announcement", 
-  authUser, 
+  //authUser, 
   registerAnnouncementController
-); //add "isEmployee" middleware
+  //add "isEmployee" middleware
+); 
 
 announcementsRoutes.get(
   "/announcements",
@@ -26,8 +27,9 @@ announcementsRoutes.get(
 
 announcementsRoutes.delete(
   "/announcement/:id",
-  authUser, 
+  //authUser, 
   deleteAnnouncementController
-); //add "isEmployee" middleware
+  //add "isEmployee" middleware
+); 
 
 export default announcementsRoutes;
