@@ -28,5 +28,4 @@ export interface IAnnouncementUpdate {
     km?: number;
     year?: number;  
     price?: number;
-    user?: IUser; 
 }
