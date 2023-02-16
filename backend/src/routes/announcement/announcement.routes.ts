@@ -1,5 +1,6 @@
 import { Router } from "express";
 import deleteAnnouncementController from "../../controllers/announcements/deleteAnnouncement.controller";
+import getAnnouncementByIdController from "../../controllers/announcements/getAnnouncementById.controller";
 import getAnnouncementsController from "../../controllers/announcements/getAnnouncements.controller";
 import registerAnnouncementController from "../../controllers/announcements/registerAnnouncement.controllers";
 import { authUser } from "../../middlewares/users/authUser.middleware";
@@ -18,9 +19,8 @@ announcementsRoutes.get(
 );
 
 announcementsRoutes.get(
-  "/announcement/:id",
-  authUser, 
-//  getAnnouncementByIdController
+  "/announcement/:id", 
+  getAnnouncementByIdController
 );
 
 
