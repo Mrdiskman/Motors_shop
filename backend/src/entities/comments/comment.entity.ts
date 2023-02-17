@@ -3,9 +3,10 @@ import {
   PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
-  OneToMany,
+  ManyToOne,
 } from "typeorm";
-import { User } from "./users";
+import { Announcement } from "../announcement";
+import { User } from "../users";
 
 @Entity("comment")
 export class Comment {
@@ -18,6 +19,9 @@ export class Comment {
   @CreateDateColumn()
   created_at: Date;
 
-  @OneToMany(() => User, (user) => user.comments)
+  @ManyToOne(() => User, (user) => user.comments, { eager: true })
   user: User;
+
+  @ManyToOne(() => Announcement, (announcement) => announcement.comments)
+  annoucement: Announcement;
 }

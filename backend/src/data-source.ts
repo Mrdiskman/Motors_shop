@@ -1,8 +1,11 @@
 import { DataSource } from "typeorm";
 import "dotenv/config";
 import { User } from "./entities/users";
-import { initialMigration1676400496579 } from "./migrations/1676400496579-initialMigration";
-import { createTables1676400547866 } from "./migrations/1676400547866-createTables";
+
+import { Announcement } from "./entities/announcement";
+import { Address } from "./entities/address";
+import { Comment } from "./entities/comments/comment.entity";
+import { initialMigration1676643843280 } from "./migrations/1676643843280-initialMigration";
 
 export const AppDataSource =
   process.env.NODE_ENV === "test"
@@ -19,6 +22,6 @@ export const AppDataSource =
         username: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DB,
-        entities: [User],
-        migrations: [initialMigration1676400496579, createTables1676400547866],
+        entities: [User, Address, Announcement, Comment],
+        migrations: [initialMigration1676643843280],
       });

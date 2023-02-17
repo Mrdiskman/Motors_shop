@@ -1,5 +1,5 @@
 import { AppDataSource } from "../../data-source";
-import { Comment } from "../../entities/comment.entity";
+import { Comment } from "../../entities/comments/comment.entity";
 import { AppError } from "../../errors/appError";
 
 const commentListMineService = async (userId: string) => {

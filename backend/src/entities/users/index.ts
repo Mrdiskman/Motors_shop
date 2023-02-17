@@ -1,36 +1,43 @@
-import { Entity, Column, PrimaryColumn, OneToOne, OneToMany, JoinColumn } from "typeorm";
+import {
+  Entity,
+  Column,
+  PrimaryColumn,
+  OneToOne,
+  OneToMany,
+  JoinColumn,
+} from "typeorm";
 import { v4 as uuid } from "uuid";
 import { Address } from "../address";
 import { Announcement } from "../announcement";
-
+import { Comment } from "../comments/comment.entity";
 
 @Entity()
 export class User {
   @PrimaryColumn("uuid")
   readonly id: string;
 
-  @Column({nullable:false})
+  @Column({ nullable: false })
   name: string;
 
-  @Column({unique:true, nullable:false})
+  @Column({ unique: true, nullable: false })
   email: string;
 
-  @Column({unique:true})
+  @Column({ unique: true })
   cpf: string;
 
-  @Column({nullable:false})
+  @Column({ nullable: false })
   phone: string;
 
-  @Column({nullable:false})
+  @Column({ nullable: false })
   dateOfBirth: string;
 
-  @Column({nullable:false})
+  @Column({ nullable: false })
   descripition: string;
 
-  @Column({nullable:false})
+  @Column({ nullable: false })
   seller: boolean;
 
-  @Column({nullable:false})
+  @Column({ nullable: false })
   password: string;
 
   @Column({ default: new Date() })
@@ -42,6 +49,9 @@ export class User {
 
   @OneToMany(() => Announcement, (announcement) => announcement.user)
   announcements: Announcement[];
+
+  @OneToMany(() => Comment, (comment) => comment.user)
+  comments: Comment[];
 
   constructor() {
     if (!this.id) {

@@ -1,7 +1,7 @@
 import { AppDataSource } from "../../data-source";
 import "dotenv/config";
 import { AppError } from "../../errors/appError";
-import { Comment } from "../../entities/comment.entity";
+import { Comment } from "../../entities/comments/comment.entity";
 
 const commentDeleteService = async (commentId: string) => {
   const commentRepository = AppDataSource.getRepository(Comment);
