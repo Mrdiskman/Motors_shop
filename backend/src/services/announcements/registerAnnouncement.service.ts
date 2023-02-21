@@ -9,9 +9,8 @@ const registerAnnouncementService = async ({
   km,
   year,  
   price,
-  user,
+  // user,
 }: IAnnouncementCreate): Promise<IAnnouncement> => {
-
   const announcementRepository = AppDataSource.getRepository(Announcement);
   const announcement: IAnnouncement = new Announcement();
     (announcement.model = model),
@@ -20,7 +19,8 @@ const registerAnnouncementService = async ({
     (announcement.km = km),
     (announcement.year = year),
     (announcement.price = price),
-    (announcement.user = user),
+    // (announcement.user = user),
+    
     await announcementRepository.save(announcement);
   return announcement;
 };

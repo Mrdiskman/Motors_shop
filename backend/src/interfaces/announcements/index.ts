@@ -8,7 +8,7 @@ export interface IAnnouncement {
     km: number;
     year: number;  
     price: number;
-    user: IUser;
+    // user: string;
 }
 
 export interface IAnnouncementCreate {
@@ -18,7 +18,7 @@ export interface IAnnouncementCreate {
     km: number;
     year: number;  
     price: number;
-    user: IUser;
+    // user: string;
 }
 
 export interface IAnnouncementUpdate {
