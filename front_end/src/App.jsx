@@ -1,9 +1,9 @@
-import "./App.css";
+import Homepage from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <h1>Mortors Shop</h1>
+      <Homepage />
     </div>
   );
 }

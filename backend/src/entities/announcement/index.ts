@@ -6,7 +6,7 @@ import {
   OneToMany,
 } from "typeorm";
 import { v4 as uuid } from "uuid";
-
+import { Comment } from "../comments/comment.entity";
 import { User } from "../users";
 
 @Entity("announcements")
@@ -40,8 +40,8 @@ export class Announcement {
   })
   user: User;
 
-  /* @OneToMany(() => Comment, (comments) => comments.user)
-  comments: Comment[]; */
+  @OneToMany(() => Comment, (comments) => comments.user)
+  comments: Comment[];
 
   constructor() {
     if (!this.id) {
