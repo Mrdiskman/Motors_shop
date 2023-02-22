@@ -3,7 +3,16 @@ import styled from "styled-components";
 export const CardAuctionStyle = styled.div`
   cursor: pointer;
   max-width: 666px;
+  margin-left: 20px;
   .sectionMainCard {
+    :hover {
+      background-image: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.7) 0%,
+          #000000 100%
+        ),
+        url("https://media.istockphoto.com/id/1150931120/pt/foto/3d-illustration-of-generic-compact-white-car-front-side-view.jpg?b=1&s=612x612&w=0&k=20&c=S9ogRwOFZeUrZisH4_sh56OMQB19qplp958cRde8Jx0=");
+    }
     border-top: 1px solid transparent;
     border-radius: 5px 5px 0px 0px;
     padding: 32px;
@@ -13,7 +22,9 @@ export const CardAuctionStyle = styled.div`
         #000000 100%
       ),
       url("https://media.istockphoto.com/id/1150931120/pt/foto/3d-illustration-of-generic-compact-white-car-front-side-view.jpg?b=1&s=612x612&w=0&k=20&c=S9ogRwOFZeUrZisH4_sh56OMQB19qplp958cRde8Jx0=");
-
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     max-width: 602px;
     height: 240px;
     .divTime {
@@ -92,7 +103,6 @@ export const CardAuctionStyle = styled.div`
     }
   }
   .containerPage {
-    border: 1px solid transparent;
     border-radius: 0px 0px 5px 5px;
     padding: 32px;
     max-width: 600px;
@@ -107,6 +117,32 @@ export const CardAuctionStyle = styled.div`
     }
     svg {
       font-size: 30px;
+      margin-right: 10px;
+    }
+  }
+  @media only screen and (max-width: 655px) {
+    width: 80vw;
+    height: 600px;
+    margin-right: 60px;
+    .sectionMainCard {
+      width: 100%;
+      height: 350px;
+      background-size: contain;
+      .divTime {
+        margin-bottom: 0px;
+      }
+      .containerInfo {
+        display: block;
+        .info {
+          display: block;
+          .divInfo {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+    .containerPage {
+      width: 100%;
     }
   }
 `;

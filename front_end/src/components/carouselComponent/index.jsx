@@ -1,10 +1,11 @@
-import { Carousel } from "@trendyol-js/react-carousel";
+import { ScrollingCarousel } from "@trendyol-js/react-carousel";
+import { CarouselStyles } from "./styles";
 
 const CarouselComponent = ({ children }) => {
   return (
-    <Carousel show={3.5} slide={3} swiping={true}>
-      {children}
-    </Carousel>
+    <CarouselStyles>
+      <ScrollingCarousel>{children}</ScrollingCarousel>
+    </CarouselStyles>
   );
 };
 

@@ -38,7 +38,7 @@ const CardAuction = () => {
       </section>
       <section className="containerPage">
         <h3>Acessar página do leilão</h3>
-        <BsArrowRight color="#ffffffff" />
+        <BsArrowRight className="setaHover" color="#ffffffff" />
       </section>
     </CardAuctionStyle>
   );
