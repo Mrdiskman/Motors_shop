@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardAuctionStyle = styled.div`
   cursor: pointer;
-  max-width: 666px;
+  width: 666px;
   margin-left: 20px;
   .sectionMainCard {
     :hover {
@@ -13,7 +13,6 @@ export const CardAuctionStyle = styled.div`
         ),
         url("https://media.istockphoto.com/id/1150931120/pt/foto/3d-illustration-of-generic-compact-white-car-front-side-view.jpg?b=1&s=612x612&w=0&k=20&c=S9ogRwOFZeUrZisH4_sh56OMQB19qplp958cRde8Jx0=");
     }
-    border-top: 1px solid transparent;
     border-radius: 5px 5px 0px 0px;
     padding: 32px;
     background-image: linear-gradient(
@@ -25,19 +24,19 @@ export const CardAuctionStyle = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    max-width: 602px;
-    height: 240px;
+    width: 602px;
+    height: 345px;
     .divTime {
       background-color: #ffffff;
       border: 1px solid #ffffff;
       border-radius: 32px;
-      margin-bottom: 65px;
+      margin-bottom: 30px;
       display: flex;
       align-items: center;
       padding: 5px;
       justify-content: space-between;
-      width: 90px;
-      height: 19px;
+      width: 100px;
+      height: 30px;
       p {
         font-size: 15px;
         font-weight: 600;
@@ -103,9 +102,10 @@ export const CardAuctionStyle = styled.div`
     }
   }
   .containerPage {
+    border: 1px solid transparent;
     border-radius: 0px 0px 5px 5px;
     padding: 32px;
-    max-width: 600px;
+    max-width: 602px;
     max-height: 10px;
     background: #4529e6;
     display: flex;
@@ -126,10 +126,10 @@ export const CardAuctionStyle = styled.div`
     margin-right: 60px;
     .sectionMainCard {
       width: 100%;
-      height: 350px;
+      height: 390px;
       background-size: contain;
       .divTime {
-        margin-bottom: 0px;
+        margin-bottom: 20px;
       }
       .containerInfo {
         display: block;
@@ -137,7 +137,11 @@ export const CardAuctionStyle = styled.div`
           display: block;
           .divInfo {
             margin-top: 10px;
+            text-align: center;
           }
+        }
+        p {
+          margin-top: 10px;
         }
       }
     }

@@ -1,9 +1,7 @@
-import { BackGroundStyle } from "./backgroundStyled"
+import { BackGroundStyle } from "./backgroundStyled";
 
-const BackGround = () =>{
-    return (
-        <BackGroundStyle></BackGroundStyle>
-    )
-}
+const BackGround = () => {
+  return <BackGroundStyle></BackGroundStyle>;
+};
 
-export default BackGround
+export default BackGround;
