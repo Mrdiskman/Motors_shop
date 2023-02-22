@@ -1,4 +1,3 @@
-
 /* import BackGround from './components/backgroundComponent/background'; */
 import Header from "./components/headerComponent/header";
 import BuildVehicleCard from "./components/vehicleCardComponent/vehicleCard";
