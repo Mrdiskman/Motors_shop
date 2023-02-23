@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <RoutesMain />
+
     </div>
   );
 }
-
 export default App;

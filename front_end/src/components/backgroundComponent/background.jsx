@@ -1,7 +1,11 @@
 import { BackGroundStyle } from "./backgroundStyled";
 
-const BackGround = () => {
-  return <BackGroundStyle></BackGroundStyle>;
-};
+
+const BackGround = ({children}) =>{
+    return (
+        <BackGroundStyle>{children}</BackGroundStyle>
+    )
+}
+
 
 export default BackGround;
