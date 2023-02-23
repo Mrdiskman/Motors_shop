@@ -2,7 +2,6 @@ import AnnounceDetailPage from './pages/viewAnnounceDetailPage/announceDetailPag
 import { GlobalStyle } from './style/Global';
 import "./reset.css"
 
-
 function App() {
   return (
     <div className="App">
@@ -11,5 +10,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
