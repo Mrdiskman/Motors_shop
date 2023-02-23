@@ -1,8 +1,8 @@
 import { BackGroundStyle } from "./backgroundStyled"
 
-const BackGround = () =>{
+const BackGround = ({children}) =>{
     return (
-        <BackGroundStyle></BackGroundStyle>
+        <BackGroundStyle>{children}</BackGroundStyle>
     )
 }
 

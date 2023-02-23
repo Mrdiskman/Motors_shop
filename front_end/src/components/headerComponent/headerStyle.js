@@ -22,6 +22,8 @@ export const HeaderStyle = styled.header`
   .userDataContainer {
     padding-left: 1%;
     display: flex;
+    width: 100vw;
+    height: 85px;
     justify-content: center;
     align-items: center;
     margin-left: 2%;
@@ -208,6 +210,7 @@ export const MenuOptions = styled.div`
     width: 8%;
     border: 1px solid black;
     margin-right: 5%;
+
     display: flex;
     flex-direction: column;
 
