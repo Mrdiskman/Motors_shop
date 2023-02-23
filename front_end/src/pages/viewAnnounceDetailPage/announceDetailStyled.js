@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const SectionPictures = styled.section`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
-  display: flex;
-  @media (min-width: 320px) and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -273,7 +271,6 @@ export const SectionPictures = styled.section`
       line-height: 24px;
       color: var(--grey2);
     }
-  }
   .containerMakeComment {
     margin-top: 25px;
     width: 95vw;
@@ -287,6 +284,7 @@ export const SectionPictures = styled.section`
     border-radius: 5px;
     padding-top: 20px;
     padding-left: 10px;
+    padding-bottom: 20px;
     gap: 20px;
   }
   .makeCommentUserData {
@@ -318,7 +316,7 @@ export const SectionPictures = styled.section`
     justify-content: start;
     align-items: flex-start;
     width: 80%;
-    min-height: 150px;
+    min-height: 100px;
     height: fit-content;
     border: 1.5px solid var(--grey7);
     border-radius: 5px;
@@ -357,34 +355,5 @@ export const SectionPictures = styled.section`
     padding: 10px;
     border-radius: 24px;
   }
-  .footerAnnounce{
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    height: 35vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--grey0);
-    color: var(--whitefixed);
-    gap: 50px;
-    margin-top: 45px;
-  }
-  .titleFooter{
-    font-size: 28px;
-    font-weight: 700;
-  }
-  .spanTitleFooter{
-    font-size: 19px;
-  }
-  .upPage{
-    background-color: var(--grey1);
-    border-radius: 5px;
-    height: 45px;
-    width: 50px;
-    border: none;
-    color: var(--whitefixed);
-    font-size: 18px;
-  }
+  
 `;
