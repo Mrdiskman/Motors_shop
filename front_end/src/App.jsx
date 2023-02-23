@@ -1,11 +1,6 @@
-import { GlobalStyle } from "./style/Global";
 import RoutesMain from "./routes";
 import { ToastContainer } from "react-toastify";
 import ContextsProvider from "./contexts/provider";
-
-
-
-
 
 function App() {
   return (
@@ -14,10 +9,6 @@ function App() {
       <ContextsProvider>
         <RoutesMain />
       </ContextsProvider>
-
-      <GlobalStyle />
-      <RoutesMain />
-
     </div>
   );
 }
