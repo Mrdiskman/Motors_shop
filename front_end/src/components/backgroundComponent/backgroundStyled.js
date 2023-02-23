@@ -6,6 +6,12 @@ export const BackGroundStyle = styled.main`
   width: 100%;
   background-image: linear-gradient(
     180deg,
+    #4529e6 31.25%,
+    #f1f3f5 31.26%,
+    #f1f3f5 100%
+  );
+  padding-bottom: 50px;
+
     #4529e6 12%,
     #f1f3f5 12%,
     #f1f3f5 100%
@@ -19,4 +25,5 @@ export const BackGroundStyle = styled.main`
       #f1f3f5 100%
     );
   }
+
 `;
