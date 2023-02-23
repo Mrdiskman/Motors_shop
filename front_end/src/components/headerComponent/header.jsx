@@ -1,8 +1,11 @@
 import { database } from "../../database";
 import { HeaderStyle, MenuOptions, NavBar } from "./headerStyle";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Contexts } from "../../contexts/provider";
 const Header = () => {
+  const { logOut } = useContext(Contexts);
+
   const CompleteNameSplit = database.user.name.split(" ");
   const surname = CompleteNameSplit[1];
   const surnameSplit = surname.split("");
@@ -52,7 +55,9 @@ const Header = () => {
             <button className="option">Editar Perfil</button>
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
-            <button className="option">Sair</button>
+            <button onClick={logOut} className="option">
+              Sair
+            </button>
           </div>
         </MenuOptions>
       )}
@@ -68,7 +73,9 @@ const Header = () => {
             <button className="option">Editar Perfil</button>
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
-            <button className="option">Sair</button>
+            <button onClick={logOut} className="option">
+              Sair
+            </button>
           </div>
         </NavBar>
       )}
