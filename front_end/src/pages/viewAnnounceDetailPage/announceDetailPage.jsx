@@ -1,8 +1,8 @@
 import BackGround from "../../components/backgroundComponent/background";
+import Footer from "../../components/footerComponent/footer";
 import Header from "../../components/headerComponent/header";
 import { database } from "../../database/index";
 import { SectionPictures } from "./announceDetailStyled";
-import { IoIosArrowUp } from "react-icons/io";
 const AnnounceDetailPage = () => {
   const CompleteNameSplit = database.user.name.split(" ");
   const surname = CompleteNameSplit[1];
@@ -138,12 +138,7 @@ const AnnounceDetailPage = () => {
             </div>
             <span className="autoComment">Recomendarei para meus amigos!</span>
           </div>
-
-          <footer className="footerAnnounce">
-            <h1 className="titleFooter">Motors <span className="spanTitleFooter">shop</span></h1>
-            <p>© 2022 -  Todos os direitos reservados.</p>
-            <button className="upPage"><IoIosArrowUp/></button>
-          </footer>
+          <Footer/>
         </SectionPictures>
       </BackGround>
     </>
