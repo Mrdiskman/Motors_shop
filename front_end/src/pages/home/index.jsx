@@ -8,8 +8,9 @@ import { carsData } from "../../components/vehicleCardComponent/carsDatabase";
 import { motorcyclesData } from "../../components/vehicleCardComponent/motorcyclesDatabase";
 
 const Home = () => (
+  <>
+  <Header />
   <HomeStyles>
-    <Header />
     <HomeNav cars={"cars"} motos={"motos"} />
     <div className="container">
       <h2 className="TitleHome">Leilão</h2>
@@ -56,5 +57,6 @@ const Home = () => (
       </CarouselComponent>
     </div>
   </HomeStyles>
+  </>
 );
 export default Home;
