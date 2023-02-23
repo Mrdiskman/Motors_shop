@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const CardAuctionStyle = styled.div`
   cursor: pointer;
-  width: 666px;
-  margin-left: 20px;
+  width: 602px;
   .sectionMainCard {
     :hover {
       background-image: linear-gradient(

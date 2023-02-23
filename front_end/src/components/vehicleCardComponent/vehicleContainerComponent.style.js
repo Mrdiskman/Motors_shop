@@ -5,7 +5,6 @@ export const VehicleContainer = styled.div`
   flex-direction: column;
   width: 312px;
   height: 100vw;
-  margin-left: 20px;
 
   h1 {
     margin-top: 60px;

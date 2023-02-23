@@ -30,7 +30,6 @@ export const HomeNavStyle = styled.div`
       justify-content: space-between;
     }
   }
-  margin-bottom: 60px;
   @media only screen and (max-width: 655px) {
     .containerNav {
       .navHome {

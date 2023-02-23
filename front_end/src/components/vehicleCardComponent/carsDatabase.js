@@ -7,7 +7,7 @@ export const carsData = [
     announcer: "Kenzinho",
     km: "0 KM",
     year: 2020,
-    price: "R$100.000,00",
+    price: "100000",
   },
   {
     img: "https://media.seudinheiro.com/uploads/2023/01/Blazer-EV-foto-Chevrolet.jpg",
