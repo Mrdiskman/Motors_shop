@@ -1,4 +1,5 @@
-import { BackGroundStyle } from "./backgroundStyled"
+import { BackGroundStyle } from "./backgroundStyled";
+
 
 const BackGround = ({children}) =>{
     return (
@@ -6,4 +7,5 @@ const BackGround = ({children}) =>{
     )
 }
 
-export default BackGround
+
+export default BackGround;
