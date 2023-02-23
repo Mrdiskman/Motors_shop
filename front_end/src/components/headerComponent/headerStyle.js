@@ -4,6 +4,7 @@ export const HeaderStyle = styled.header`
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
     display: flex;
     width: 100vw;
+    height: 85px;
     justify-content: center;
     align-items: center;
 
@@ -187,6 +188,7 @@ export const NavBar = styled.nav`
 `
 export const MenuOptions = styled.div`
     z-index: 5;
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     justify-content: end;
