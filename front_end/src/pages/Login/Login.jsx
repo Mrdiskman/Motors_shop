@@ -51,7 +51,7 @@ function Login() {
           </div>
         </div>
         {errors.password && <span>{errors.password.message}</span>}
-        <p>Esqueci minha senha</p>
+        <span>Esqueci minha senha</span>
         <button className="btnSingIn">Entrar</button>
         <p>Ainda não possui cadastro?</p>
         <button href="/register" className="btnSingUp">

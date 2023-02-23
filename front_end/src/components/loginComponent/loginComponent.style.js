@@ -36,14 +36,22 @@ export const LoginForm = styled.form`
     margin-top: -25px;
   }
 
+  span {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -25px;
+    margin-right: 20px;
+    color: var(--grey2);
+  }
+
   .password_div {
     display: flex;
 
     .eye_div {
       display: flex;
       justify-content: flex-end;
-      margin-top: -15px;
       margin-left: -8%;
+      margin-top: 10px;
     }
   }
 
@@ -76,5 +84,18 @@ export const LoginForm = styled.form`
     border-color: var(--grey1);
     background-color: var(--grey1);
     color: var(--whitefixed);
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--grey2);
+  }
+
+  @media screen and (min-width: 425px) {
+    width: 420px;
+    max-height: 100%;
+    margin-top: 50px;
   }
 `;
