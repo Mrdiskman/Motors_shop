@@ -1,10 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-  accountCreated,
-  fail,
-  wellcome,
-} from "../components/toatify/Toastify.style";
 import api from "../services/api";
 
 export const Contexts = createContext({});
@@ -16,17 +11,14 @@ const ContextsProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   async function registerUser(data) {
-    await api.post("/users", data).catch(function (error) {
-      fail();
-    });
+    await api.post("/users", data).catch((err) => console.log(err));
     navigate("/login", { replace: true });
-    return accountCreated();
   }
 
   async function loginUser(data) {
-    const response = await api.post("/login", data).catch(function (error) {
-      fail();
-    });
+    const response = await api
+      .post("/login", data)
+      .catch((err) => console.log(err));
     const { accessToken, user } = response.data;
 
     setUser(user);
@@ -36,12 +28,16 @@ const ContextsProvider = ({ children }) => {
     const toNavigate = location.state?.from?.pathname || `/dashboard/${idUser}`;
 
     if (accessToken !== null) {
-      localStorage.setItem("@nowaiting:token", accessToken);
-      if (localStorage.getItem("@nowaiting:token") !== null) {
+      localStorage.setItem("@motors_shop:token", accessToken);
+      if (localStorage.getItem("@motors_shop:token") !== null) {
         navigate(toNavigate, { replace: true });
-        wellcome();
       }
     }
+  }
+  function logOut() {
+    setUser(false);
+    localStorage.clear();
+    navigate("/home");
   }
 
   return (
@@ -49,6 +45,7 @@ const ContextsProvider = ({ children }) => {
       value={{
         registerUser,
         loginUser,
+        logOut,
         user,
       }}
     >
