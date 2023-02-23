@@ -12,7 +12,7 @@ export const FooterComponent = styled.footer`
   background-color: var(--grey0);
   color: var(--whitefixed);
   gap: 50px;
-  margin-top: 45px;
+  margin-right: 0px;
 
   .titleFooter {
     font-size: 22px;
@@ -35,6 +35,7 @@ export const FooterComponent = styled.footer`
     border: none;
     color: var(--whitefixed);
     font-size: 18px;
+    cursor: pointer;
   }
   @media (min-width: 768px) {
     display: flex;

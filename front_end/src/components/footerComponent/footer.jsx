@@ -1,3 +1,4 @@
+import "../../reset.css"
 import { FooterComponent } from "./footerStyledComponent";
 import { IoIosArrowUp } from "react-icons/io";
 
