@@ -8,9 +8,11 @@ import { useContext, useState } from "react";
 import { EyeFilled, EyeInvisibleFilled } from "@ant-design/icons";
 import { schema } from "../../validators/login.js";
 import { Contexts } from "../../contexts/provider.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [type, setType] = useState("password");
+  const navigate = useNavigate();
 
   const {
     handleSubmit,
@@ -54,7 +56,7 @@ function Login() {
         <span>Esqueci minha senha</span>
         <button className="btnSingIn">Entrar</button>
         <p>Ainda não possui cadastro?</p>
-        <button href="/register" className="btnSingUp">
+        <button onClick={navigate("/register")} className="btnSingUp">
           <strong>Cadastrar</strong>
         </button>
       </LoginForm>
