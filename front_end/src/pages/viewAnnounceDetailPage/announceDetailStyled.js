@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const SectionPictures = styled.section`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
   /* containers em geral */
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,6 +51,7 @@ export const SectionPictures = styled.section`
     justify-content: start;
     align-items: flex-start;
     gap: 20px;
+    min-height: 440px;
   }
 
   .sellerDataSection {
@@ -354,10 +354,19 @@ export const SectionPictures = styled.section`
     padding: 10px;
     border-radius: 24px;
   }
+  .deskTopFront{
+    display: none;
+  }
   /* ----------- */
   @media (min-width: 769px) {
     display: flex;
-
+    .mobileFront{
+      display: none;
+    }
+    .deskTopFront{
+    display: flex;
+    flex-direction: column;
+  }
     .announceContainerInfo{
       display: flex;
       flex-direction: row;
@@ -386,7 +395,12 @@ export const SectionPictures = styled.section`
     .containerRigths {
       width: 20vw;
     }
-    .parteDeCima {
+    .containerPics{
+      padding-top: 50px;
+      min-height: 345px;
+      
+    }
+    .upside {
       display: flex;
       gap: 45px;
     }
