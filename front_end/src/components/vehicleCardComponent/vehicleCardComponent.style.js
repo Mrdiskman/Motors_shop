@@ -3,40 +3,81 @@ import styled from "styled-components";
 export const VehicleCard = styled.div`
   display: flex;
   flex-direction: column;
-  width: 290px;
-  height: 300px;
+  width: 312px;
+  height: 360px;
+  cursor: pointer;
+  :hover {
+    .div_img {
+      border: 3px solid #4529e6;
+      img {
+        width: 89%;
+      }
+    }
+  }
 
   .div_img {
-    height: 152px;
+    width: 312px;
+    height: 154px;
     background-color: var(--grey7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     img {
-      height: 152px;
-      width: 90%;
-      margin-left: 5%;
+      background-size: cover;
+      width: 80%;
     }
   }
 
   h2 {
     font-weight: bolder;
-    margin-top: 15px;
+    margin-top: 16px;
     overflow: hidden;
     white-space: nowrap;
+    font-size: 16px;
     max-width: 312px;
     text-overflow: ellipsis;
   }
 
   p {
-    max-width: 312px;
-    margin-top: 15px;
+    max-width: 93%;
+    max-height: 43px;
+    margin-top: 16px;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 14px;
     color: var(--grey2);
   }
 
-  span {
-    margin-top: 20px;
-    color: var(--grey2);
+  .divAnnouncer {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    p {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+      background-color: var(--alert1);
+      margin-top: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      line-height: 39px;
+      font-size: 14px;
+      color: var(--whitefixed);
+    }
+    span {
+      font-size: 14px;
+      color: var(--grey2);
+    }
   }
 `;
 
@@ -47,7 +88,7 @@ export const VehiclePrice = styled.div`
   align-items: center;
   font-weight: bolder;
 
-  div {
+  .divItens {
     display: flex;
     width: 50%;
     height: 32px;
@@ -58,6 +99,7 @@ export const VehiclePrice = styled.div`
     .km_div {
       display: flex;
       justify-content: center;
+      align-items: center;
       width: 50px;
       height: 32px;
       border-radius: 4px;
@@ -67,6 +109,7 @@ export const VehiclePrice = styled.div`
     .year_div {
       display: flex;
       justify-content: center;
+      align-items: center;
       width: 50px;
       height: 32px;
       border-radius: 4px;

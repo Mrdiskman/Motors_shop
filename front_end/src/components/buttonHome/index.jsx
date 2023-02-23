@@ -1,8 +1,11 @@
 import { ButtonHomeStyle } from "./style";
 
-const ButtonHome = ({ children }) => {
+const ButtonHome = ({ children, link }) => {
+  const anchorLink = () => {
+    window.location.href = `#${link}`;
+  };
   return (
-    <ButtonHomeStyle>
+    <ButtonHomeStyle onClick={anchorLink}>
       <p>{children}</p>
     </ButtonHomeStyle>
   );

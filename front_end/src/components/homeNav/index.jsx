@@ -1,7 +1,7 @@
 import ButtonHome from "../buttonHome";
 import { HomeNavStyle } from "./styles";
 
-const HomeNav = () => {
+const HomeNav = ({ cars, motos }) => {
   return (
     <HomeNavStyle>
       <div className="containerNav">
@@ -12,8 +12,8 @@ const HomeNav = () => {
           Um ambiente feito para você explorar o seu melhor
         </p>
         <nav className="navHome">
-          <ButtonHome>Carros</ButtonHome>
-          <ButtonHome>Motos</ButtonHome>
+          <ButtonHome link={cars}>Carros</ButtonHome>
+          <ButtonHome link={motos}>Motos</ButtonHome>
         </nav>
       </div>
     </HomeNavStyle>
