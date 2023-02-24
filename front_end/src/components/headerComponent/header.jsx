@@ -3,6 +3,11 @@ import { HeaderStyle, MenuOptions, NavBar } from "./headerStyle";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useContext, useState } from "react";
 import { Contexts } from "../../contexts/provider";
+
+import React from 'react';
+import ReactModal from 'react-modal';
+import { Button, Container, Flex, Image, Input , Title } from "../../style/styles";
+
 const Header = () => {
   const { logOut } = useContext(Contexts);
 
@@ -26,6 +31,36 @@ const Header = () => {
     }
     setNavDesktop(true);
   }
+
+
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const customStyles = {
+    content: {
+      top: '5%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, 0%)',
+      height: '1252px',
+      width: '520px'
+    },
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.15)'
+    }
+  };
+
+
   return (
     <>
       <HeaderStyle>
@@ -52,7 +87,26 @@ const Header = () => {
       {navDesktop && (
         <MenuOptions>
           <div className="conteinerOptions">
-            <button className="option">Editar Perfil</button>
+            <button                 
+                className="option"
+                onClick={handleOpenModal}
+            >Editar Perfil Modal</button>  
+                <ReactModal
+                    isOpen={isModalOpen}
+                    onRequestClose={handleCloseModal}
+                    contentLabel="Modal"
+                    style={customStyles}
+                >
+                    <Flex
+                        flexDirection = {'row'}
+                        justifyContent = {'space-between'}
+                        margin  = {'0px 0px 40px 0px'}  
+                    >
+                        <h1>Imagem do Veiculo</h1>
+                        <button onClick={handleCloseModal}>X</button>
+                    </Flex>
+                    
+                </ReactModal>         
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
             <button onClick={logOut} className="option">
@@ -60,6 +114,7 @@ const Header = () => {
             </button>
           </div>
         </MenuOptions>
+        
       )}
 
       {navMobile && (

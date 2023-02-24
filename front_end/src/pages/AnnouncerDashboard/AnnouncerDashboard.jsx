@@ -10,6 +10,7 @@ import BuildVehicleCard from "../../components/vehicleCardComponent/vehicleCard"
 import { database } from "../../database";
 
 const AnnouncerDashboard = () => {
+
   return (
     <>
       <Header />

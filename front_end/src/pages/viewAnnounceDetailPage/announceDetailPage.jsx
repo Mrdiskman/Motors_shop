@@ -50,6 +50,32 @@ const AnnounceDetailPage = () => {
     }
   };
 
+  const [isModalOpen2, setIsModalOpen2] = useState(false);
+
+  const handleOpenModal2 = () => {
+    setIsModalOpen2(true);
+  };
+
+  const handleCloseModal2 = () => {
+    setIsModalOpen2(false);
+  };
+
+  const customStyles2 = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      height: '354px',
+      width: '520px'
+    },
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.15)'
+    }
+  };
+
 
   return (
     <>
@@ -59,11 +85,41 @@ const AnnounceDetailPage = () => {
           <div className="upside">
             <div className="left">
               <div className="containers mainPicCOntainer">
-                <img
-                  src={primaryImage}
-                  alt="Foto do carro"
-                  className="MainPicture"
-                />
+                 <Button 
+                    onClick={handleOpenModal2}
+                    height={'100%'}
+                    width={'100%'}
+                    borderRadius={'4px'}
+                >
+                    <Image
+                        src={primaryImage}
+                        alt="fotos dos carros"
+                        height="100%"
+                        width="100%"
+                    />
+                </Button>
+                <ReactModal
+                    isOpen={isModalOpen2}
+                    onRequestClose={handleCloseModal2}
+                    contentLabel="Modal"
+                    style={customStyles2}
+                >
+                    <Flex
+                        flexDirection = {'row'}
+                        justifyContent = {'space-between'}
+                        margin  = {'0px 0px 40px 0px'}  
+                    >
+                        <h1>Imagem do Veiculo</h1>
+                        <button onClick={handleCloseModal2}>X</button>
+                    </Flex>
+                    <Image
+                        src={primaryImage}
+                        alt="fotos dos carros"
+                        className="detailPictures"
+                        height="239"
+                        width="466"
+                    />
+                </ReactModal>
               </div>
 
               <div className="containers dataAnnounce">

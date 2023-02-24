@@ -60,23 +60,42 @@ export const Image = styled.img`
 `;
 
 export const Button = styled.button`
+  cursor:${({cursor}) => (cursor ? cursor : 'pointer')}; 
   box-sizing: ${({ boxSizing }) => (boxSizing ? boxSizing : "border-box")};
   display: ${({ display }) => (display ? display : "flex")};
   justify-content: ${({ justifyContent }) => (justifyContent ? justifyContent : "center")};
   align-items: ${({ alignItems }) => (alignItems ? alignItems : "center")};
   padding: ${({ padding }) => (padding ? padding : "12px 20px")};
   margin: ${({ margin }) => (margin ? margin : "0px 0px 0px 0px")};
+  margin-top: ${({ marginTop }) => (marginTop ? marginTop : "0px 0px 0px 0px")};
+  margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : "0px 0px 0px 0px")};
   width: ${({ width }) => (width ? width : "120px")};
   height: ${({ height }) => (height ? height : "40px")};
   background: ${({background}) => (background ? background : "none")};
+  background-color: ${({backgroundColor}) => (backgroundColor ? backgroundColor : "none")};
   border: ${({ border }) => (border ? border : "none")};
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "5px")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "600")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "14px")};
-  font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : '"Inter", sans-serif')};
+  font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : 'Inter')};
   color: ${({ color }) => (color ? color : "#FFFFFF")};
 `;
 
+export const Title = styled.label`
+  padding: ${({ padding }) => (padding ? padding : "12px 20px")};
+  margin: ${({ margin }) => (margin ? margin : "0px 0px 0px 0px")};
+  margin-top: ${({ marginTop }) => (marginTop ? marginTop : "0px 0px 0px 0px")};
+  margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : "0px 0px 0px 0px")};
+  width: ${({ width }) => (width ? width : "120px")};
+  height: ${({ height }) => (height ? height : "40px")};
+  background-color: ${({backgroundColor}) => (backgroundColor ? backgroundColor : "none")};
+  border: ${({ border }) => (border ? border : "none")};
+  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "5px")};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "600")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "14px")};
+  font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : 'Inter')};
+  color: ${({ color }) => (color ? color : "#FFFFFF")};
+`
 export const Input = styled.input`
   font-size: 14px;
   width: 100%;
