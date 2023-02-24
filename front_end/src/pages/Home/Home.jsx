@@ -14,7 +14,7 @@ const Home = () => (
     <HomeStyles>
       <HomeNav cars={"cars"} motos={"motos"} />
       <div className="container">
-        <h2 className="TitleHome">Leilão</h2>
+        <h2 className="TitleHome auctions">Leilão</h2>
         <CarouselComponent>
           <CardAuction />
           <CardAuction />

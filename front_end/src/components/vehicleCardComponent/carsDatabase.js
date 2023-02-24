@@ -5,7 +5,7 @@ export const carsData = [
     descryption:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     announcer: "Kenzinho",
-    km: "0 KM",
+    km: "0",
     year: 2020,
     price: "100000",
   },
