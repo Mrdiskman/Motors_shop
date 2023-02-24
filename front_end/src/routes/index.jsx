@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import AnnouncerDashboard from "../pages/AnnouncerDashboard/AnnouncerDashboard";
-import Home from "../pages/Home/Home";
+import Home from "../pages/home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import UserDashboard from "../pages/UserDashboard/UserDashboard";
