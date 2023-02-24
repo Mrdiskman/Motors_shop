@@ -11,8 +11,12 @@ export const VehicleCard = styled.div`
     .div_img {
       border: 3px solid #4529e6;
       border-radius: 5px;
+      .div_active {
+        position: static;
+      }
       img {
         width: 90%;
+        position: absolute;
       }
     }
   }
@@ -51,6 +55,24 @@ export const VehicleCard = styled.div`
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+    .div_active {
+      background-color: ${(props) => (props.active ? "#4529E6" : "#ADB5BD")};
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 51px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        height: 100%;
+        font-size: 14px;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
     img {
       background-size: cover;
       width: 80%;

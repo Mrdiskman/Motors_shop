@@ -1,17 +1,28 @@
 import { VehicleCard, VehiclePrice } from "./vehicleCardComponent.style";
 
 const BuildVehicleCard = ({
+  owner,
   img,
   title,
   descryption,
   announcer,
   km,
   year,
+  active,
   price,
 }) => {
+  console.log(owner, active);
   return (
-    <VehicleCard>
+    <VehicleCard active={active}>
       <div className="div_img">
+        {owner ? (
+          <div className="div_active">
+            <p>{active ? "Ativo" : "Inativo"}</p>
+          </div>
+        ) : (
+          <></>
+        )}
+
         <img src={img} alt={title} />
       </div>
       <h2 className="titleCarrousel">{title}</h2>

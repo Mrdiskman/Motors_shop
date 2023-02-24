@@ -8,6 +8,7 @@ export const carsData = [
     km: "0",
     year: 2020,
     price: "100000",
+    active: true,
   },
   {
     img: "https://media.seudinheiro.com/uploads/2023/01/Blazer-EV-foto-Chevrolet.jpg",
@@ -18,6 +19,7 @@ export const carsData = [
     km: 0,
     year: 2020,
     price: "100000",
+    active: true,
   },
   {
     img: "https://media.seudinheiro.com/uploads/2023/01/Blazer-EV-foto-Chevrolet.jpg",
@@ -28,6 +30,7 @@ export const carsData = [
     km: 0,
     year: 2020,
     price: "100000",
+    active: false,
   },
   {
     img: "https://media.seudinheiro.com/uploads/2023/01/Blazer-EV-foto-Chevrolet.jpg",
@@ -38,6 +41,7 @@ export const carsData = [
     km: 0,
     year: 2020,
     price: "100000",
+    active: false,
   },
   {
     img: "https://media.seudinheiro.com/uploads/2023/01/Blazer-EV-foto-Chevrolet.jpg",
@@ -48,6 +52,7 @@ export const carsData = [
     km: 0,
     year: 2020,
     price: "100000",
+    active: true,
   },
   {
     img: "https://media.seudinheiro.com/uploads/2023/01/Blazer-EV-foto-Chevrolet.jpg",
@@ -58,5 +63,6 @@ export const carsData = [
     km: 0,
     year: 2020,
     price: "100000",
+    active: true,
   },
 ];
