@@ -8,12 +8,19 @@ export const AnnouncerCard = styled.div`
   padding-bottom: 35px;
   padding-right: 25px;
   flex-direction: column;
-  width: 90%;
-  min-height: 400px;
-  height: fit-content;
-  background-color: var(--whitefixed);
-  border-radius: 5px;
-  margin-top: 65px;
+userDashboard
+  align-items: flex-start;
+  padding: 40px 29px;
+  gap: 16px;
+  position: absolute;
+  width: 92%;
+  height: 500px;
+  left: 16px;
+  top: 145px;
+  background: var(--grey10);
+  border-radius: 4px;
+  margin-bottom: 400px;
+
 
   .sellerNameAbreviation {
     display: flex;

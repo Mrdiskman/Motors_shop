@@ -1,6 +1,9 @@
-import { VehicleCard, VehiclePrice } from "./vehicleCardComponent.style";
+import {
+  VehicleUserCard,
+  VehicleUserPrice,
+} from "./vehicleUserCardComponent.style";
 
-const BuildVehicleCard = ({
+const BuildUserVehicleCard = ({
   img,
   title,
   descryption,
@@ -8,38 +11,38 @@ const BuildVehicleCard = ({
   km,
   year,
   price,
+  is_active,
 }) => {
   return (
-    <VehicleCard>
+    <VehicleUserCard>
       <div className="div_img">
         <img src={img} alt={title} />
+        <p>{is_active}</p>
       </div>
- userDashboard
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <p>{descryption}</p>
-
       <div className="divAnnouncer">
-        <p className="miniatureCarrousel">{announcer[0]}</p>
-        <span className="nameAnnouncer">{announcer}</span>
+        <p>{announcer[0]}</p>
+        <span>{announcer}</span>
       </div>
-      <VehiclePrice>
+      <VehicleUserPrice>
         <div className="divItens">
           <div className="km_div">
-            <h3 className="numbers">{km}</h3>
+            <h3>{km}</h3>
           </div>
           <div className="year_div">
-            <h3 className="numbers">{year}</h3>
+            <h3>{year}</h3>
           </div>
         </div>
-        <h3 className="price">
+        <h3>
           {parseInt(price).toLocaleString("pt-br", {
             style: "currency",
             currency: "BRL",
           })}
         </h3>
-      </VehiclePrice>
-    </VehicleCard>
+      </VehicleUserPrice>
+    </VehicleUserCard>
   );
 };
 
-export default BuildVehicleCard;
+export default BuildUserVehicleCard;
