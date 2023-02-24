@@ -7,7 +7,7 @@ import { SectionPictures } from "./announceDetailStyled";
 
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
-import { Button, Container, Flex, Image } from "../../style/styles";
+import { Button, Container, Flex, Image, OverflowY} from "../../style/styles";
 
 const AnnounceDetailPage = () => {
   const CompleteNameSplit = database.user.name.split(" ");

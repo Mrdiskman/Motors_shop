@@ -14,6 +14,8 @@ export const AnnouncerCard = styled.div`
   background: var(--grey10);
   border-radius: 4px;
 
+
+
   .sellerNameAbreviation {
     width: 80px;
     height: 80px;
@@ -113,6 +115,8 @@ export const AnnouncerCard = styled.div`
       flex-grow: 0;
     }
   }
+
+
 
   @media screen and (min-width: 769px) {
     position: absolute;

@@ -47,7 +47,8 @@ export const Flex = styled.div`
       margin ? margin : "0px"};
     padding: ${({ padding }) =>
       padding ? padding : "0px"};  
-    
+    gap:${({ gap }) =>
+    gap ? gap : "0px"};
     @media(min-width: 768px){
         flex-direction: row;
     }
@@ -97,14 +98,13 @@ export const Title = styled.label`
   color: ${({ color }) => (color ? color : "#FFFFFF")};
 `
 export const Input = styled.input`
-  font-size: 14px;
-  width: 100%;
-  height: 37px;
-  max-height: 37px;
-  margin: 0px;
-  padding: 10px 12px 10px 12px;
-  border-radius: 4px;
-  border-style: solid;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "14px")};
+  width: ${({ width }) => (width ? width : "90%")};
+  height: ${({ height }) => (height ? height : "35px")};
+  margin: ${({ margin }) => (margin ? margin : "0px 0px 0px 0px")};
+  padding: ${({ padding }) => (padding ? padding : "12px 20px")};
+  border-radius: 5px;
+  border: ${({ border }) => (border ? border : "solid")};
   border-color: #dde6e9;
   border-width: 1px;
   &:focus {
@@ -113,13 +113,35 @@ export const Input = styled.input`
   }
 `;
 
+export const OverflowY = styled.div`
+  margin: 0px;
+  padding: 0px;
+  overflow-y: scroll;
+`;
+
 export const Label = styled.label`
   margin-bottom: 8px;
   width: 100%;
   font: SourceSansPro;
   font-size: 14px;
   text-align: left;
+  color: #212529;
+  
 `;
+export const TextArea = styled.textarea`
+border: 1.5px solid #E9ECEF;
+border-radius: 4px;
+font-size: ${({ fontSize }) => (fontSize ? fontSize : "14px")};
+width: ${({ width }) => (width ? width : "90%")};
+height: ${({ height }) => (height ? height : "80px")};
+margin: ${({ margin }) => (margin ? margin : "0px 0px 0px 0px")};
+padding: ${({ padding }) => (padding ? padding : "12px 20px")};
+border-color: #dde6e9;
+border-width: 1px;
+&:focus {
+  outline: none;
+}
+`
 export const HelperText = styled.label`
   margin-bottom: 8px;
   width: 100%;
@@ -149,3 +171,10 @@ export const ResultP =
 
     text-align: left;
 `;
+
+export const divContainer = styled.div`
+width:100%;
+display: flex;
+align-items: center;
+`
+
