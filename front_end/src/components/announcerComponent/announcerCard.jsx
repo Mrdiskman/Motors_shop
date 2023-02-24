@@ -9,16 +9,16 @@ const BuildAnnouncerCard = ({ name, seller, descripition }) => {
 
   return (
     <AnnouncerCard>
-      <div>
+      <div className="containerDiv">
         <p className="sellerNameAbreviation">{nameAbreviation}</p>
-        <p className="sellerName">{name}</p>
-        <p className="sellerRole">Anunciante</p>
+        <div className="dataContainerAnnouncer">
+          <p className="sellerName">{name}</p>
+          <p className="sellerRole">Anunciante</p>
+        </div>
         <p className="sellerDescription">{descripition}</p>
       </div>
 
-      <button>
-        <p>Criar anúncio</p>
-      </button>
+      <button>Criar anúncio</button>
     </AnnouncerCard>
   );
 };

@@ -7,19 +7,24 @@ import BuildUserVehicleCard from "../../components/userDashComponent/vehicleUser
 import { carsData } from "../../components/vehicleCardComponent/carsDatabase";
 import { motorcyclesData } from "../../components/vehicleCardComponent/motorcyclesDatabase";
 import { database } from "../../database";
+ userDashboard
 import { Div_block, UserDashStyles } from "./userDashBoard.style";
+
 
 const UserDashboard = () => {
   return (
     <>
       <Header />
       <BackGroundStyle>
+userDashboard
         <UserDashStyles>
+
           <BuildAnnouncerCard
             name={database.user.name}
             seller={database.user.seller}
             descripition={database.user.descripition}
           />
+
           <Div_block></Div_block>
           <h2 className="TitleHome" id="cars">
             Carros
@@ -58,6 +63,7 @@ const UserDashboard = () => {
             ))}
           </CarouselComponent>
         </UserDashStyles>
+
       </BackGroundStyle>
 
       <Footer />

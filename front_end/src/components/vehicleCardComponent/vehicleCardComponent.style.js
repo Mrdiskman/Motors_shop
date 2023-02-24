@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const VehicleCard = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap");
   display: flex;
   flex-direction: column;
   width: 312px;
@@ -9,12 +10,39 @@ export const VehicleCard = styled.div`
   :hover {
     .div_img {
       border: 3px solid #4529e6;
+      border-radius: 5px;
       img {
-        width: 89%;
+        width: 90%;
       }
     }
   }
-
+  .titleCarrousel {
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--grey1);
+  }
+  .descriptionCarrousel {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--grey2);
+  }
+  .miniatureCarrousel {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--whitefixed);
+  }
+  .nameAnnouncer {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--grey2);
+  }
   .div_img {
     width: 312px;
     height: 154px;
@@ -101,7 +129,20 @@ export const VehiclePrice = styled.div`
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-
+    .numbers {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      color: var(--brand1);
+    }
+    .price {
+      font-family: "Lexend", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: var(--grey1);
+    }
     .km_div {
       display: flex;
       justify-content: center;
