@@ -1,4 +1,3 @@
-
 import React from "react";
 import ContextsProvider from "./contexts/provider";
 import RoutesMain from "../src/routes/index";

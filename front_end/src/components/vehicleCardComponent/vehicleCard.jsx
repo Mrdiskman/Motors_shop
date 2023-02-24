@@ -9,7 +9,6 @@ const BuildVehicleCard = ({
   year,
   price,
 }) => {
-  console.log();
   return (
     <VehicleCard>
       <div className="div_img">

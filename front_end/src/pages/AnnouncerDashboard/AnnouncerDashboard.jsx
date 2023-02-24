@@ -1,19 +1,25 @@
+import BuildAnnouncerCard from "../../components/announcerComponent/announcerCard";
+import { BackGroundStyle } from "../../components/backgroundComponent/backgroundStyled";
 import CardAuction from "../../components/cardAuctionComponent";
 import CarouselComponent from "../../components/carouselComponent";
+import Footer from "../../components/footerComponent/footer";
 import Header from "../../components/headerComponent/header";
-import HomeNav from "../../components/homeNav";
-import BuildVehicleCard from "../../components/vehicleCardComponent/vehicleCard";
-import { HomeStyles } from "./style";
 import { carsData } from "../../components/vehicleCardComponent/carsDatabase";
 import { motorcyclesData } from "../../components/vehicleCardComponent/motorcyclesDatabase";
+import BuildVehicleCard from "../../components/vehicleCardComponent/vehicleCard";
+import { database } from "../../database";
 
-const Home = () => (
-  <>
-  <Header />
-  <HomeStyles>
-    <HomeNav cars={"cars"} motos={"motos"} />
-    <div className="container">
-      <h2 className="TitleHome">Leilão</h2>
+const AnnouncerDashboard = () => {
+  return (
+    <>
+      <Header />
+      <BackGroundStyle>
+        <BuildAnnouncerCard
+          name={database.user.name}
+          seller={database.user.seller}
+          descripition={database.user.descripition}
+        />
+      </BackGroundStyle>
       <CarouselComponent>
         <CardAuction />
         <CardAuction />
@@ -55,8 +61,9 @@ const Home = () => (
           />
         ))}
       </CarouselComponent>
-    </div>
-  </HomeStyles>
-  </>
-);
-export default Home;
+      <Footer />
+    </>
+  );
+};
+
+export default AnnouncerDashboard;

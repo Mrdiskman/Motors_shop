@@ -4,7 +4,7 @@ export const FooterComponent = styled.footer`
   font-family: "Inter", sans-serif;
   font-weight: 500;
   height: 35vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
