@@ -5,6 +5,10 @@ import Header from "../../components/headerComponent/header";
 import { database } from "../../database/index";
 import { SectionPictures } from "./announceDetailStyled";
 
+import React, { useState } from 'react';
+import ReactModal from 'react-modal';
+import { Button, Container, Flex, Image } from "../../style/styles";
+
 const AnnounceDetailPage = () => {
   const CompleteNameSplit = database.user.name.split(" ");
   const surname = CompleteNameSplit[1];
@@ -18,6 +22,34 @@ const AnnounceDetailPage = () => {
   const miniPictures = images.join("").split(",");
   const primaryImage = images[0][0];
   const announce = database.user.announcements[0];
+
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      height: '365px',
+      width: '344px'
+    },
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.15)'
+    }
+  };
+
 
   return (
     <>
@@ -63,13 +95,43 @@ const AnnounceDetailPage = () => {
                   <h2 className="titlePhotos">Fotos</h2>
                   <ul className="ulListImages">
                     {miniPictures.map((elem, index) => (
-                      <li key={index} className="listImages">
-                        <img
-                          src={elem}
-                          alt="fotos dos carros"
-                          className="miniPictures"
-                        />
-                      </li>
+                        <li key={index} className="listImages">
+                            <Button 
+                                onClick={handleOpenModal}
+                                height={'108px'}
+                                width={'108px'}
+                                borderRadius={'4px'}
+                            >
+                                <Image
+                                    src={elem}
+                                    alt="fotos dos carros"
+                                    height="108"
+                                    width="108"
+                                />
+                            </Button>
+                            <ReactModal
+                                isOpen={isModalOpen}
+                                onRequestClose={handleCloseModal}
+                                contentLabel="Modal"
+                                style={customStyles}
+                            >
+                                <Flex
+                                    flexDirection = {'row'}
+                                    justifyContent = {'space-between'}
+                                    margin  = {'0px 0px 40px 0px'}  
+                                >
+                                    <h1>Imagem do Veiculo</h1>
+                                    <button onClick={handleCloseModal}>X</button>
+                                </Flex>
+                                <Image
+                                    src={elem}
+                                    alt="fotos dos carros"
+                                    className="detailPictures"
+                                    height="239"
+                                    width="312"
+                                />
+                            </ReactModal>
+                        </li>
                     ))}
                   </ul>
                 </div>
@@ -164,11 +226,41 @@ const AnnounceDetailPage = () => {
                 <ul className="ulListImages">
                   {miniPictures.map((elem, index) => (
                     <li key={index} className="listImages">
-                      <img
-                        src={elem}
-                        alt="fotos dos carros"
-                        className="miniPictures"
-                      />
+                        <Button 
+                            onClick={handleOpenModal}
+                            height={'108px'}
+                            width={'108px'}
+                            borderRadius={'4px'}
+                        >
+                            <Image
+                                src={elem}
+                                alt="fotos dos carros"
+                                height="108"
+                                width="108"
+                            />
+                        </Button>
+                        <ReactModal
+                            isOpen={isModalOpen}
+                            onRequestClose={handleCloseModal}
+                            contentLabel="Modal"
+                            style={customStyles}
+                        >
+                            <Flex
+                              flexDirection = {'row'}
+                              justifyContent = {'space-between'}
+                              margin  = {'0px 0px 40px 0px'}  
+                            >
+                                <h1>Imagem do Veiculo</h1>
+                                <button onClick={handleCloseModal}>X</button>
+                            </Flex>
+                            <Image
+                                src={elem}
+                                alt="fotos dos carros"
+                                className="detailPictures"
+                                height="239"
+                                width="312"
+                            />
+                        </ReactModal>
                     </li>
                   ))}
                 </ul>

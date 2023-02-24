@@ -81,6 +81,11 @@ export const SectionPictures = styled.section`
     height: 100%;
     border-radius: 5px;
   }
+  .detailPictures {
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+  }
   /* -------- */
 
   /* Informaçao do anuncio */
@@ -181,11 +186,13 @@ export const SectionPictures = styled.section`
     gap: 20px;
   }
 
+  /* --------------- 
   .listImages {
     width: 100px;
     height: 90px;
     border-radius: 5px;
   }
+  */
   /* --------------- */
 
   /* Parte do vendedor */

@@ -35,18 +35,19 @@ export const Container =
       fontSize ? fontSize : "calc(10px + 2vmin)"};
     color: ${({ color }) => (color ? color : "#656565")};
 `;
-export const Flex =
-  styled.div
-  `
+export const Flex = styled.div`
+
     display: ${({ display }) => (display ? display : "flex")};
     flex-direction: ${({ flexDirection }) =>
       flexDirection ? flexDirection : "column"};
     align-items: ${({ alignItems }) => (alignItems ? alignItems : "center")};
     justify-content: ${({ justifyContent }) =>
       justifyContent ? justifyContent : "center"};
+    margin: ${({ margin }) =>
+      margin ? margin : "0px"};
+    padding: ${({ padding }) =>
+      padding ? padding : "0px"};  
     
-    margin: 0px;
-    padding: 0px;
     @media(min-width: 768px){
         flex-direction: row;
     }
@@ -56,6 +57,24 @@ export const Image = styled.img`
   width: ${({ width }) => (width ? width : "90%")};
   height: ${({ height }) => (height ? height : "90%")};
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "5px")};
+`;
+
+export const Button = styled.button`
+  box-sizing: ${({ boxSizing }) => (boxSizing ? boxSizing : "border-box")};
+  display: ${({ display }) => (display ? display : "flex")};
+  justify-content: ${({ justifyContent }) => (justifyContent ? justifyContent : "center")};
+  align-items: ${({ alignItems }) => (alignItems ? alignItems : "center")};
+  padding: ${({ padding }) => (padding ? padding : "12px 20px")};
+  margin: ${({ margin }) => (margin ? margin : "0px 0px 0px 0px")};
+  width: ${({ width }) => (width ? width : "120px")};
+  height: ${({ height }) => (height ? height : "40px")};
+  background: ${({background}) => (background ? background : "none")};
+  border: ${({ border }) => (border ? border : "none")};
+  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "5px")};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "600")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "14px")};
+  font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : '"Inter", sans-serif')};
+  color: ${({ color }) => (color ? color : "#FFFFFF")};
 `;
 
 export const Input = styled.input`
