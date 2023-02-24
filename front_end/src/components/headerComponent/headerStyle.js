@@ -3,11 +3,13 @@ import styled from "styled-components";
 export const HeaderStyle = styled.header`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap");
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 80px;
   justify-content: center;
   align-items: center;
   gap: 35%;
+  position: relative;
+  z-index: 0;
   .navBar {
     display: none;
   }
@@ -124,26 +126,39 @@ export const HeaderStyle = styled.header`
 export const NavBar = styled.nav`
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  .menu {
-    margin-top: 10px;
-    background-color: #ffffff;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+
+  .conteinerOptionsMobile {
+    width: 50%;
+    height: 200px;
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
+    gap: 16px;
+    background-color: white;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-  }
-  .option {
-    background-color: transparent;
-    border: none;
-    border-bottom: black 1px solid;
-    width: 35%;
-    padding-bottom: 5px;
-    color: #495057;
-    font-weight: 400;
-    font-size: 16px;
-    font-family: "Inter", sans-serif;
+
+    .option {
+      display: flex;
+      cursor: pointer;
+      color: #495057;
+      text-align: start;
+      background-color: transparent;
+      border: none;
+      font-family: "Inter", sans-serif;
+      width: 100%;
+      font-weight: 400;
+      font-size: 16px;
+      padding-bottom: 5px;
+      justify-content: center;
+      align-items: center;
+      font-weight: bolder;
+    }
   }
   .listMobile {
     list-style: none;
@@ -154,10 +169,18 @@ export const NavBar = styled.nav`
   }
   .listContainerMobile {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
     gap: 20%;
     list-style: none;
     border-bottom: black 1px solid;
     padding-bottom: 15px;
+
+    li {
+      font-weight: bolder;
+    }
     @media (min-width: 769px) {
       display: none;
     }
@@ -165,29 +188,34 @@ export const NavBar = styled.nav`
 `;
 
 export const MenuOptions = styled.div`
-  z-index: 5;
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  align-items: flex-end;
+  position: absolute;
+  z-index: 6;
+  margin-left: 87%;
+
   .conteinerOptions {
-    width: 8%;
+    width: 200px;
+    height: 200px;
     border: 1px solid black;
     margin-right: 5%;
     display: flex;
     flex-direction: column;
     gap: 16px;
-  }
-  .option {
-    cursor: pointer;
-    color: #495057;
-    text-align: start;
-    background-color: transparent;
-    border: none;
-    font-family: "Inter", sans-serif;
-    width: 100%;
-    font-weight: 400;
-    font-size: 16px;
-    padding-bottom: 5px;
+    background-color: white;
+    justify-content: center;
+
+    .option {
+      cursor: pointer;
+      color: #495057;
+      text-align: start;
+      background-color: transparent;
+      border: none;
+      font-family: "Inter", sans-serif;
+      width: 100%;
+      font-weight: 400;
+      font-size: 16px;
+      padding-bottom: 5px;
+    }
   }
 `;

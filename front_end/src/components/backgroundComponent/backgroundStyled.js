@@ -11,12 +11,6 @@ export const BackGroundStyle = styled.main`
     #f1f3f5 100%
   );
   padding-bottom: 50px;
-
-    #4529e6 12%,
-    #f1f3f5 12%,
-    #f1f3f5 100%
-  );
-  padding-bottom: 50px;
   @media (min-width: 769px) {
     background-image: linear-gradient(
       180deg,
@@ -25,5 +19,4 @@ export const BackGroundStyle = styled.main`
       #f1f3f5 100%
     );
   }
-
 `;

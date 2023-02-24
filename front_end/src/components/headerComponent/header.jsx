@@ -69,7 +69,7 @@ const Header = () => {
             <li className="listMobile">Motos</li>
             <li className="listMobile">Leilao</li>
           </ul>
-          <div className="menu">
+          <div className="conteinerOptionsMobile ">
             <button className="option">Editar Perfil</button>
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>

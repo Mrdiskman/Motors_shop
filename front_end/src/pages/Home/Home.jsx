@@ -1,6 +1,7 @@
 import CardAuction from "../../components/cardAuctionComponent";
 import CarouselComponent from "../../components/carouselComponent";
 import Header from "../../components/headerComponent/header";
+/* import Footer from "../../components/footerComponent/footer"; */
 import HomeNav from "../../components/homeNav";
 import BuildVehicleCard from "../../components/vehicleCardComponent/vehicleCard";
 import { HomeStyles } from "./style";
@@ -57,7 +58,7 @@ const Home = () => (
         </CarouselComponent>
       </div>
     </HomeStyles>
-    <Footer></Footer>
+    {/* <Footer /> */}
   </>
 );
 export default Home;
