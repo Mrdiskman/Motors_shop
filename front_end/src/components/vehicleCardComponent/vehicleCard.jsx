@@ -25,7 +25,7 @@ const BuildVehicleCard = ({
       <VehiclePrice>
         <div className="divItens">
           <div className="km_div">
-            <h3 className="numbers">{km}</h3>
+            <h3 className="numbers">{km} KM</h3>
           </div>
           <div className="year_div">
             <h3 className="numbers">{year}</h3>
