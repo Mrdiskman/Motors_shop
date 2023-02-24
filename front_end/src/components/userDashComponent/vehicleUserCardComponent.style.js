@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const VehicleCard = styled.div`
+export const VehicleUserCard = styled.div`
   display: flex;
   flex-direction: column;
   width: 312px;
@@ -27,12 +27,6 @@ export const VehicleCard = styled.div`
       background-size: cover;
       width: 80%;
     }
-  }
-
-  h1 {
-    font-family: "Lexend", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
   }
 
   h2 {
@@ -87,7 +81,7 @@ export const VehicleCard = styled.div`
   }
 `;
 
-export const VehiclePrice = styled.div`
+export const VehicleUserPrice = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 20px;

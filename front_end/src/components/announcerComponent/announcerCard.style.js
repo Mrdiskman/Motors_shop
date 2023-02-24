@@ -13,6 +13,7 @@ export const AnnouncerCard = styled.div`
   top: 145px;
   background: var(--grey10);
   border-radius: 4px;
+  margin-bottom: 400px;
 
   .sellerNameAbreviation {
     width: 80px;
