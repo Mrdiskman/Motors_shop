@@ -1,7 +1,7 @@
 import CardAuction from "../../components/cardAuctionComponent";
 import CarouselComponent from "../../components/carouselComponent";
 import Header from "../../components/headerComponent/header";
-/* import Footer from "../../components/footerComponent/footer"; */
+import Footer from "../../components/footerComponent/footer";
 import HomeNav from "../../components/homeNav";
 import BuildVehicleCard from "../../components/vehicleCardComponent/vehicleCard";
 import { HomeStyles } from "./style";
@@ -14,7 +14,7 @@ const Home = () => (
     <HomeStyles>
       <HomeNav cars={"cars"} motos={"motos"} />
       <div className="container">
-        <h2 className="TitleHome">Leilão</h2>
+        <h2 className="TitleHome auctions">Leilão</h2>
         <CarouselComponent>
           <CardAuction />
           <CardAuction />
@@ -57,8 +57,8 @@ const Home = () => (
           ))}
         </CarouselComponent>
       </div>
+      <Footer />
     </HomeStyles>
-    {/* <Footer /> */}
   </>
 );
 export default Home;

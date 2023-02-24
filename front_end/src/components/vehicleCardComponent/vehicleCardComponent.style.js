@@ -1,21 +1,53 @@
 import styled from "styled-components";
 
 export const VehicleCard = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap");
   display: flex;
   flex-direction: column;
   width: 312px;
   height: 360px;
   cursor: pointer;
-  :hover {
-    .div_img {
+
+  .titleCarrousel {
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--grey1);
+  }
+  .descriptionCarrousel {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--grey2);
+  }
+  .miniatureCarrousel {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--whitefixed);
+  }
+  .nameAnnouncer {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--grey2);
+  }
+  .div_img {
+    :hover {
       border: 3px solid #4529e6;
+      border-radius: 5px;
+      .div_active {
+        position: static;
+      }
       img {
-        width: 89%;
+        width: 90%;
+        position: absolute;
       }
     }
-  }
-
-  .div_img {
+    border: 3px solid transparent;
     width: 312px;
     height: 154px;
     background-color: var(--grey7);
@@ -23,6 +55,26 @@ export const VehicleCard = styled.div`
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+    .div_active {
+      background-color: ${(props) => (props.active ? "#4529E6" : "#ADB5BD")};
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 51px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        height: 100%;
+        font-size: 14px;
+        font-family: "Inter";
+        font-weight: 500;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
     img {
       background-size: cover;
       width: 80%;
@@ -79,6 +131,29 @@ export const VehicleCard = styled.div`
       color: var(--grey2);
     }
   }
+  .div_edit {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    .button_edit {
+      cursor: pointer;
+      width: 105px;
+      height: 38px;
+      border: 1.5px solid #212529;
+      border-radius: 4px;
+      color: #212529;
+      font-size: 14px;
+      font-family: "Inter";
+
+      :hover {
+        background-color: var(--brand2);
+        color: #0b0d0d;
+        border: 1.5px solid var(--brand2);
+      }
+    }
+  }
 `;
 
 export const VehiclePrice = styled.div`
@@ -95,7 +170,20 @@ export const VehiclePrice = styled.div`
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-
+    .numbers {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      color: var(--brand1);
+    }
+    .price {
+      font-family: "Lexend", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: var(--grey1);
+    }
     .km_div {
       display: flex;
       justify-content: center;

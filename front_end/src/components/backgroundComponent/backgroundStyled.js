@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const BackGroundStyle = styled.main`
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
   min-height: 91vh;
   height: fit-content;
   width: 100%;
@@ -11,6 +12,17 @@ export const BackGroundStyle = styled.main`
     #f1f3f5 100%
   );
   padding-bottom: 50px;
+  .titleHome {
+    width: 100%;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--grey0);
+    padding-left: 50px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
   @media (min-width: 769px) {
     background-image: linear-gradient(
       180deg,

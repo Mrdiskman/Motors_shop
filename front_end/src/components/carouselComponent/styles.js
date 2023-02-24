@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const CarouselStyles = styled.div`
+  margin-bottom: 80px;
   .styles-module_sliderBase__swkx1 {
     .styles-module_slider__o0fqa {
       gap: 50px;
     }
   }
+  padding-left: 25px;
+  padding-right: 25px;
 `;

@@ -13,16 +13,22 @@ export const HomeNavStyle = styled.div`
     flex-direction: column;
     align-items: center;
     .titleHome {
+      font-family: "Lexend", sans-serif;
+      font-weight: 700;
       font-weight: 700;
       font-size: 44px;
       text-align: center;
       color: #fdfdfd;
     }
     .descriptionHome {
-      margin-top: 20px;
+      font-family: "Inter", sans-serif;
       font-weight: 400;
       font-size: 16px;
-      color: #f8f9fa;
+      line-height: 28px;
+      color: var(--grey9);
+      margin-top: 20px ; 
+      font-weight: 400;
+      font-size: 16px;
     }
     .navHome {
       width: 381px;

@@ -44,7 +44,7 @@ export const HeaderStyle = styled.header`
   }
   @media (min-width: 769px) {
     display: flex;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     align-items: center;
     gap: 0px;

@@ -1,135 +1,94 @@
 import styled from "styled-components";
 
 export const AnnouncerCard = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
   display: flex;
+  padding-left: 30px;
+  padding-top: 40px;
+  padding-bottom: 35px;
+  padding-right: 25px;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 40px 29px;
-  gap: 16px;
-  position: absolute;
-  width: 92%;
-  height: 500px;
-  left: 16px;
-  top: 145px;
-  background: var(--grey10);
-  border-radius: 4px;
+  width: 90%;
+  min-height: 400px;
+  height: fit-content;
+  background-color: var(--whitefixed);
+  border-radius: 5px;
+  margin-top: 65px;
 
 
 
   .sellerNameAbreviation {
-    width: 80px;
-    height: 80px;
-    background-color: var(--brand1);
-    border-radius: 50%;
     display: flex;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
     justify-content: center;
     align-items: center;
-    color: var(--whitefixed);
+    background-color: var(--brand1);
     font-family: "Inter", sans-serif;
     font-weight: 500;
-    line-height: 39px;
-    font-size: 25px;
+    font-size: 36px;
+    line-height: 53px;
+    color: var(--whitefixed);
+  }
+  .dataContainerAnnouncer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 25px;
   }
 
   .sellerName {
-    position: absolute;
-    width: 92%;
-    height: 25px;
-    left: 29px;
-    top: 168px;
-
-    font-family: "Lexend";
-    font-style: normal;
+    font-family: "Lexend", sans-serif;
     font-weight: 600;
     font-size: 20px;
-    line-height: 25px;
-
+    line-height: 24px;
     color: var(--grey1);
   }
 
   .sellerRole {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 4px 8px;
-    gap: 10px;
-
-    position: absolute;
-    width: 92px;
+    border-radius: 5px;
+    width: 90px;
     height: 32px;
-    left: 168px;
-    top: 165px;
+    background-color: var(--brand4);
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
     color: var(--brand1);
-
-    background: var(--brand4);
-    border-radius: 4px;
   }
 
   .sellerDescription {
-    position: absolute;
-    width: 78%;
-    height: 140px;
-    left: 29px;
-    top: 217px;
-    font-family: "Inter";
-    font-style: normal;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     color: var(--grey2);
+    margin-bottom: 15px;
   }
 
   button {
-    box-sizing: border-box;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 12px 28px;
-    gap: 10px;
     width: 160px;
     height: 48px;
     border: 1.5px solid var(--brand1);
-    border-radius: 4px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    background-color: var(--whitefixed);
-    margin-top: 373px;
-    position: absolute;
-
-    p {
-      width: 104px;
-      height: 0px;
-
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 0px;
-
-      color: var(--brand1);
-      flex: none;
-      order: 0;
-      flex-grow: 0;
-    }
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--brand1);
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
   }
 
 
 
   @media screen and (min-width: 769px) {
-    position: absolute;
-    width: 90%;
-    height: 500px;
-    left: 5%;
-    top: 155px;
-
-    background: var(--grey10);
-    border-radius: 4px;
-
-    .sellerDescription {
-      width: 90%;
-    }
+    width: 80%;
+    margin-bottom: 100px;
   }
 `;
