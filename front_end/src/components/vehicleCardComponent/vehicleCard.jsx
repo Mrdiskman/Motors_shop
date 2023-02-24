@@ -10,6 +10,7 @@ const BuildVehicleCard = ({
   year,
   active,
   price,
+  edit,
 }) => {
   console.log(owner, active);
   return (
@@ -47,6 +48,14 @@ const BuildVehicleCard = ({
           })}
         </h3>
       </VehiclePrice>
+      {edit ? (
+        <div className="div_edit">
+          <button className="button_edit">Editar</button>
+          <button className="button_edit">Ver como</button>
+        </div>
+      ) : (
+        <></>
+      )}
     </VehicleCard>
   );
 };
