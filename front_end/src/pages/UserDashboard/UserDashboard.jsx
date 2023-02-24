@@ -22,11 +22,12 @@ const UserDashboard = () => {
           />
         </DivStylesAnnounce>
         <p className="titleHome" id="cars">
-            Carros
-          </p>
+          Carros
+        </p>
         <CarouselComponent>
           {carsData.map((car, index) => (
             <BuildVehicleCard
+              owner={car.announcer}
               key={index}
               img={car.img}
               title={car.title}
@@ -35,6 +36,7 @@ const UserDashboard = () => {
               km={car.km}
               year={car.year}
               price={car.price}
+              active={car.active}
             />
           ))}
         </CarouselComponent>
@@ -45,6 +47,7 @@ const UserDashboard = () => {
         <CarouselComponent>
           {motorcyclesData.map((moto, index) => (
             <BuildVehicleCard
+              owner={moto.announcer}
               key={index}
               img={moto.img}
               title={moto.title}
@@ -53,6 +56,7 @@ const UserDashboard = () => {
               km={moto.km}
               year={moto.year}
               price={moto.price}
+              active={moto.active}
             />
           ))}
         </CarouselComponent>
