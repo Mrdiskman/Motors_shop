@@ -8,7 +8,6 @@ import AnnounceDetailPage from "../pages/viewAnnounceDetailPage/announceDetailPa
 
 const RoutesMain = () => (
   <Routes>
-    <Route path="/home" element={<Home />} />
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
     <Route path="/" element={<Home />} />
