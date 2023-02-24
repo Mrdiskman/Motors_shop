@@ -7,19 +7,7 @@ export const VehicleCard = styled.div`
   width: 312px;
   height: 360px;
   cursor: pointer;
-  :hover {
-    .div_img {
-      border: 3px solid #4529e6;
-      border-radius: 5px;
-      .div_active {
-        position: static;
-      }
-      img {
-        width: 90%;
-        position: absolute;
-      }
-    }
-  }
+
   .titleCarrousel {
     font-family: "Lexend", sans-serif;
     font-weight: 600;
@@ -48,6 +36,18 @@ export const VehicleCard = styled.div`
     color: var(--grey2);
   }
   .div_img {
+    :hover {
+      border: 3px solid #4529e6;
+      border-radius: 5px;
+      .div_active {
+        position: static;
+      }
+      img {
+        width: 90%;
+        position: absolute;
+      }
+    }
+    border: 3px solid transparent;
     width: 312px;
     height: 154px;
     background-color: var(--grey7);
@@ -69,6 +69,8 @@ export const VehicleCard = styled.div`
       p {
         height: 100%;
         font-size: 14px;
+        font-family: "Inter";
+        font-weight: 500;
         text-align: center;
         color: #ffffff;
       }
@@ -127,6 +129,29 @@ export const VehicleCard = styled.div`
     span {
       font-size: 14px;
       color: var(--grey2);
+    }
+  }
+  .div_edit {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    .button_edit {
+      cursor: pointer;
+      width: 105px;
+      height: 38px;
+      border: 1.5px solid #212529;
+      border-radius: 4px;
+      color: #212529;
+      font-size: 14px;
+      font-family: "Inter";
+
+      :hover {
+        background-color: var(--brand2);
+        color: #0b0d0d;
+        border: 1.5px solid var(--brand2);
+      }
     }
   }
 `;
