@@ -46,6 +46,7 @@ export default function Home() {
             alt="Next.js Logo"
             width={180}
             height={37}
+            
             priority
           />
           <div className={styles.thirteen}>
