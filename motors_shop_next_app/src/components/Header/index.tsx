@@ -1,16 +1,16 @@
 import { database } from "../../database";
-import { HeaderStyle, MenuOptions, NavBar } from "./header.styles";
+import { HeaderStyle, MenuOptions, NavBar } from "./styles";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useContext, useState } from "react";
 import { Contexts } from "../../contexts/provider";
 
 import React from 'react';
 import ReactModal from 'react-modal';
-import { Button, Container, Flex, Image, Input , Label, Title, TextArea, divContainer } from "../../style/styles";
+import { Button, Container, Flex, Image, Input , Label, Title, TextArea, divContainer } from "../../styles/styles"
 
 
 const Header = () => {
-  const { logOut } = useContext(Contexts);
+  //const { logOut } = useContext(Contexts);
 
   const CompleteNameSplit = database.user.name.split(" ");
   const surname = CompleteNameSplit[1];
@@ -122,14 +122,18 @@ const Header = () => {
                     <Label htmlFor="">Descrição
                       <TextArea placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"></TextArea>
                     </Label>
-                    <divContainer> 
+                    <Container                    
+                    width={"100%"}
+                    display={"flex"}
+                    alignItems={"center"}
+                    > 
                       <Button border={'1.5px solid #DEE2E6;'} color={'#495057'} backgroundColor={'#DEE2E6'}>Cancelar</Button>
                       <Button border={'1.5px solid #4529E6;'} color={'#ffffff'} backgroundColor={'#4529E6'}>Salvar alterações</Button>
-                    </divContainer>
+                    </Container>
                 </ReactModal>         
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
-            <button onClick={logOut} className="option">
+            <button className="option + for onClick={logOut}">
               Sair
             </button>
           </div>
@@ -148,7 +152,7 @@ const Header = () => {
             <button className="option">Editar Perfil</button>
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
-            <button onClick={logOut} className="option">
+            <button onClick={()=>{}} className="option">
               Sair
             </button>
           </div>
