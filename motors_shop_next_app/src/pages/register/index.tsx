@@ -19,12 +19,9 @@ export default function Home() {
       </Head>
       <main >
         <Header/>
-        <Image
-        src="/car_page_mock.jpg"
-        alt="car_shop_mock" 
-        width="1080" 
-        height="720" 
-        />
+            <h1>
+                PAGINA DE CADASTRO
+            </h1>
         <Footer/>
        
       </main>

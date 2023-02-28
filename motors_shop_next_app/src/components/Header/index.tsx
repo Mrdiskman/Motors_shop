@@ -6,7 +6,7 @@ import { Contexts } from "../../contexts/provider";
 
 import React from 'react';
 import ReactModal from 'react-modal';
-import { Button, Container, Flex, Image, Input , Label, Title, TextArea, divContainer } from "../../styles/styles"
+import { Button, Container, Flex, Image, Input , Label, Title, TextArea, divContainer } from "../GeneralComponents"
 
 
 const Header = () => {
@@ -75,6 +75,7 @@ const Header = () => {
             <li>Leilao</li>
           </ul>
         </nav>
+
         <div className="userDataContainer" onClick={() => toggleDeskTop()}>
           <div className="containerNameAbreviation">
             <p className="nameAbreviation">{nameAbreviation}</p>
@@ -85,6 +86,8 @@ const Header = () => {
           <GiHamburgerMenu className="menuMobileStyle" />
         </button>
       </HeaderStyle>
+
+      
       {navDesktop && (
         <MenuOptions>
           <div className="conteinerOptions">
