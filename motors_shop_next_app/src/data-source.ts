@@ -1,5 +1,11 @@
 
 import { DataSource } from "typeorm"
+import { User } from "./entities/user.entity"
+import { createTables1677587488043 } from "./migrations/1677587488043-createTables"
+import { initialMigration1677587581500 } from "./migrations/1677587581500-initialMigration"
+
+
+
 
 
 require('dotenv').config()
@@ -16,9 +22,8 @@ export const AppDataSource = new DataSource({
 
     synchronize: false,
     logging: true,
-    entities: ["src/entities/user.entity.ts"], ////
-    migrations: ["src/migrations/1677541398723-initialMigration.ts"], ////
-
+    entities: [User], 
+    migrations: [createTables1677587488043, initialMigration1677587581500], 
 
 })
 

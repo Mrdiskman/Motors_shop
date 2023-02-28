@@ -62,7 +62,7 @@ html {
     --brand2: #5126EA;
     --brand3: #B0A6F0;
     --brand4: #EDEAFD;
-    --grey0: #0B0D0D;
+    --grey0: #0B0D0D; 
     --grey1: #212529;
     --grey2: #495057;
     --grey3: #868E96;

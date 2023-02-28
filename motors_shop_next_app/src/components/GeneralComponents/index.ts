@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import Image from 'next/image'
+
+
 interface Props {
     
     width?: string
@@ -29,6 +32,7 @@ interface Props {
     border?: string
     fontFamily?: string
     gap?: string
+    objectFit?: string
 }
 
 export const Container =
@@ -42,11 +46,11 @@ export const Container =
       justifyContent ? justifyContent : "center"};
     
     background-color: ${({ backgroundColor }) =>
-      backgroundColor ? backgroundColor : "#FFFFFF"};
+      backgroundColor ? backgroundColor : "#FDFDFD"};
     
-    width: ${({ width }) => (width ? width : "608px")};
+    width: ${({ width }) => (width ? width : "auto")};
     max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : "auto")};
-    height: ${({ height }) => (height ? height : "390px")};
+    height: ${({ height }) => (height ? height : "auto")};
     margin: ${({ margin }) => (margin ? margin : "auto")};
     padding: ${({ padding }) => (padding ? padding : "auto")};
     box-sizing: border-box;
@@ -85,10 +89,9 @@ export const Flex = styled.div<Props>`
     }
 `;
 
-export const Image = styled.img<Props>`
-  width: ${({ width }) => (width ? width : "90%")};
-  height: ${({ height }) => (height ? height : "90%")};
-  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "5px")};
+export const ImageFit = styled(Image)<Props>`
+  object-fit: ${({ objectFit }) => (objectFit ? objectFit : "cover")};    
+  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "4px")};
 `;
 
 export const Button = styled.button<Props>`
@@ -113,31 +116,61 @@ export const Button = styled.button<Props>`
   color: ${({ color }) => (color ? color : "#FFFFFF")};
 `;
 
-export const Title = styled.label<Props>`
-  padding: ${({ padding }) => (padding ? padding : "12px 20px")};
+export const Title = styled.h2<Props>`
+  padding: ${({ padding }) => (padding ? padding : "0px 0px")};
   margin: ${({ margin }) => (margin ? margin : "0px 0px 0px 0px")};
   margin-top: ${({ marginTop }) => (marginTop ? marginTop : "0px 0px 0px 0px")};
   margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : "0px 0px 0px 0px")};
-  width: ${({ width }) => (width ? width : "120px")};
-  height: ${({ height }) => (height ? height : "40px")};
+  background-color: ${({backgroundColor}) => (backgroundColor ? backgroundColor : "none")};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "500")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
+  font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : 'Inter')};
+  color: ${({ color }) => (color ? color : "#000000")};
+`
+export const Form = styled.form<Props>`
+  padding: ${({ padding }) => (padding ? padding : "0px 0px")};
+  margin: ${({ margin }) => (margin ? margin : "0px 0px 0px 0px")};
+  margin-top: ${({ marginTop }) => (marginTop ? marginTop : "0px")};
+  margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : "8px")};
+  width: ${({ width }) => (width ? width : "100%")};
+  height: ${({ height }) => (height ? height : "17px")};
   background-color: ${({backgroundColor}) => (backgroundColor ? backgroundColor : "none")};
   border: ${({ border }) => (border ? border : "none")};
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "5px")};
-  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "600")};
+  text-align: ${({ textAlign }) => (textAlign ? textAlign : "left")};
+`
+export const Label = styled.label<Props>`
+  padding: ${({ padding }) => (padding ? padding : "0px 0px")};
+  margin: ${({ margin }) => (margin ? margin : "0px 0px 0px 0px")};
+  margin-top: ${({ marginTop }) => (marginTop ? marginTop : "0px")};
+  margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : "8px")};
+  width: ${({ width }) => (width ? width : "100%")};
+  height: ${({ height }) => (height ? height : "17px")};
+  background-color: ${({backgroundColor}) => (backgroundColor ? backgroundColor : "none")};
+  border: ${({ border }) => (border ? border : "none")};
+  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "5px")};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "medium")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "14px")};
   font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : 'Inter')};
-  color: ${({ color }) => (color ? color : "#FFFFFF")};
+  color: ${({ color }) => (color ? color : "#212529")};
+  text-align: ${({ textAlign }) => (textAlign ? textAlign : "left")};
 `
+
+
 export const Input = styled.input<Props>`
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "14px")};
-  width: ${({ width }) => (width ? width : "90%")};
-  height: ${({ height }) => (height ? height : "35px")};
+  width: ${({ width }) => (width ? width : "100%")};
+  height: ${({ height }) => (height ? height : "48px")};
   margin: ${({ margin }) => (margin ? margin : "0px 0px 0px 0px")};
   padding: ${({ padding }) => (padding ? padding : "12px 20px")};
-  border-radius: 5px;
+  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "5px")};
   border: ${({ border }) => (border ? border : "solid")};
-  border-color: #dde6e9;
-  border-width: 1px;
+  border-color: ${({ borderColor }) => (borderColor ? borderColor : " #E9ECEF")};
+  border-width: 1,5px;
+  ::placeholder {
+    color: #868E96;
+    opacity: 1;
+  }
   &:focus {
     outline: none;
     border-color: #66afe9;
@@ -150,15 +183,7 @@ export const OverflowY = styled.div<Props>`
   overflow-y: scroll;
 `;
 
-export const Label = styled.label<Props>`
-  margin-bottom: 8px;
-  width: 100%;
-  font: SourceSansPro;
-  font-size: 14px;
-  text-align: left;
-  color: #212529;
-  
-`;
+
 export const TextArea = styled.textarea<Props>`
 border: 1.5px solid #E9ECEF;
 border-radius: 4px;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const FooterComponent = styled.footer`
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -9,8 +10,8 @@ export const FooterComponent = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--grey0);
-  color: var(--whitefixed);
+  background-color: #0B0D0D;
+  color: #FFFFFF;
   gap: 50px;
   margin-right: 0px;
 
@@ -28,12 +29,12 @@ export const FooterComponent = styled.footer`
     line-height: 24px;
   }
   .upPage {
-    background-color: var(--grey1);
+    background-color: #212529;
     border-radius: 5px;
     height: 40px;
     width: 45px;
     border: none;
-    color: var(--whitefixed);
+    color: #FFFFFF;
     font-size: 18px;
     cursor: pointer;
   }

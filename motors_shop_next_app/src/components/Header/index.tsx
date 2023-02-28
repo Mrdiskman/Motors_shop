@@ -6,7 +6,8 @@ import { Contexts } from "../../contexts/provider";
 
 import React from 'react';
 import ReactModal from 'react-modal';
-import { Button, Container, Flex, Image, Input , Label, Title, TextArea, divContainer } from "../GeneralComponents"
+import { Button, Container, Flex, Input , Label, Title, TextArea, divContainer } from "../GeneralComponents"
+import Link from "next/link";
 
 
 const Header = () => {
@@ -65,9 +66,13 @@ const Header = () => {
   return (
     <>
       <HeaderStyle>
-        <h1 className="title">
-          Motors <span className="titleStyle">shop</span>
-        </h1>
+        <Link
+            href={'/'}
+        >
+            <h1 className="title">
+            Motors <span className="titleStyle">shop</span>
+            </h1>
+        </Link>
         <nav className="navBar">
           <ul className="containerList">
             <li>Carros</li>
@@ -87,7 +92,7 @@ const Header = () => {
         </button>
       </HeaderStyle>
 
-      
+
       {navDesktop && (
         <MenuOptions>
           <div className="conteinerOptions">

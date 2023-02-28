@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { FooterComponent } from '@/components/Footer/styles'
+import { Container, Form, Input, Label, Title } from '@/components/GeneralComponents'
 
 //const inter = Inter({ subsets: ['latin'] })
 
@@ -19,9 +20,34 @@ export default function Home() {
       </Head>
       <main >
         <Header/>
-            <h1>
-                PAGINA DE CADASTRO
-            </h1>
+            <Container
+                width='411px'
+                height='1630px'
+                justifyContent='start'
+                padding='44px 48px'
+            >
+                <Title
+                    marginBottom='32px'    
+                >
+                    Cadastro
+                </Title>
+                <Label>
+                    Informacoes Pessoais
+                </Label>
+                <Form>
+                    <Label>
+                        Nome
+                    </Label>
+                    <Input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="123-45-678"
+                        >
+                    </Input>
+                </Form>
+            </Container>
         <Footer/>
        
       </main>
