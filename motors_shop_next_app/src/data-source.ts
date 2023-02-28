@@ -1,8 +1,7 @@
 
 import { DataSource } from "typeorm"
 import { User } from "./entities/user.entity"
-import { createTables1677587488043 } from "./migrations/1677587488043-createTables"
-import { initialMigration1677587581500 } from "./migrations/1677587581500-initialMigration"
+import { initialMigration1677613479220 } from "./migrations/1677613479220-initialMigration"
 
 
 
@@ -23,7 +22,7 @@ export const AppDataSource = new DataSource({
     synchronize: false,
     logging: true,
     entities: [User], 
-    migrations: [createTables1677587488043, initialMigration1677587581500], 
+    migrations: [initialMigration1677613479220]
 
 })
 

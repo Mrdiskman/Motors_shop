@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: '',
-    path: `${basePath}/_next/image`,
+    //path: `${basePath}/_next/image`,
   }
 }
 

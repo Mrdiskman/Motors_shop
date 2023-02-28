@@ -31,7 +31,7 @@ export default function Home() {
                 >
                     Cadastro
                 </Title>
-                <Label>
+                <Label                >
                     Informacoes Pessoais
                 </Label>
                 <Form>
@@ -43,7 +43,61 @@ export default function Home() {
                         id="name"
                         name="name"
                         required
-                        placeholder="123-45-678"
+                        placeholder="Ex: Samuel Leao"                     >
+                    </Input>
+                    <Label>
+                        Email
+                    </Label>
+                    <Input
+                        type='email'
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="Ex: samuel@kenzie.com.br"
+                        >
+                    </Input>
+                    <Label>
+                        CPF
+                    </Label>
+                    <Input
+                        type='text'
+                        id="cpf"
+                        name="cpf"
+                        required
+                        placeholder="000.000.000-00" 
+                        >
+                    </Input>
+                    <Label>
+                        Celular
+                    </Label>
+                    <Input
+                        type='text'
+                        id="phone"
+                        name="phone"
+                        required
+                        placeholder="(DDD) 90000-0000" 
+                        >
+                    </Input>
+                    <Label>
+                        Data de nascimento
+                    </Label>
+                    <Input
+                        type='text'
+                        id="birthday"
+                        name="birthday"
+                        required
+                        placeholder="00/00/00" 
+                        >
+                    </Input>
+                    <Label>
+                        Descricao
+                    </Label>
+                    <Input
+                        type='text'
+                        id="description"
+                        name="description"
+                        required
+                        placeholder="Digitar descricao" 
                         >
                     </Input>
                 </Form>
