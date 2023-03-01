@@ -25,7 +25,7 @@ export const HomeNavStyle = styled.div`
       font-weight: 400;
       font-size: 16px;
       line-height: 28px;
-      color: var(--grey9);
+      color: #F8F9FA;
       margin-top: 20px ; 
       font-weight: 400;
       font-size: 16px;

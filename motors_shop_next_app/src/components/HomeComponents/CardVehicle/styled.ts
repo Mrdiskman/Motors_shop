@@ -21,32 +21,32 @@ export const VehicleCard = styled.div`
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    color: var(--grey1);
+    color: #212529;
   }
   .descriptionCarrousel {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    color: var(--grey2);
+    color: #495057;
   }
   .miniatureCarrousel {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 14px;
-    color: var(--whitefixed);
+    color: #FFFFFF;
   }
   .nameAnnouncer {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
-    color: var(--grey2);
+    color: #495057;
   }
   .div_img {
     width: 312px;
     height: 154px;
-    background-color: var(--grey7);
+    background-color: #E9ECEF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +80,7 @@ export const VehicleCard = styled.div`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     font-size: 14px;
-    color: var(--grey2);
+    color: var();
   }
   .divAnnouncer {
     width: 100%;
@@ -92,7 +92,7 @@ export const VehicleCard = styled.div`
       width: 32px;
       height: 32px;
       margin-right: 8px;
-      background-color: var(--alert1);
+      background-color: #CD2B31;
       margin-top: 0px;
       display: flex;
       justify-content: center;
@@ -102,11 +102,11 @@ export const VehicleCard = styled.div`
       font-weight: 600;
       line-height: 39px;
       font-size: 14px;
-      color: var(--whitefixed);
+      color: #FFFFFF;
     }
     span {
       font-size: 14px;
-      color: var(--grey2);
+      color: #495057;
     }
   }
 `;
@@ -129,14 +129,14 @@ export const VehiclePrice = styled.div`
       font-weight: 500;
       font-size: 14px;
       line-height: 24px;
-      color: var(--brand1);
+      color: #4529E6;
     }
     .price {
       font-family: "Lexend", sans-serif;
       font-weight: 600;
       font-size: 16px;
       line-height: 20px;
-      color: var(--grey1);
+      color: #212529;
     }
     .km_div {
       display: flex;
@@ -145,8 +145,8 @@ export const VehiclePrice = styled.div`
       width: 50px;
       height: 32px;
       border-radius: 4px;
-      background-color: var(--brand4);
-      color: var(--brand1);
+      background-color: #EDEAFD;
+      color: #4529E6;
     }
     .year_div {
       display: flex;
@@ -155,8 +155,8 @@ export const VehiclePrice = styled.div`
       width: 50px;
       height: 32px;
       border-radius: 4px;
-      background-color: var(--brand4);
-      color: var(--brand1);
+      background-color: #EDEAFD;
+      color: #4529E6;
     }
   }
 `;
