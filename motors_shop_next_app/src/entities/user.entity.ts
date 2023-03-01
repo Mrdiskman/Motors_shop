@@ -6,50 +6,47 @@ import {
   OneToMany,
   JoinColumn,
 } from "typeorm";
-import { v4 as uuid } from "uuid"
+import { v4 as uuid } from "uuid";
 import { Address } from "./address.entity";
 import { Announcement } from "./announcement.entity";
 import { Comment } from "./comment.entity";
 
 @Entity()
-
 export class User {
-  
-  @PrimaryColumn('uuid')
+  @PrimaryColumn("uuid")
   readonly id: string;
 
-  @Column({ nullable: false })
+  @Column({ type: "varchar", length: 24, nullable: false })
   name: string;
 
-  @Column({ nullable: false })
+  @Column({ type: "varchar", length: 2, nullable: false })
   abbreviation: string;
 
-  @Column({ unique: true, nullable: false })
+  @Column({ type: "varchar", length: 20, unique: true, nullable: false })
   email: string;
 
-  @Column({ unique: true })
+  @Column({ type: "varchar", length: 11, unique: true })
   cpf: string;
 
-  @Column({ nullable: false })
+  @Column({ type: "varchar", length: 11, nullable: false })
   phone: string;
 
-  @Column({ nullable: false })
+  @Column({ type: "varchar", length: 10, nullable: false })
   dateOfBirth: string;
 
-  @Column({ nullable: false })
+  @Column({ type: "varchar", length: 150, nullable: false })
   descripition: string;
 
-  @Column({ nullable: false })
+  @Column({ type: "boolean", nullable: false })
   seller: boolean;
 
-  @Column({ nullable: false })
+  @Column({ type: "varchar", length: 50, nullable: false })
   password: string;
 
-  @Column({ default: new Date() })
+  @Column({ type: "date", default: new Date() })
   register: Date;
 
   @OneToOne(() => Address)
-  
   @JoinColumn()
   address: Address;
 
@@ -60,8 +57,8 @@ export class User {
   comments: Comment[];
 
   constructor() {
-      if (!this.id) {
-          this.id = uuid();
-      }
+    if (!this.id) {
+      this.id = uuid();
+    }
   }
 }

@@ -5,18 +5,18 @@ export class Address {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column({ length: 8 })
+  @Column({ type: "varchar", length: 8 })
   cep: string;
 
-  @Column({ length: 64 })
+  @Column({ type: "varchar", length: 64 })
   state: string;
 
-  @Column({ length: 64 })
+  @Column({ type: "varchar", length: 64 })
   city: string;
 
-  @Column({ length: 10 })
+  @Column({ type: "varchar", length: 10 })
   number: string;
 
-  @Column()
+  @Column({ type: "varchar", length: 220 })
   complement: string;
 }
