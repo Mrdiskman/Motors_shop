@@ -1,22 +1,21 @@
-import { ReactNode, useState } from "react"
-import Footer from "../Footer"
-import Header from "../Header"
+
+import HeaderContextProvider from "@/contexts/header/HeaderContext";
+import { ReactNode } from "react";
+import Footer from "../GeneralComponents/Footer";
+import Header from "../GeneralComponents/Header";
 
 interface Props {
-    children?: ReactNode
+  children?: ReactNode;
 }
-export const Layout = ({children, ...props}: Props) => {
-    
-     return (
-        <>
-            <Header/>
-            <main
-                {...props}
-            >
-                {children}
-            </main>
-            <Footer/>
-        </>
 
-    )
-}
+export const Layout = ({ children, ...props }: Props) => {
+  return (
+    <>
+      <HeaderContextProvider>
+        <Header />
+        <main {...props}>{children}</main>
+        <Footer />
+      </HeaderContextProvider>
+    </>
+  );
+};
