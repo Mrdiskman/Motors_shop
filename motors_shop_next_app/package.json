@@ -10,6 +10,7 @@
     "typeorm": "typeorm-ts-node-commonjs"
   },
   "dependencies": {
+    "@babel/core": "^7.21.0",
     "@trendyol-js/react-carousel": "^3.0.2",
     "@types/node": "^18.14.2",
     "@types/react": "18.0.28",
