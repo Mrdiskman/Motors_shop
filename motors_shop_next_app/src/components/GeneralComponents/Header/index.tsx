@@ -4,7 +4,7 @@ import UserData from "../UserData/index";
 import React, { useContext } from "react";
 import Link from "next/link";
 import { HeaderContext } from "@/contexts/header/HeaderContext";
-import MenuOptions from "../OptionsButton";
+import MenuOptions from "../OptionsDesktop";
 import OptionsMenu from "../OptionsMobile";
 
 function Header() {
