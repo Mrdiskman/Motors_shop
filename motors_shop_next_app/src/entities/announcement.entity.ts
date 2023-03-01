@@ -9,31 +9,30 @@ import { v4 as uuid } from "uuid";
 import { Comment } from "./comment.entity";
 import { User } from "./user.entity";
 
-
 @Entity("announcements")
 export class Announcement {
   @PrimaryGeneratedColumn("uuid")
   readonly id: string;
 
-  @Column({ length: 60 })
+  @Column({ type: "varchar", length: 60 })
   model: string;
 
-  @Column({ length: 50 })
+  @Column({ type: "varchar", length: 50 })
   type: string;
 
-  @Column({ nullable: true })
+  @Column({ type: "varchar", length: 50, nullable: true })
   description: string;
 
-  @Column()
+  @Column({ type: "int" })
   km: number;
 
-  @Column()
+  @Column({ type: "int" })
   year: number;
 
   @Column({ type: "float" })
   price: number;
 
-  @Column({ default: "true" })
+  @Column({ type: "boolean", default: "true" })
   isActive: boolean;
 
   @ManyToOne(() => User, {
