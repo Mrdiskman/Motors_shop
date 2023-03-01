@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const HeaderStyle = styled.header`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap");
-  display: flex;
   width: 100%;
   height: 80px;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 35%;
-  position: relative;
-  z-index: 0;
+  background-color: #FDFDFD;
+
   .navBar {
     display: none;
   }
@@ -70,7 +70,7 @@ export const HeaderStyle = styled.header`
       font-size: 30px;
       background-image: linear-gradient(
         90deg,
-        rgba(2, 0, 36, 1) 46%,
+        rgba(2, 0, 36, 1) 20%,
         rgba(69, 41, 230, 1) 57%
       );
       background-clip: text;

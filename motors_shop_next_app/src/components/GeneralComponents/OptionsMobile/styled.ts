@@ -12,7 +12,7 @@ export const NavBar = styled.nav`
   .conteinerOptionsMobile {
     width: 50%;
     height: 200px;
-    border: 1px solid black;
+    border: none;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -52,7 +52,7 @@ export const NavBar = styled.nav`
     background-color: white;
     gap: 20%;
     list-style: none;
-    border-bottom: black 1px solid;
+    border-bottom:none;
     padding-bottom: 15px;
 
     li {

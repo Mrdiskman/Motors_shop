@@ -1,21 +1,8 @@
-import { createContext, ReactNode, useState } from "react";
+import { IProps } from "@/interfaces/generaInterfaces";
+import { IHeader } from "@/interfaces/header";
+import { createContext, useState } from "react";
 
-interface IProps {
-  children?: ReactNode;
-}
-
-export interface IHeader {
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  toggleMobile: () => void;
-  toggleDeskTop: () => void;
-  handleOpenModal: () => void;
-  handleCloseModal: () => void;
-  isModalOpen: boolean;
-  navDesktop: boolean;
-  navMobile: boolean;
-}
 export const HeaderContext = createContext<IHeader>({} as IHeader);
-
 const HeaderContextProvider = ({ children }: IProps) => {
   const [navMobile, setNavMobile] = useState(false);
   const [navDesktop, setNavDesktop] = useState(false);
