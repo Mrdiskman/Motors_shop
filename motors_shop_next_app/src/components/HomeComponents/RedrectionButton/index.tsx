@@ -1,6 +1,6 @@
 import { ButtonHomeStyle } from "./styled";
 
-const ReddirectionButton = ({ children, link }) => {
+const ReddirectionButton = ({ children, link }: any) => {
   const anchorLink = () => {
     window.location.href = `#${link}`;
   };

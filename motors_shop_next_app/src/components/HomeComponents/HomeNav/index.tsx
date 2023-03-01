@@ -1,7 +1,7 @@
 import ReddirectionButton from "../RedrectionButton";
 import { HomeNavStyle } from "./styled";
 
-const HomeNav = ({ cars, motos }) => {
+const HomeNav = ({ cars, motos }: any) => {
   return (
     <HomeNavStyle>
       <div className="containerNav">

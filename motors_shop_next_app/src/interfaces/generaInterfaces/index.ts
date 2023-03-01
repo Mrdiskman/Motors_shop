@@ -1,5 +1,9 @@
 import { ReactNode } from "react";
 
 export interface IProps {
-    children?: ReactNode;
-  }
+  children?: ReactNode;
+}
+
+export interface IPropsCarrousel {
+  children: ReactNode[];
+}

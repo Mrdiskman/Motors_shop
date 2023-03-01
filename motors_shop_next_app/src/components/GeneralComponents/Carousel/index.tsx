@@ -1,9 +1,9 @@
-import { IProps } from "@/interfaces/generaInterfaces";
+import { IPropsCarrousel } from "@/interfaces/generaInterfaces";
 import { ScrollingCarousel } from "@trendyol-js/react-carousel";
 
 import { CarouselStyles } from "./styled";
 
-const CarouselComponent = ({ children }:IProps) => {
+const CarouselComponent = ({ children } : any) => {
   return (
     <CarouselStyles>
       <ScrollingCarousel>{children}</ScrollingCarousel>

@@ -56,6 +56,18 @@ function Home() {
             // price={moto.price}
             />
             <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
             {/* ))} */}
           </CarouselComponent>
         </div>
