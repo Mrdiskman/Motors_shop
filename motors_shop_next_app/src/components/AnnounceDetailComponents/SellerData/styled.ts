@@ -17,6 +17,10 @@ export const SellerDataStyled = styled.div`
   padding-right: 5px;
   gap: 20px;
 
+  button{
+    cursor: pointer;
+  }
+  
   .sellerNameAbreviation {
     width: 80px;
     height: 80px;
@@ -63,5 +67,9 @@ export const SellerDataStyled = styled.div`
     font-weight: 600;
     font-size: 16px;
     margin-bottom: 10px;
+  }
+
+  @media (min-width: 769px) {
+    width: 20vw;
   }
 `;
