@@ -1,4 +1,5 @@
 import { Router } from "express";
+import listAllUsersController from "../../controllers/users/listAllUsers.controller";
 import listUserController from "../../controllers/users/listUser.controller";
 import userRegisterController from "../../controllers/users/registerUser.controllers";
 import updateUserController from "../../controllers/users/updateUser.controller";
@@ -17,7 +18,8 @@ routes.post(
 );
 routes.post("/users/login", loginUserController);
 
-routes.get("/users", listUserController);
+routes.get("/users/:id", listUserController);
+routes.get("/users", listAllUsersController);
 
 routes.patch("/users/update", authUser, updateUserController);
 routes.delete("/users/delete", authUser, userDeleteController);
