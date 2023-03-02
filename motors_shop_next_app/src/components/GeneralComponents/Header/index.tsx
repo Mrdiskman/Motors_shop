@@ -8,11 +8,7 @@ import MenuOptions from "../OptionsDesktop";
 import OptionsMenu from "../OptionsMobile";
 
 function Header() {
-  const {
-    toggleMobile,
-    navDesktop,
-    navMobile,
-  } = useContext(HeaderContext);
+  const { toggleMobile, navDesktop, navMobile } = useContext(HeaderContext);
 
   return (
     <>
@@ -34,14 +30,10 @@ function Header() {
           <GiHamburgerMenu className="menuMobileStyle" />
         </button>
       </HeaderStyle>
-      {navDesktop && (
-        <MenuOptions/>
-      )}
-      {navMobile && (
-       <OptionsMenu/>
-      )}
+      {navDesktop && <MenuOptions />}
+      {navMobile && <OptionsMenu />}
     </>
   );
-};
+}
 
 export default Header;
