@@ -1,5 +1,5 @@
-import { Address } from "@/entities/address.entity";
-import { User } from "@/entities/user.entity";
+import { Address } from "../../../entities/address.entity";
+import { User } from "../../../entities/user.entity";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { AppDataSource } from "../../../data-source";
 
@@ -45,6 +45,7 @@ export default async function handler(
     const userRepository = AppDataSource.getRepository(User);
     const addressRepository = AppDataSource.getRepository(Address);
     let abbreviationString = "";
+
     if (name.split(" ").length > 1) {
       const arr = name.split(" ");
       abbreviationString = arr[0][0] + arr[1][0];
