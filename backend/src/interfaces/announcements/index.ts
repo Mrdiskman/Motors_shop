@@ -7,7 +7,9 @@ export interface IAnnouncement {
   km: number;
   year: number;
   price: number;
-  user: IUser;
+  user: any;
+  default_img: string;
+  images: string[];
 }
 
 export interface IAnnouncementCreate {
@@ -17,7 +19,9 @@ export interface IAnnouncementCreate {
   km: number;
   year: number;
   price: number;
-  user: IUser;
+  user: string;
+  default_img: string;
+  images: string[];
 }
 
 export interface IAnnouncementUpdate {
