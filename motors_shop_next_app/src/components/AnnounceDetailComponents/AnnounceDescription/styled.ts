@@ -20,6 +20,10 @@ export const SellerDataStyled = styled.div`
   padding-right: 5px;
   color: #212529;
   
+  button{
+    cursor: pointer;
+  }
+  
   .description {
     margin-top: 30px;
     font-family: "Inter", sans-serif;
@@ -27,5 +31,8 @@ export const SellerDataStyled = styled.div`
     font-size: 16px;
     line-height: 28px;
     color: #495057;
+  }
+  @media (min-width: 769px) {
+    width: 40vw;
   }
 `;

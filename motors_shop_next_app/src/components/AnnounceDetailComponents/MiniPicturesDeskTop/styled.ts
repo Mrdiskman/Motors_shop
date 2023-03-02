@@ -17,6 +17,10 @@ export const MiniPicturesDesktopContainer = styled.div`
   padding-right: 5px;
   gap: 20px;
 
+  button{
+    cursor: pointer;
+  }
+  
   .titlePhotos {
     font-family: "Lexend", sans-serif;
     font-weight: 600;

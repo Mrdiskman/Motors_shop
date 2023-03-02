@@ -15,6 +15,10 @@ export const CommentsStyled = styled.section`
   padding-bottom: 10px;
   padding-right: 5px;
 
+  button{
+    cursor: pointer;
+  }
+
   .display {
     width: 100%;
     height: 100%;
@@ -83,6 +87,8 @@ export const CommentsStyled = styled.section`
   }
 
   @media (min-width: 769px) {
+    width: 40vw;
+    min-height: 200px;
     .announceContainerInfo {
       display: flex;
       flex-direction: row;

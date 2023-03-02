@@ -16,7 +16,10 @@ export const MakeCommentStyled = styled.div`
   padding-bottom: 10px;
   padding-right: 5px;
   gap: 20px;
-
+  
+  button{
+    cursor: pointer;
+  }
   .makeCommentUserData {
     display: flex;
     gap: 10px;
@@ -90,5 +93,9 @@ export const MakeCommentStyled = styled.div`
     font-size: 14px;
     padding: 10px;
     border-radius: 24px;
+  }
+  @media (min-width: 769px) {
+    width: 40vw;
+    min-height: 380px;
   }
 `;

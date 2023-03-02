@@ -8,15 +8,20 @@ export const CommentsStyled = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FDFDFD;
+  background-color: #fdfdfd;
   border-radius: 5px;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 10px;
   padding-right: 5px;
+
   .comments {
     margin-top: 40px;
     margin-bottom: 50px;
+  }
+  
+  button {
+    cursor: pointer;
   }
   .dataComments {
     display: flex;
@@ -27,7 +32,7 @@ export const CommentsStyled = styled.section`
   .abreviationNameComment {
     width: 35px;
     height: 35px;
-    background-color: var(--alert1);
+    background-color: #cd2b31;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +41,7 @@ export const CommentsStyled = styled.section`
     font-weight: 600;
     line-height: 39px;
     font-size: 14px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
   .nameComment {
     font-family: "Inter", sans-serif;
@@ -51,5 +56,8 @@ export const CommentsStyled = styled.section`
     font-size: 14px;
     line-height: 24px;
     color: #495057;
+  }
+  @media (min-width: 769px) {
+    width: 40vw;
   }
 `;

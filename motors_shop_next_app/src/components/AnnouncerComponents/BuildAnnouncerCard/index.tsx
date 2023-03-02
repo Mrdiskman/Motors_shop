@@ -34,17 +34,13 @@ const BuildAnnouncerCard = ({ name, seller, descripition }: any) => {
       marginRight: '-50%',
       transform: 'translate(-50%, 0%)',
       minHeight: '1252px',
-      // height: 'fit-content',
       width: '90vw'
     },
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.15)'
     }
-    // @media (min-width: 769px) {
-
-    // }
   };
-
+ 
   return (
     <AnnouncerCard>
       <div className="containerDiv">
