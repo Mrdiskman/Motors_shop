@@ -12,6 +12,10 @@ export const BackGroundStyle = styled.main`
     #f1f3f5 100%
   );
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   .titleHome {
     width: 100%;
     font-family: "Lexend", sans-serif;
