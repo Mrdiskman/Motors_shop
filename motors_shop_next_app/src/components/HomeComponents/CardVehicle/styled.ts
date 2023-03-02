@@ -34,7 +34,7 @@ export const VehicleCard = styled.div`
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 14px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
   .nameAnnouncer {
     font-family: "Inter", sans-serif;
@@ -46,7 +46,7 @@ export const VehicleCard = styled.div`
   .div_img {
     width: 312px;
     height: 154px;
-    background-color: #E9ECEF;
+    background-color: #e9ecef;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +92,7 @@ export const VehicleCard = styled.div`
       width: 32px;
       height: 32px;
       margin-right: 8px;
-      background-color: #CD2B31;
+      background-color: #cd2b31;
       margin-top: 0px;
       display: flex;
       justify-content: center;
@@ -102,11 +102,34 @@ export const VehicleCard = styled.div`
       font-weight: 600;
       line-height: 39px;
       font-size: 14px;
-      color: #FFFFFF;
+      color: #ffffff;
     }
     span {
       font-size: 14px;
       color: #495057;
+    }
+  }
+  .div_edit {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    .button_edit {
+      cursor: pointer;
+      width: 105px;
+      height: 38px;
+      border: 1.5px solid #212529;
+      border-radius: 4px;
+      color: #212529;
+      font-size: 14px;
+      font-family: "Inter";
+
+      :hover {
+        background-color: var(--brand2);
+        color: #0b0d0d;
+        border: 1.5px solid var(--brand2);
+      }
     }
   }
 `;
@@ -129,7 +152,7 @@ export const VehiclePrice = styled.div`
       font-weight: 500;
       font-size: 14px;
       line-height: 24px;
-      color: #4529E6;
+      color: #4529e6;
     }
     .price {
       font-family: "Lexend", sans-serif;
@@ -145,8 +168,8 @@ export const VehiclePrice = styled.div`
       width: 50px;
       height: 32px;
       border-radius: 4px;
-      background-color: #EDEAFD;
-      color: #4529E6;
+      background-color: #edeafd;
+      color: #4529e6;
     }
     .year_div {
       display: flex;
@@ -155,8 +178,8 @@ export const VehiclePrice = styled.div`
       width: 50px;
       height: 32px;
       border-radius: 4px;
-      background-color: #EDEAFD;
-      color: #4529E6;
+      background-color: #edeafd;
+      color: #4529e6;
     }
   }
 `;
