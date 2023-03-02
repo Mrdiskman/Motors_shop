@@ -1,19 +1,32 @@
 import Header from "@/components/GeneralComponents/Header";
 import Footer from "@/components/GeneralComponents/Footer";
-import { HomeStyles } from "./styled";
+import { DivStylesAnnounce, HomeStyles, TitleHome } from "./styles";
 import HomeNav from "@/components/HomeComponents/HomeNav";
 import CarouselComponent from "@/components/GeneralComponents/Carousel";
 import CardAuction from "@/components/GeneralComponents/CardAuction";
 import CardVehicle from "@/components/HomeComponents/CardVehicle";
+import { Layout } from "@/components/Layout";
+import { Container } from "@/components/GeneralComponents";
+import BuildAnnouncerCard from "@/components/AnnouncerComponents/BuildAnnouncerCard";
+import { database } from "@/database";
 
-function Home() {
+function Announcer() {
   return (
-    <>
-      <Header />
+    
+    <Layout>
       <HomeStyles>
-        <HomeNav cars={"cars"} motos={"motos"} />
+ 
+        <DivStylesAnnounce>
+          <BuildAnnouncerCard
+            name={database.user.name}
+            seller={database.user.seller}
+            descripition={database.user.descripition}
+          />
+        </DivStylesAnnounce>
+
         <div className="container">
-          <h2 className="TitleHome auctions">Leilão</h2>
+       
+          <TitleHome>Leilão</TitleHome>
           <CarouselComponent>
             <CardAuction />
             <CardAuction />
@@ -21,9 +34,9 @@ function Home() {
             <CardAuction />
           </CarouselComponent>
 
-          <h2 className="TitleHome" id="cars">
+          <TitleHome id="cars">
             Carros
-          </h2>
+          </TitleHome>
           <CarouselComponent>
             {/* {carsData.map((car, index) => ( */}
             <CardVehicle
@@ -38,11 +51,16 @@ function Home() {
             />
             {/* ))} */}
             <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
+            <CardVehicle/>
           </CarouselComponent>
 
-          <h2 className="TitleHome" id="motos">
+          <TitleHome id="motos">
             Motos
-          </h2>
+          </TitleHome>
           <CarouselComponent>
             {/* {motorcyclesData.map((moto, index) => ( */}
             <CardVehicle
@@ -72,8 +90,8 @@ function Home() {
           </CarouselComponent>
         </div>
       </HomeStyles>
-      <Footer />
-    </>
+    </Layout>
+
   );
 }
-export default Home;
+export default Announcer;

@@ -12,7 +12,6 @@ import Header from "@/components/GeneralComponents/Header";
 import { AnnounceDetailStyled } from "./styled";
 
 function AnnounceDetailPage() {
-
   return (
     <>
       <Header />

@@ -8,7 +8,7 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FDFDFD;
+  background-color: #fdfdfd;
   border-radius: 5px;
   padding: 0px;
 
@@ -17,8 +17,17 @@ export const ImageContainer = styled.div`
     height: 90%;
     border-radius: 5px;
   }
+
+  button{
+    cursor: pointer;
+  }
   @media (min-width: 769px) {
     height: 30vh;
-    width: 35vw; 
+    width: 40vw;
+    .MainPicture {
+      width: 70%;
+      height: 90%;
+      border-radius: 5px;
+    }
   }
 `;

@@ -9,8 +9,10 @@ import OptionsMenu from "../OptionsMobile";
 import NotLogged from "../NotLogged";
 
 function Header() {
+
   const { toggleMobile, navDesktop, navMobile, isLoged } =
     useContext(HeaderContext);
+
   return (
     <>
     {isLoged == false?
@@ -33,6 +35,7 @@ function Header() {
           <GiHamburgerMenu className="menuMobileStyle" />
         </button>
       </HeaderStyle>
+
     :(
         <HeaderStyle>
           <Link href={"/home"}>
@@ -53,6 +56,7 @@ function Header() {
           </button>
         </HeaderStyle>
       )}
+
       {navDesktop && <MenuOptions />}
       {navMobile && <OptionsMenu />}
     </>

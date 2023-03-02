@@ -1,0 +1,64 @@
+import {
+  Entity,
+  Column,
+  PrimaryColumn,
+  OneToOne,
+  OneToMany,
+  JoinColumn,
+} from "typeorm";
+import { v4 as uuid } from "uuid";
+import { Address } from "../address";
+import { Announcement } from "../announcement";
+import { Comment } from "../comments/comment.entity";
+
+@Entity()
+export class User {
+  @PrimaryColumn("uuid")
+  readonly id: string;
+
+  @Column({ length: 24, nullable: false })
+  name: string;
+
+  @Column({ length: 2, nullable: false })
+  abbreviation: string;
+
+  @Column({ length: 20, unique: true, nullable: false })
+  email: string;
+
+  @Column({ length: 11, unique: true })
+  cpf: string;
+
+  @Column({ length: 11, nullable: false })
+  phone: string;
+
+  @Column({ length: 10, nullable: false })
+  dateOfBirth: string;
+
+  @Column({ length: 150, nullable: false })
+  descripition: string;
+
+  @Column({ nullable: false })
+  seller: boolean;
+
+  @Column({ length: 150, nullable: false })
+  password: string;
+
+  @Column({ default: new Date() })
+  register: Date;
+
+  @OneToOne(() => Address, { eager: true })
+  @JoinColumn()
+  address: Address;
+
+  @OneToMany(() => Announcement, (announcement) => announcement.user)
+  announcements: Announcement[];
+
+  @OneToMany(() => Comment, (comment) => comment.user)
+  comments: Comment[];
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuid();
+    }
+  }
+}
