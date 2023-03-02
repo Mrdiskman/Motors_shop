@@ -6,18 +6,19 @@ import { MenuOptionsStyled } from "./styled";
 const MenuOptions = () => {
   const {
     handleOpenModal,
+    setIsLoged
   } = useContext(HeaderContext);
 
   return (
     <MenuOptionsStyled>
       <div className="conteinerOptions">
-        <button className="option" onClick={handleOpenModal}>
+        <button className="option" onClick={()=> handleOpenModal()}>
           Editar Perfil
         </button>
         <ModalEditProfile/>
         <button className="option">Editar endereço</button>
         <button className="option">Meus Anúncios</button>
-        <button className="option + for onClick={logOut}">Sair</button>
+        <button className="option + for onClick={logOut}" onClick={()=>setIsLoged(false)}>Sair</button>
       </div>
     </MenuOptionsStyled>
   );

@@ -1,4 +1,5 @@
 export interface IHeader {
+  setIsLoged: React.Dispatch<React.SetStateAction<boolean>>;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   toggleMobile: () => void;
   toggleDeskTop: () => void;
@@ -7,4 +8,5 @@ export interface IHeader {
   isModalOpen: boolean;
   navDesktop: boolean;
   navMobile: boolean;
+  isLoged:boolean
 }
