@@ -4,9 +4,8 @@ import { Address } from "./entities/address.entity";
 import { Announcement } from "./entities/announcement.entity";
 import { Comment } from "./entities/comment.entity";
 import { User } from "./entities/user.entity";
-import { createMigrations1677703573494 } from "./migrations/1677703573494-createMigrations";
-import { createMigrations1677703837704 } from "./migrations/1677703837704-createMigrations";
-import { createMigrations1677704153154 } from "./migrations/1677704153154-createMigrations";
+import { createMigrations1677760333487 } from "./migrations/1677760333487-createMigrations";
+import { createMigrations1677762334878 } from "./migrations/1677762334878-createMigrations";
 
 require("dotenv").config();
 
@@ -22,11 +21,7 @@ export const AppDataSource = new DataSource({
   synchronize: false,
   logging: true,
   entities: [User, Address, Announcement, Comment],
-  migrations: [
-    createMigrations1677703573494,
-    createMigrations1677703837704,
-    createMigrations1677704153154,
-  ],
+  migrations: [createMigrations1677760333487, createMigrations1677762334878],
 });
 
 AppDataSource.initialize()

@@ -46,7 +46,7 @@ export class User {
   @Column({ type: "date", default: new Date() })
   register: Date;
 
-  @OneToOne(() => Address)
+  @OneToOne(() => Address, { eager: true })
   @JoinColumn()
   address: Address;
 
