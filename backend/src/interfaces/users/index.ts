@@ -8,6 +8,7 @@ export interface IUser {
   phone: string;
   dateOfBirth: string;
   descripition: string;
+  abbreviation: string;
   seller: boolean;
   register?: Date;
   address: IAddress;

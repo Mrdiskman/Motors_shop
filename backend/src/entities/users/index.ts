@@ -16,34 +16,37 @@ export class User {
   @PrimaryColumn("uuid")
   readonly id: string;
 
-  @Column({ nullable: false })
+  @Column({ length: 24, nullable: false })
   name: string;
 
-  @Column({ unique: true, nullable: false })
+  @Column({ length: 2, nullable: false })
+  abbreviation: string;
+
+  @Column({ length: 20, unique: true, nullable: false })
   email: string;
 
-  @Column({ unique: true })
+  @Column({ length: 11, unique: true })
   cpf: string;
 
-  @Column({ nullable: false })
+  @Column({ length: 11, nullable: false })
   phone: string;
 
-  @Column({ nullable: false })
+  @Column({ length: 10, nullable: false })
   dateOfBirth: string;
 
-  @Column({ nullable: false })
+  @Column({ length: 150, nullable: false })
   descripition: string;
 
   @Column({ nullable: false })
   seller: boolean;
 
-  @Column({ nullable: false })
+  @Column({ length: 150, nullable: false })
   password: string;
 
   @Column({ default: new Date() })
   register: Date;
 
-  @OneToOne(() => Address)
+  @OneToOne(() => Address, { eager: true })
   @JoinColumn()
   address: Address;
 

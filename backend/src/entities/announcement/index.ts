@@ -9,7 +9,7 @@ import {
 } from "typeorm";
 import { v4 as uuid } from "uuid";
 import { Comment } from "../comments/comment.entity";
-import { Images } from "../ListImages";
+
 import { User } from "../users";
 
 @Entity("announcements")
@@ -32,6 +32,12 @@ export class Announcement {
   @Column()
   year: number;
 
+  @Column({ length: 220 })
+  default_img: string;
+
+  @Column("simple-array")
+  images: string[];
+
   @Column({ type: "float" })
   price: number;
 
@@ -43,9 +49,6 @@ export class Announcement {
   })
   user: User;
 
-  @OneToOne(() => Images)
-  @JoinColumn()
-  images: Images[];
   @OneToMany(() => Comment, (comments) => comments.user)
   comments: Comment[];
 

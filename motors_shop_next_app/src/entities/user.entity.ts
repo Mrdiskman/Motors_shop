@@ -50,10 +50,12 @@ export class User {
   @JoinColumn()
   address: Address;
 
-  @OneToMany(() => Announcement, (announcement) => announcement.user)
+  @OneToMany(() => Announcement, (announcement) => announcement.user, {
+    eager: true,
+  })
   announcements: Announcement[];
 
-  @OneToMany(() => Comment, (comment) => comment.user)
+  @OneToMany(() => Comment, (comment) => comment.user, { eager: true })
   comments: Comment[];
 
   constructor() {

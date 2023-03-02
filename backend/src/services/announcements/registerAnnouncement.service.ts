@@ -4,7 +4,6 @@ import {
   IAnnouncementCreate,
 } from "../../interfaces/announcements";
 import { Announcement } from "../../entities/announcement";
-import { Images } from "../../entities/ListImages";
 
 const registerAnnouncementService = async ({
   model,
@@ -16,7 +15,6 @@ const registerAnnouncementService = async ({
   user,
 }: IAnnouncementCreate): Promise<IAnnouncement> => {
   const announcementRepository = AppDataSource.getRepository(Announcement);
-  const imagesRepository = AppDataSource.getRepository(Images);
 
   const announcement: IAnnouncement = new Announcement();
   (announcement.model = model),
