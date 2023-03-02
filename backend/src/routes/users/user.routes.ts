@@ -9,12 +9,17 @@ import cpfAlredyExistMiddleware from "../../middlewares/users/cpfAlredyExist.mid
 import emailAlredyExistMiddleware from "../../middlewares/users/emailAlredyExist.middleware";
 const routes = Router();
 
-routes.post("/users", emailAlredyExistMiddleware, cpfAlredyExistMiddleware, userRegisterController);
-routes.post("/users/login", loginUserController)
+routes.post(
+  "/users",
+  emailAlredyExistMiddleware,
+  cpfAlredyExistMiddleware,
+  userRegisterController
+);
+routes.post("/users/login", loginUserController);
 
-routes.get("/user", authUser, listUserController)
+routes.get("/users", listUserController);
 
-routes.patch("/user/update", authUser, updateUserController)
-routes.delete("/user/delete", authUser, userDeleteController)
+routes.patch("/users/update", authUser, updateUserController);
+routes.delete("/users/delete", authUser, userDeleteController);
 
 export default routes;
