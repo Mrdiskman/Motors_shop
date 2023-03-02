@@ -9,34 +9,35 @@ import SellerData from "@/components/AnnounceDetailComponents/SellerData";
 import BackGround from "@/components/GeneralComponents/Background";
 import Footer from "@/components/GeneralComponents/Footer";
 import Header from "@/components/GeneralComponents/Header";
+import { Layout } from "@/components/Layout";
 import { AnnounceDetailStyled } from "./styled";
 
 function AnnounceDetailPage() {
   return (
     <>
-      <Header />
-      <BackGround>
-        <AnnounceDetailStyled>
-          <div className="upside">
-            <div className="left">
-              <PrimaryImage />
-              <AnnounceData />
-              <AnnounceDescription />
-              <div className="mobileFront">
-                <MiniPictures />
+      <Layout>
+        <BackGround>
+            <AnnounceDetailStyled>
+            <div className="upside">
+                <div className="left">
+                <PrimaryImage />
+                <AnnounceData />
+                <AnnounceDescription />
+                <div className="mobileFront">
+                    <MiniPictures />
+                    <SellerData />
+                </div>
+                <Comments />
+                <MakeComment />
+                </div>
+                <div className="deskTopFront">
+                <MiniPicturesDesktop />
                 <SellerData />
-              </div>
-              <Comments />
-              <MakeComment />
+                </div>
             </div>
-            <div className="deskTopFront">
-              <MiniPicturesDesktop />
-              <SellerData />
-            </div>
-          </div>
-        </AnnounceDetailStyled>
-      </BackGround>
-      <Footer />
+            </AnnounceDetailStyled>
+        </BackGround>
+      </Layout>
     </>
   );
 }

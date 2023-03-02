@@ -9,23 +9,24 @@ import { Layout } from "@/components/Layout";
 import { Container } from "@/components/GeneralComponents";
 import BuildAnnouncerCard from "@/components/AnnouncerComponents/BuildAnnouncerCard";
 import { database } from "@/database";
+import BackGround from "@/components/GeneralComponents/Background";
 
 function Announcer() {
   return (
     
     <Layout>
       <HomeStyles>
- 
-        <DivStylesAnnounce>
-          <BuildAnnouncerCard
-            name={database.user.name}
-            seller={database.user.seller}
-            descripition={database.user.descripition}
-          />
-        </DivStylesAnnounce>
-
+        <BackGround>
+          <DivStylesAnnounce>
+            <BuildAnnouncerCard
+              name={database.user.name}
+              seller={database.user.seller}
+              descripition={database.user.descripition}
+            />
+          </DivStylesAnnounce>
+        </BackGround>
         <div className="container">
-       
+      
           <TitleHome>Leilão</TitleHome>
           <CarouselComponent>
             <CardAuction />
