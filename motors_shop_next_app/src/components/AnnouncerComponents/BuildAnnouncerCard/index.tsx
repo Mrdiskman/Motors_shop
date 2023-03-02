@@ -40,7 +40,7 @@ const BuildAnnouncerCard = ({ name, seller, descripition }: any) => {
       backgroundColor: 'rgba(0, 0, 0, 0.15)'
     }
   };
-
+ 
   return (
     <AnnouncerCard>
       <div className="containerDiv">
