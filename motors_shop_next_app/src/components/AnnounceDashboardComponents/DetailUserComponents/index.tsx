@@ -4,7 +4,7 @@ import { DivStylesAnnounce } from "./styled";
 
 function AnnounceDescription() {
   return (
-    <DivStylesAnnounce>
+    <DivStylesAnnounce className="joao">
       <BuildAnnouncerCard
         name={"kalebe sampaio"}
         seller={true}

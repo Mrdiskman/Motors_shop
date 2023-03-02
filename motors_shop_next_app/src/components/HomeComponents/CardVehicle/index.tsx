@@ -1,6 +1,6 @@
 import { VehiclePrice, VehicleCard } from "./styled";
 
-const CardVehicle = ({}) => {
+const CardVehicle = ({ edit }: any) => {
   return (
     <VehicleCard>
       <div className="div_img">
@@ -24,6 +24,14 @@ const CardVehicle = ({}) => {
         </div>
         <h3 className="price"></h3>
       </VehiclePrice>
+      {edit ? (
+        <div className="div_edit">
+          <button className="button_edit">Editar</button>
+          <button className="button_edit">Ver como</button>
+        </div>
+      ) : (
+        <></>
+      )}
     </VehicleCard>
   );
 };
