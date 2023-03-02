@@ -1,6 +1,13 @@
+import "reflect-metadata";
 import { DataSource } from "typeorm";
+import { Address } from "./entities/address.entity";
+import { Announcement } from "./entities/announcement.entity";
+import { Comment } from "./entities/comment.entity";
 import { User } from "./entities/user.entity";
+import { createMigrations1677760333487 } from "./migrations/1677760333487-createMigrations";
+import { createMigrations1677762334878 } from "./migrations/1677762334878-createMigrations";
 import { initialMigration1677613479220 } from "./migrations/1677613479220-initialMigration";
+
 
 require("dotenv").config();
 
@@ -15,8 +22,9 @@ export const AppDataSource = new DataSource({
 
   synchronize: false,
   logging: true,
-  entities: [User],
-  migrations: [initialMigration1677613479220],
+  entities: [User, Address, Announcement, Comment],
+  migrations: [createMigrations1677760333487, createMigrations1677762334878,initialMigration1677613479220],
+
 });
 
 AppDataSource.initialize()

@@ -1,51 +1,66 @@
-// src/entities/user.entity.ts
+import {
+  Entity,
+  Column,
+  PrimaryColumn,
+  OneToOne,
+  OneToMany,
+  JoinColumn,
+} from "typeorm";
+import { v4 as uuid } from "uuid";
+import { Address } from "./address.entity";
+import { Announcement } from "./announcement.entity";
+import { Comment } from "./comment.entity";
 
-// começamos importando os decorators necessários do typeorm:
-// Entity, para criar uma classe com o decorator
-// E alguns decorators que representam colunas de tabelas como
-// o Column, o mais básico
-// e o PrimaryColumn, que usaremos para gerar o ID do nosso usuário
-import { Entity, Column, PrimaryColumn } from "typeorm";
-
-// também importamos aqui o uuid
-import { v4 as uuid } from "uuid"
-
-// usamos o decorator Entity
 @Entity()
-// declaramos a classe já exportando ela com o export
-// pois ela será usada em outros lugares na aplicação, 
-// e se você já pensou nos services de usuário, BINGO!
 export class User {
-		
-    // criamos a primeira coluna que será um uuid,
-    // e também aproveitamos para usar o type dessa coluna como uuid
-    // passando o argumento "uuid", que por baixo dos panos, avisa
-    // pro banco que essa coluna irá guardar strings no formato
-    // de uuid 
-    @PrimaryColumn('uuid')
-		
-    // usamos o readonly aqui, pois uma vez criado, um id de usuário
-    // jamais poderá ser alterado.
-    readonly id: string;
+  @PrimaryColumn("uuid")
+  readonly id: string;
 
-    // e então criamos as nossas duas colunas de nome e email usando
-    // o Column e declarando elas como strings
-    @Column()
-    name: string
+  @Column({ type: "varchar", length: 24, nullable: false })
+  name: string;
 
-    @Column({ unique: true })
-    email: string
+  @Column({ type: "varchar", length: 2, nullable: false })
+  abbreviation: string;
 
-//{ nullable: true }) - by default all columns are NOT NULL in TypeORM
+  @Column({ type: "varchar", length: 20, unique: true, nullable: false })
+  email: string;
 
+  @Column({ type: "varchar", length: 11, unique: true })
+  cpf: string;
 
+  @Column({ type: "varchar", length: 11, nullable: false })
+  phone: string;
 
-    // aqui, definimos no contrutor da classe a geração automática
-    // dos Ids, basicamente, qualquer instância dessa classe será criada
-    // com um id totalmente único
-    constructor() {
-        if (!this.id) {
-            this.id = uuid();
-        }
+  @Column({ type: "varchar", length: 10, nullable: false })
+  dateOfBirth: string;
+
+  @Column({ type: "varchar", length: 150, nullable: false })
+  descripition: string;
+
+  @Column({ type: "boolean", nullable: false })
+  seller: boolean;
+
+  @Column({ type: "varchar", length: 50, nullable: false })
+  password: string;
+
+  @Column({ type: "date", default: new Date() })
+  register: Date;
+
+  @OneToOne(() => Address, { eager: true })
+  @JoinColumn()
+  address: Address;
+
+  @OneToMany(() => Announcement, (announcement) => announcement.user, {
+    eager: true,
+  })
+  announcements: Announcement[];
+
+  @OneToMany(() => Comment, (comment) => comment.user, { eager: true })
+  comments: Comment[];
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuid();
     }
+  }
 }
