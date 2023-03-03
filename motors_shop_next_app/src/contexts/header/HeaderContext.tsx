@@ -5,8 +5,7 @@ import { createContext, useState } from "react";
 export const HeaderContext = createContext<IHeader>({} as IHeader);
 const HeaderContextProvider = ({ children }: IProps) => {
   const [isLoged, setIsLoged] = useState(false);
-  const [navMobile, setNavMobile] = useState(false);
-  const [navDesktop, setNavDesktop] = useState(false);
+  const [isNavMobile, setIsNavMobile] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   function handleOpenModal() {
@@ -18,13 +17,10 @@ const HeaderContextProvider = ({ children }: IProps) => {
   }
 
   function toggleMobile() {
-    if (navMobile) {
-        setNavDesktop(true);
-        setNavMobile(false);
-        return 
-    }
-    setNavMobile(true);
-    setNavDesktop(false);
+    isNavMobile ? 
+        setIsNavMobile(false)
+        :
+        setIsNavMobile(true)
     return
   }
 
@@ -45,8 +41,7 @@ const HeaderContextProvider = ({ children }: IProps) => {
         handleOpenModal,
         handleCloseModal,
         isModalOpen,
-        navDesktop,
-        navMobile,
+        isNavMobile,
         isLoged
       }}
     >
