@@ -199,6 +199,7 @@ export const EditProfileForm = styled.form`
 
     .btns-div {
       display: flex;
+      align-items: center;
       justify-content: flex-end;
     }
   }
