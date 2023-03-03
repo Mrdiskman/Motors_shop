@@ -7,9 +7,9 @@ export const BackGroundStyle = styled.main`
   width: 100%;
   background-image: linear-gradient(
     180deg,
-    #4529e6 31.25%,
-    #f1f3f5 31.26%,
-    #f1f3f5 100%
+    #4529E6 31.25%,
+    #E9ECEF 31.26%,
+    #E9ECEF 100%
   );
 
   .titleHome {
