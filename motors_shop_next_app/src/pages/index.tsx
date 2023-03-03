@@ -1,14 +1,12 @@
 import Head from "next/head";
-
 import { Layout } from "@/components/Layout";
 import HeaderContextProvider from "@/contexts/header/HeaderContext";
-
 import HomeNav from "@/components/HomeComponents/HomeNav";
 import CarouselComponent from "@/components/GeneralComponents/Carousel";
 import CardAuction from "@/components/GeneralComponents/CardAuction";
 import CardVehicle from "@/components/HomeComponents/CardVehicle";
 import { HomeStyles } from "./announcer/styles";
-
+import { api } from "@/services/api";
 
 export default function Home() {
   return (
@@ -52,13 +50,13 @@ export default function Home() {
                 // price={car.price}
                 />
                 {/* ))} */}
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
               </CarouselComponent>
 
               <h2 className="TitleHome" id="motos">
@@ -76,19 +74,19 @@ export default function Home() {
                 // year={moto.year}
                 // price={moto.price}
                 />
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
-                <CardVehicle/>
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
+                <CardVehicle />
                 {/* ))} */}
               </CarouselComponent>
             </div>
