@@ -9,10 +9,8 @@ import OptionsMenu from "../OptionsMobile";
 import NotLogged from "../NotLogged";
 
 function Header() {
-
   const { toggleMobile, navDesktop, navMobile, isLoged } =
     useContext(HeaderContext);
-
 
   return (
     <>
@@ -22,7 +20,6 @@ function Header() {
             Motors <span className="titleStyle">shop</span>
           </h1>
         </Link>
-
         <nav className="navBar">
           <ul className="containerList">
             <li>Carros</li>
@@ -31,20 +28,15 @@ function Header() {
           </ul>
         </nav>
 
-        {isLoged ?
-        <UserData />
-          :
-        <NotLogged />
-        }
+        {isLoged ? <UserData /> : <NotLogged />}
 
         <button onClick={() => toggleMobile()} className="btnMobile">
           <GiHamburgerMenu className="menuMobileStyle" />
         </button>
-
       </HeaderStyle>
 
-      { navDesktop && <MenuOptions /> }
-      { navMobile && <OptionsMenu /> }
+      {navDesktop && <MenuOptions />}
+      {navMobile && <OptionsMenu />}
     </>
   );
 }
