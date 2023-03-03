@@ -9,7 +9,7 @@ import OptionsMenu from "../OptionsMobile";
 import NotLogged from "../NotLogged";
 
 function Header() {
-  const { toggleMobile, isNavMobile, isLoged, verifyIsLogged } =
+  const { toggleMobile, isNavMobile, isLoged, verifyIsLogged, navDesktop } =
 
     useContext(HeaderContext);
   if (typeof window !== "undefined") {
@@ -48,7 +48,7 @@ function Header() {
         </button>
       </HeaderStyle>
       
-      { !isNavMobile && <MenuOptions /> }
+      { navDesktop && <MenuOptions /> }
       { isNavMobile && <OptionsMenu /> }
 
     </>

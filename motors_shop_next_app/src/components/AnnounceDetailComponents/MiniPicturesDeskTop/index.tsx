@@ -1,16 +1,16 @@
-import { database } from "@/database";
+import { useEffect, useState } from "react";
 import { MiniPicturesDesktopContainer } from "./styled";
 
-function MiniPicturesDesktop() {
-  const images = database.user.announcements.map(
-    (annoucement) => annoucement.pictures
-  );
-  const miniPictures = images.join("").split(",");
+function MiniPicturesDesktop({images}:any) {
+  const [otherImages, setOtherImages] = useState([])
+  useEffect(() => {
+    setOtherImages(images)
+  }, [images]);
   return (
     <MiniPicturesDesktopContainer>
       <h2 className="titlePhotos">Fotos</h2>
       <ul className="ulListImages">
-        {miniPictures.map((elem, index) => (
+        {otherImages.map((elem, index):any => (
           <li key={index} className="listImages">
             <img src={elem} alt="fotos dos carros" className="miniPictures" />
           </li>

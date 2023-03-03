@@ -1,12 +1,10 @@
-import { database } from "@/database";
 import { SellerDataStyled } from "./styled";
 
-function AnnounceDescription() {
-  const announce = database.user.announcements[0];
+function AnnounceDescription({ description }: any) {
   return (
     <SellerDataStyled>
       <h3>Descrição</h3>
-      <p className="description">{announce.description}</p>
+      <p className="description">{description}</p>
     </SellerDataStyled>
   );
 }
