@@ -14,11 +14,13 @@ const MenuOptions = () => {
             <button className="option" onClick={handleOpenModal}>
               Editar Perfil
             </button>
-            <ModalEditProfile />
+
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
             <button className="option + for onClick={logOut}">Sair</button>
           </div>
+
+          <ModalEditProfile />
         </MenuOptionsStyled>
       ) : (
         <MenuOptionsStyled>

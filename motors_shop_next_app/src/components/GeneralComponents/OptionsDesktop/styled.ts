@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const MenuOptionsStyled = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   position: absolute;
-  right: 1vw;
   z-index: 6;
-  margin-left: 87%;
-
   .conteinerOptions {
+    position: absolute;
+    right: 1vw;
     width: 200px;
     height: 200px;
     border: none;
@@ -20,7 +20,7 @@ export const MenuOptionsStyled = styled.div`
     gap: 16px;
     background-color: white;
     justify-content: center;
-  
+
     .option {
       cursor: pointer;
       display: flex;
@@ -36,4 +36,4 @@ export const MenuOptionsStyled = styled.div`
       padding-bottom: 5px;
     }
   }
- `; 
+`;
