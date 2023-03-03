@@ -10,6 +10,7 @@ import BackGround from "@/components/GeneralComponents/Background";
 
 function Announcer() {
   return (
+
     <>
       <Header />
       <BackGround>
