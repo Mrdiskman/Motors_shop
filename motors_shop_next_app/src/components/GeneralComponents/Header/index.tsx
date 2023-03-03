@@ -9,7 +9,7 @@ import OptionsMenu from "../OptionsMobile";
 import NotLogged from "../NotLogged";
 
 function Header() {
-  const { toggleMobile, navDesktop, navMobile, isLoged, verifyIsLogged } =
+  const { toggleMobile, isNavMobile, isLoged, verifyIsLogged } =
 
     useContext(HeaderContext);
   if (typeof window !== "undefined") {
