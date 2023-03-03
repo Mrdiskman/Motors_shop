@@ -2,7 +2,7 @@ import { CardAuctionStyle } from "./styled";
 import { BiTimeFive } from "react-icons/bi";
 import { BsArrowRight } from "react-icons/bs";
 
-const CardAuction = () => {
+const CardAuction = ({ owner }: any) => {
   return (
     <CardAuctionStyle>
       <section className="sectionMainCard">
@@ -36,10 +36,17 @@ const CardAuction = () => {
           <p>R$ 00.000,00</p>
         </section>
       </section>
-      <section className="containerPage">
-        <h3>Acessar página do leilão</h3>
-        <BsArrowRight className="setaHover" color="#ffffffff" />
-      </section>
+      {owner ? (
+        <section className="containerPageButton">
+          <button className="button_edit">Editar</button>
+          <button className="button_edit">Ver como</button>
+        </section>
+      ) : (
+        <section className="containerPage">
+          <h3>Acessar página do leilão</h3>
+          <BsArrowRight className="setaHover" color="#ffffffff" />
+        </section>
+      )}
     </CardAuctionStyle>
   );
 };

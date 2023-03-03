@@ -6,9 +6,13 @@ import Link from "next/link";
 import { HeaderContext } from "@/contexts/header/HeaderContext";
 import MenuOptions from "../OptionsDesktop";
 import OptionsMenu from "../OptionsMobile";
+import NotLogged from "../NotLogged";
 
 function Header() {
-  const { toggleMobile, navDesktop, navMobile } = useContext(HeaderContext);
+
+  const { toggleMobile, navDesktop, navMobile, isLoged } =
+    useContext(HeaderContext);
+
 
   return (
     <>
@@ -18,6 +22,7 @@ function Header() {
             Motors <span className="titleStyle">shop</span>
           </h1>
         </Link>
+
         <nav className="navBar">
           <ul className="containerList">
             <li>Carros</li>
@@ -25,13 +30,21 @@ function Header() {
             <li>Leilao</li>
           </ul>
         </nav>
+
+        {isLoged ?
         <UserData />
+          :
+        <NotLogged />
+        }
+
         <button onClick={() => toggleMobile()} className="btnMobile">
           <GiHamburgerMenu className="menuMobileStyle" />
         </button>
+
       </HeaderStyle>
-      {navDesktop && <MenuOptions />}
-      {navMobile && <OptionsMenu />}
+
+      { navDesktop && <MenuOptions /> }
+      { navMobile && <OptionsMenu /> }
     </>
   );
 }
