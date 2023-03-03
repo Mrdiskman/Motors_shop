@@ -1,9 +1,21 @@
 import { VehiclePrice, VehicleCard } from "./styled";
+type Props = {
+  edit?: boolean;
+  active?: boolean;
+  owner?: string;
+};
 
-const CardVehicle = ({ edit }: any) => {
+const CardVehicle = ({ edit, active, owner }: Props) => {
   return (
-    <VehicleCard>
+    <VehicleCard active={active}>
       <div className="div_img">
+        {owner ? (
+          <div className="div_active">
+            <p className="active_title">{active ? "Ativo" : "Inativo"}</p>
+          </div>
+        ) : (
+          <></>
+        )}
         <img src="" alt="" />
       </div>
       userDashboard

@@ -9,7 +9,7 @@ import {
   Title,
 } from "@/components/GeneralComponents/index";
 
-const BuildAnnouncerCard = ({ name, seller, descripition }: any) => {
+const BuildAnnouncerCard = ({ name, seller, descripition, owner }: any) => {
   const CompleteNameSplit = name.split(" ");
   const surname = CompleteNameSplit[1];
   const surnameSplit = surname.split("");
@@ -43,10 +43,13 @@ const BuildAnnouncerCard = ({ name, seller, descripition }: any) => {
         </div>
         <p className="sellerDescription">{descripition}</p>
       </div>
-
-      <Button height={"108px"} width={"108px"} borderRadius={"4px"}>
-        <p>Criar anúncio</p>
-      </Button>
+      {owner ? (
+        <Button height={"108px"} width={"108px"} borderRadius={"4px"}>
+          <p>Criar anúncio</p>
+        </Button>
+      ) : (
+        <></>
+      )}
     </AnnouncerCard>
   );
 };
