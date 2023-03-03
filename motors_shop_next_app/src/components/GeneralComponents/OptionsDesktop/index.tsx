@@ -1,12 +1,10 @@
 import { HeaderContext } from "@/contexts/header/HeaderContext";
 import { useContext } from "react";
-import ModalEditProfile from "../Header/EditProfileModal";
+import ModalEditProfile from "../ModalComponent/modalComponent";
 import { MenuOptionsStyled } from "./styled";
 
 const MenuOptions = () => {
-  const {
-    handleOpenModal,
-  } = useContext(HeaderContext);
+  const { handleOpenModal } = useContext(HeaderContext);
 
   return (
     <MenuOptionsStyled>
@@ -14,7 +12,8 @@ const MenuOptions = () => {
         <button className="option" onClick={handleOpenModal}>
           Editar Perfil
         </button>
-        <ModalEditProfile/>
+        <ModalEditProfile />
+        {/* <ModalEditProfile /> */}
         <button className="option">Editar endereço</button>
         <button className="option">Meus Anúncios</button>
         <button className="option + for onClick={logOut}">Sair</button>
