@@ -1,17 +1,29 @@
 import Footer from "@/components/GeneralComponents/Footer";
 import Header from "@/components/GeneralComponents/Header";
+import { api } from "@/services/api";
 import { useForm } from "react-hook-form";
 import { LoginStyled } from "./styled";
 
 function Login() {
   const {register, handleSubmit, formState:{errors}} = useForm()
+  
   function onSubmit(data:any){
     const loginData = {
         email:String(data.email),
         password:String(data.password),
     }
-   console.log(loginData)
+    login(loginData)
 } 
+
+async function login(data:any){
+  const result = await api.post("/users/login", data
+  ).then((res:any)=>{
+      const {token} = res.data
+      localStorage.setItem("@TOKEN", JSON.stringify(token))
+      window.location.href = "http://localhost:3000/"
+  }
+  ).catch((err:any)=>console.log(err))
+}
   return (
     <>
       <Header />
