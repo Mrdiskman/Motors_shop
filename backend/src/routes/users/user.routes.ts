@@ -1,4 +1,5 @@
 import { Router } from "express";
+import forgetPasswordController from "../../controllers/users/forgetPassword";
 import listAllUsersController from "../../controllers/users/listAllUsers.controller";
 import listUserController from "../../controllers/users/listUser.controller";
 import userRegisterController from "../../controllers/users/registerUser.controllers";
@@ -22,6 +23,7 @@ routes.get("/user", listUserController);
 routes.get("/users", listAllUsersController);
 
 routes.patch("/users/update", authUser, updateUserController);
+routes.patch("/users/reset", forgetPasswordController)
 routes.delete("/users/delete", authUser, userDeleteController);
 
 export default routes;

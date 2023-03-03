@@ -94,6 +94,7 @@ export const VehicleCard = styled.div<Props>`
     font-size: 16px;
     max-width: 312px;
     text-overflow: ellipsis;
+    color: #495057;
   }
   p {
     max-width: 93%;
@@ -105,7 +106,7 @@ export const VehicleCard = styled.div<Props>`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     font-size: 14px;
-    color: var();
+    color: #495057;
   }
   .divAnnouncer {
     width: 100%;
@@ -151,9 +152,9 @@ export const VehicleCard = styled.div<Props>`
       font-family: "Inter";
 
       :hover {
-        background-color: var(--brand2);
+        background-color: #5126ea;
         color: #0b0d0d;
-        border: 1.5px solid var(--brand2);
+        border: 1.5px solid #5126ea;
       }
     }
   }
@@ -172,19 +173,19 @@ export const VehiclePrice = styled.div`
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    .numbers {
-      font-family: "Inter", sans-serif;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 24px;
-      color: #4529e6;
-    }
     .price {
       font-family: "Lexend", sans-serif;
       font-weight: 600;
       font-size: 16px;
       line-height: 20px;
       color: #212529;
+    }
+    .numbers {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      color: #4529e6;
     }
     .km_div {
       display: flex;

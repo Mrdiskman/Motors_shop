@@ -9,7 +9,9 @@ import OptionsMenu from "../OptionsMobile";
 import NotLogged from "../NotLogged";
 
 function Header() {
-  const { toggleMobile, isNavMobile, isLoged, verifyIsLogged } =
+
+  const { toggleMobile, isNavMobile, isLoged, verifyIsLogged, navDesktop } =
+
     useContext(HeaderContext);
   if (typeof window !== "undefined") {
     const token = window.localStorage.getItem("@TOKEN");
@@ -46,8 +48,11 @@ function Header() {
         </button>
       </HeaderStyle>
 
-      {!isNavMobile && <MenuOptions />}
-      {isNavMobile && <OptionsMenu />}
+      
+      { navDesktop && <MenuOptions /> }
+      { isNavMobile && <OptionsMenu /> }
+
+
     </>
   );
 }

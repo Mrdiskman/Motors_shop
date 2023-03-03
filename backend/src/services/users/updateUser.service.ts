@@ -5,9 +5,20 @@ import { IUserUpdate } from "../../interfaces/users";
 
 const updateUserService = async (id: string, newData: IUserUpdate) => {
   const usersRepository = AppDataSource.getRepository(User);
-  console.log("oi");
+
+  let abbreviationString = "";
+
+  if (newData.name) {
+    if (newData.name.split(" ").length > 1) {
+      const arr = newData.name.split(" ");
+      abbreviationString = arr[0][0] + arr[1][0];
+      newData.abbreviation = abbreviationString;
+    } else {
+      abbreviationString = newData.name[0];
+      newData.abbreviation = abbreviationString;
+    }
+  }
   const newUser = await usersRepository.update(id, { ...newData });
-  console.log(newUser);
   const newUserReq = await usersRepository.findOneBy({ id });
 
   const updateRes = {

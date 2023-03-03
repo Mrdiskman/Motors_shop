@@ -6,6 +6,11 @@ import { MenuOptionsStyled } from "./styled";
 const MenuOptions = () => {
   const { handleOpenModal, isModalOpen } = useContext(HeaderContext);
 
+  const logOut = () => {
+    window.localStorage.removeItem("@TOKEN");
+    window.location.href = "http://localhost:3000/"
+  }  
+
   return (
     <>
       {isModalOpen == true ? (
@@ -17,7 +22,7 @@ const MenuOptions = () => {
 
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
-            <button className="option + for onClick={logOut}">Sair</button>
+            <button className="option + for" onClick={()=>logOut()}>Sair</button>
           </div>
 
           <ModalEditProfile />
@@ -30,7 +35,7 @@ const MenuOptions = () => {
             </button>
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
-            <button className="option + for onClick={logOut}">Sair</button>
+            <button className="option + for" onClick={()=>logOut()} >Sair</button>
           </div>
         </MenuOptionsStyled>
       )}

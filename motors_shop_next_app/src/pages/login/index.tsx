@@ -5,30 +5,27 @@ import { useForm } from "react-hook-form";
 import { LoginStyled } from "./styled";
 
 function Login() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
-  function onSubmit(data: any) {
+  const {register, handleSubmit, formState:{errors}} = useForm()
+  
+  function onSubmit(data:any){
     const loginData = {
-      email: String(data.email),
-      password: String(data.password),
-    };
-    login(loginData);
-  }
+        email:String(data.email),
+        password:String(data.password),
+    }
+    login(loginData)
+} 
 
-  async function login(data: any) {
-    const result = await api
-      .post("/users/login", data)
-      .then((res: any) => {
-        const { token } = res.data;
-        localStorage.setItem("@TOKEN", JSON.stringify(token));
-        window.location.href = "http://localhost:3000/";
-      })
-      .catch((err: any) => console.log(err));
+async function login(data:any){
+  const result = await api.post("/users/login", data
+  ).then((res:any)=>{
+      const {token} = res.data
+      localStorage.setItem("@TOKEN", JSON.stringify(token))
+      window.location.href = "http://localhost:3000/"
   }
+  ).catch((err:any)=>console.log(err))
+}
+
   return (
     <>
       <Header />
@@ -36,27 +33,19 @@ function Login() {
         <form className="formLogin">
           <h2 className="typeForm">Login</h2>
           <label>Usuário</label>
-          <input
-            type="text"
-            placeholder="Digitar Usuário"
-            {...register("email")}
-          />
+
+          <input type="text" placeholder="Digitar Usuário" {...register("email")}/>
           <label>Senha</label>
-          <input
-            type="password"
-            placeholder="Digitar Senha"
-            {...register("password")}
-          />
-          <button className="forgetPassword" type="button">
-            Esqueci minha senha
-          </button>
+          <input type="password" placeholder="Digitar Senha" {...register("password")} />
+          <button className="forgetPassword" type="button">Esqueci minha senha</button>
+
           <button type="submit" className="send">
             Entrar
           </button>
           <p className="dontHaveAcc">Ainda não possui uma conta?</p>
-          <button className="register" type="button">
-            Cadastrar
-          </button>
+
+          <button className="register" type="button">Cadastrar</button>
+
         </form>
       </LoginStyled>
       <Footer />

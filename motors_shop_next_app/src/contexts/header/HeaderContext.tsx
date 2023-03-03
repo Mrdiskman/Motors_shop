@@ -8,14 +8,15 @@ const HeaderContextProvider = ({ children }: IProps) => {
   const [isNavMobile, setIsNavMobile] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  function verifyIsLogged(token: any) {
-    if (token) {
-      setIsLoged(true);
-    } else {
-      setIsLoged(false);
-    }
-  }
+  const [navDesktop, setNavDesktop] = useState(false);
 
+  function verifyIsLogged(token:any){
+    if(token){
+      setIsLoged(true)
+    }
+    else{setIsLoged(false)} 
+  }
+  
   function handleOpenModal() {
     setIsModalOpen(true);
   }
@@ -25,15 +26,20 @@ const HeaderContextProvider = ({ children }: IProps) => {
   }
 
   function toggleMobile() {
-    isNavMobile ? setIsNavMobile(false) : setIsNavMobile(true);
-    return;
+
+    isNavMobile ? 
+        setIsNavMobile(false)
+        :
+        setIsNavMobile(true)
+    return
+
   }
 
   function toggleDeskTop() {
-    if (navDesktop) {
-      return setNavDesktop(false);
-    }
-    setNavDesktop(true);
+    navDesktop ? 
+    setNavDesktop(false)
+    :
+    setNavDesktop(true)
   }
 
   return (
@@ -48,7 +54,8 @@ const HeaderContextProvider = ({ children }: IProps) => {
         handleCloseModal,
         isModalOpen,
         isNavMobile,
-        isLoged,
+        navDesktop,
+        isLoged
       }}
     >
       {children}
