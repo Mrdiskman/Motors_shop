@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NotLoggedStyled = styled.div`
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 30px;
@@ -27,5 +27,8 @@ export const NotLoggedStyled = styled.div`
     border: 1.5px solid #adb5bd;
     border-radius: 5px;
     transition: 0.5s;
+  }
+  @media (min-width: 769px) {
+    display: flex;
   }
 `;

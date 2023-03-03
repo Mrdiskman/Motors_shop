@@ -6,15 +6,16 @@ export const LoginStyled = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 76.7vh;
+  padding-top: 50px;
+  padding-bottom: 70px;
   color: #000000;
 
   button {
     cursor: pointer;
   }
   .formLogin {
-    width: 23%;
-    height: 73%;
+    width: 90%;
+    padding-bottom: 50px;
     background-color: #fdfdfd;
     display: flex;
     align-items: center;
@@ -22,7 +23,7 @@ export const LoginStyled = styled.div`
     border-radius: 5px;
   }
   input {
-    width: 70%;
+    width: 80%;
     height: 45px;
     border: 1.5px solid #e9ecef;
     border-radius: 5px;
@@ -33,7 +34,7 @@ export const LoginStyled = styled.div`
     padding-left: 15px;
   }
   .forgetPassword {
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: flex-end;
     margin-top: 5px;
@@ -47,7 +48,7 @@ export const LoginStyled = styled.div`
     color: #495057;
   }
   .typeForm {
-    width: 70%;
+    width: 80%;
     justify-content: flex-start;
     margin-bottom: 35px;
     margin-top: 45px;
@@ -58,7 +59,7 @@ export const LoginStyled = styled.div`
     color: #000000;
   }
   label {
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: flex-start;
     margin-top: 15px;
@@ -71,7 +72,7 @@ export const LoginStyled = styled.div`
   }
   .send {
     gap: 10px;
-    width: 315px;
+    width: 80%;
     height: 48px;
     background-color: #4529e6;
     border: 1.5px solid #4529e6;
@@ -92,7 +93,7 @@ export const LoginStyled = styled.div`
   }
   .register {
     gap: 10px;
-    width: 315px;
+    width: 80%;
     height: 48px;
     border: 1.5px solid #adb5bd;
     border-radius: 5px;
@@ -101,5 +102,12 @@ export const LoginStyled = styled.div`
     font-size: 16px;
     color: #0b0d0d;
     margin-top: 30px;
+  }
+  @media (min-width: 769px) {
+    height: 76.7vh;
+    .formLogin {
+      min-width: 350px;
+      width: 25%;
+    }
   }
 `;
