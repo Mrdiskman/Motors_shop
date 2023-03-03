@@ -10,6 +10,7 @@ import NotLogged from "../NotLogged";
 
 function Header() {
   const { toggleMobile, navDesktop, navMobile, isLoged, verifyIsLogged } =
+
     useContext(HeaderContext);
   if (typeof window !== "undefined") {
     const token = window.localStorage.getItem("@TOKEN");
@@ -46,9 +47,10 @@ function Header() {
           <GiHamburgerMenu className="menuMobileStyle" />
         </button>
       </HeaderStyle>
+      
+      { !isNavMobile && <MenuOptions /> }
+      { isNavMobile && <OptionsMenu /> }
 
-      {navDesktop && <MenuOptions />}
-      {navMobile && <OptionsMenu />}
     </>
   );
 }
