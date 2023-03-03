@@ -19,9 +19,13 @@ const HeaderContextProvider = ({ children }: IProps) => {
 
   function toggleMobile() {
     if (navMobile) {
-      return setNavMobile(false);
+        setNavDesktop(true);
+        setNavMobile(false);
+        return 
     }
     setNavMobile(true);
+    setNavDesktop(false);
+    return
   }
 
   function toggleDeskTop() {
