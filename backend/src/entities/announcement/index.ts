@@ -20,7 +20,7 @@ export class Announcement {
   @Column({ length: 60 })
   model: string;
 
-  @Column({ length: 50 })
+  @Column({ length: 150 })
   type: string;
 
   @Column({ nullable: true })

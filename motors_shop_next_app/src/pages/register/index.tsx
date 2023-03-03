@@ -21,10 +21,25 @@ export default function Home() {
   const [isSeller, isSetSeller]: any = useState(false);
 
   const onSubmit = (data: any) => {
-    const { cep, state, number, city, complement, ...rest } = data;
+    const {
+      cep,
+      state,
+      number,
+      city,
+      complement,
+      road,
+      confirm_password,
+      ...rest
+    } = data;
     rest.address = { cep, state, number, city, complement };
     rest.seller = isSeller;
-    console.log(rest);
+    api
+      .post("/users", rest)
+      .then((response) => {
+        window.location.href = "http://localhost:3000/login";
+        console.log(response.data);
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <>
@@ -86,15 +101,15 @@ export default function Home() {
             <Input
               type="text"
               id="birthday"
-              {...register("birthday")}
+              {...register("dateOfBirth")}
               required
               placeholder="00/00/00"
             ></Input>
             <Label>Descricao</Label>
             <Input
               type="text"
-              id="description"
-              {...register("description")}
+              id="descripition"
+              {...register("descripition")}
               required
               placeholder="Digitar descricao"
             ></Input>
@@ -174,33 +189,69 @@ export default function Home() {
 
             <Label>Tipo de conta</Label>
             <DivInput>
-              <Button
-                onChange={(e) => {
-                  e.preventDefault();
-                  isSetSeller(true);
-                  console.log(isSeller);
-                }}
-                width="152px"
-                margin="0px 11px 0px 0px"
-                backgroundColor="#4529E6"
-                borderRadius="4px"
-                border="1.5px solid #4529E6;"
-              >
-                Comprador
-              </Button>
-              <Button
-                onChange={(e) => {
-                  e.preventDefault();
-                  isSetSeller(false);
-                }}
-                width="152px"
-                color="#0B0D0D"
-                backgroundColor="#FDFDFD;"
-                borderRadius="4px"
-                border="1.5px solid #ADB5BD;"
-              >
-                Anuciante
-              </Button>
+              {isSeller ? (
+                <>
+                  <Button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      isSetSeller(false);
+                    }}
+                    width="152px"
+                    color="#0B0D0D"
+                    backgroundColor="#FDFDFD;"
+                    borderRadius="4px"
+                    margin="0px 11px 0px 0px"
+                    border="1.5px solid #ADB5BD;"
+                  >
+                    Comprador
+                  </Button>
+                  <Button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      isSetSeller(true);
+                    }}
+                    width="152px"
+                    backgroundColor="#4529E6"
+                    borderRadius="4px"
+                    border="1.5px solid #4529E6;"
+                  >
+                    Anuciante
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      isSetSeller(false);
+                    }}
+                    width="152px"
+                    margin="0px 11px 0px 0px"
+                    backgroundColor="#4529E6"
+                    borderRadius="4px"
+                    border="1.5px solid #4529E6;"
+                  >
+                    Comprador
+                  </Button>
+                  <Button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      isSetSeller(true);
+                    }}
+                    width="152px"
+                    color="#0B0D0D"
+                    backgroundColor="#FDFDFD;"
+                    borderRadius="4px"
+                    border="1.5px solid #ADB5BD;"
+                  >
+                    Anuciante
+                  </Button>
+                </>
+              )}
             </DivInput>
 
             <Label>Senha</Label>
@@ -214,8 +265,8 @@ export default function Home() {
             <Label>Confirmar Senha</Label>
             <Input
               type="password"
-              id="confirm-password"
-              {...register("confirm-password")}
+              id="confirm_password"
+              {...register("confirm_password")}
               required
               placeholder="Digitar senha"
             ></Input>
