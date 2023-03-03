@@ -1,18 +1,18 @@
 import { database } from "@/database";
 import { CommentsStyled } from "./styled";
 
-function AnnounceData() {
-  const announce = database.user.announcements[0];
+function AnnounceData({data}:any) {
+
   return (
     <CommentsStyled>
       <div className="display">
-        <h3 className="model">{announce.model}</h3>
+        <h3 className="model">{data.model}</h3>
         <div className="announceContainerInfo">
           <div className="announceContainerInfoNumbers">
-            <span className="announceInfoNumber">{announce.year}</span>
-            <span className="announceInfoNumber">{announce.km} KM</span>
+            <span className="announceInfoNumber">{data.year}</span>
+            <span className="announceInfoNumber">{data.km} KM</span>
           </div>
-          <p className="price">R$ {announce.price}</p>
+          <p className="price">R$ {data.price}</p>
         </div>
 
         <button className="buy">Comprar</button>

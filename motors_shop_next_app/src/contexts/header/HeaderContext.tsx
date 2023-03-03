@@ -7,6 +7,7 @@ const HeaderContextProvider = ({ children }: IProps) => {
   const [isLoged, setIsLoged] = useState(false);
   const [isNavMobile, setIsNavMobile] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [navDesktop, setNavDesktop] = useState(false);
 
   function verifyIsLogged(token:any){
     if(token){
@@ -32,10 +33,10 @@ const HeaderContextProvider = ({ children }: IProps) => {
   }
 
   function toggleDeskTop() {
-    if (navDesktop) {
-      return setNavDesktop(false);
-    }
-    setNavDesktop(true);
+    navDesktop ? 
+    setNavDesktop(false)
+    :
+    setNavDesktop(true)
   }
 
   return (
@@ -50,6 +51,7 @@ const HeaderContextProvider = ({ children }: IProps) => {
         handleCloseModal,
         isModalOpen,
         isNavMobile,
+        navDesktop,
         isLoged
       }}
     >

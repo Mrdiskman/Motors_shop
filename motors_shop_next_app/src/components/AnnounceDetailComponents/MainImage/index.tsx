@@ -1,11 +1,11 @@
 import { ImageContainer } from "./styled";
 
-function PrimaryImage() {
+function PrimaryImage({image}:any) {
   return (
     <ImageContainer className="mainPicContainer">
       <img
-        src="https://st4.depositphotos.com/1008239/40970/i/1600/depositphotos_409708386-stock-photo-service-worker-washing-car-on.jpg"
-        alt="Foto do carro"
+        src={image}
+        alt="Foto do veiculo"
         className="MainPicture"
       />
     </ImageContainer>

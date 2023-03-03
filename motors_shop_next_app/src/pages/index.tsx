@@ -6,7 +6,6 @@ import CarouselComponent from "@/components/GeneralComponents/Carousel";
 import CardAuction from "@/components/GeneralComponents/CardAuction";
 import CardVehicle from "@/components/HomeComponents/CardVehicle";
 import { HomeStyles } from "./announcer/styles";
-import { api } from "@/services/api";
 
 export default function Home() {
   return (
