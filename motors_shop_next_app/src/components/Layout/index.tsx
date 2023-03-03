@@ -1,14 +1,10 @@
 
 import HeaderContextProvider from "@/contexts/header/HeaderContext";
-import { ReactNode } from "react";
+import { IProps } from "@/interfaces/generaInterfaces";
 import Footer from "../GeneralComponents/Footer";
 import Header from "../GeneralComponents/Header";
 
-interface Props {
-  children?: ReactNode;
-}
-
-export const Layout = ({ children, ...props }: Props) => {
+export const Layout = ({ children, ...props }: IProps) => {
   return (
     <>
       <HeaderContextProvider>

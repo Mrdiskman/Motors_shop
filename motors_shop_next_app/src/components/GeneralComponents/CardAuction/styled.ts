@@ -100,6 +100,31 @@ export const CardAuctionStyle = styled.div`
       }
     }
   }
+  .containerPageButton {
+    border: 1px solid transparent;
+    border-radius: 0px 0px 5px 5px;
+    padding: 32px;
+    max-width: 602px;
+    max-height: 10px;
+    background: #4529e6;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    .button_edit {
+      border: 1.5px solid #fdfdfd;
+      background-color: transparent;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 80px;
+      height: 38px;
+      color: #ffffff;
+      font-family: "Inter";
+      :hover {
+        background-color: #fdfdfd;
+        color: #0b0d0d;
+      }
+    }
+  }
   .containerPage {
     border: 1px solid transparent;
     border-radius: 0px 0px 5px 5px;
