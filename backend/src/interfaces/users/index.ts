@@ -38,4 +38,5 @@ export interface IUserUpdate {
   phone?: string;
   dateOfBirth?: string;
   descripition?: string;
+  abbreviation?: string;
 }

@@ -5,6 +5,7 @@ import { Announcement } from "./entities/announcement";
 import { Address } from "./entities/address";
 import { Comment } from "./entities/comments/comment.entity";
 import { createMigrations1677848993188 } from "./migrations/1677848993188-createMigrations";
+import { createMigrations1677851479265 } from "./migrations/1677851479265-createMigrations";
 
 export const AppDataSource =
   process.env.NODE_ENV === "test"
@@ -22,5 +23,8 @@ export const AppDataSource =
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DB,
         entities: [User, Address, Announcement, Comment],
-        migrations: [createMigrations1677848993188],
+        migrations: [
+          createMigrations1677848993188,
+          createMigrations1677851479265,
+        ],
       });

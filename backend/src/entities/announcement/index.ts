@@ -49,7 +49,9 @@ export class Announcement {
   })
   user: User;
 
-  @OneToMany(() => Comment, (comments) => comments.user)
+  @OneToMany(() => Comment, (comments) => comments.annoucement, {
+    eager: true,
+  })
   comments: Comment[];
 
   constructor() {
