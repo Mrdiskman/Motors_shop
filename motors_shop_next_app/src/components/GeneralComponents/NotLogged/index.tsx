@@ -7,10 +7,10 @@ function NotLogged() {
   return (
     <>
       <NotLoggedStyled>
-        <button className="actionButton" onClick={() => setIsLoged(true)}>
+        <button className="actionButton" onClick={()=>window.location.href = "http://localhost:3000/login"}>
           Fazer Login
         </button>
-        <button className="actionButton">Cadastrar</button>
+        <button className="actionButton" onClick={()=>window.location.href = "http://localhost:3000/register"}>Cadastrar</button>
       </NotLoggedStyled>
     </>
   );
