@@ -45,16 +45,14 @@ function AnnounceDetailPage() {
 			}
 		},
   });
-  async function getAnnounceDetail() {
-    await api
-      .get("/announcements/e511d1ba-c203-45ee-bfb7-5c3656bbde5e")
-      .then((res: any) => {
-        setAnnounceData(res.data);
-      })
-      .catch((err: any) => console.log(err));
-  }
-  useEffect(() => {
-    getAnnounceDetail();
+
+  useEffect(() => { 
+      api
+        .get("/announcements/e511d1ba-c203-45ee-bfb7-5c3656bbde5e")
+        .then((res: any) => {
+          setAnnounceData(res.data);
+        })
+        .catch((err: any) => console.log(err));
   }, []);
  
   return (
