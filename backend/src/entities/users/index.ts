@@ -13,6 +13,9 @@ import { Comment } from "../comments/comment.entity";
 
 @Entity()
 export class User {
+  update(password: string) {
+      throw new Error("Method not implemented.");
+  }
   @PrimaryColumn("uuid")
   readonly id: string;
 

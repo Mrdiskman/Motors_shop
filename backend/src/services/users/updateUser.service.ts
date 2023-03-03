@@ -5,9 +5,7 @@ import { IUserUpdate } from "../../interfaces/users";
 
 const updateUserService = async (id: string, newData: IUserUpdate) => {
   const usersRepository = AppDataSource.getRepository(User);
-  console.log("oi");
   const newUser = await usersRepository.update(id, { ...newData });
-  console.log(newUser);
   const newUserReq = await usersRepository.findOneBy({ id });
 
   const updateRes = {
