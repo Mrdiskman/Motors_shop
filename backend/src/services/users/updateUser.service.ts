@@ -5,6 +5,7 @@ import { IUserUpdate } from "../../interfaces/users";
 
 const updateUserService = async (id: string, newData: IUserUpdate) => {
   const usersRepository = AppDataSource.getRepository(User);
+
   let abbreviationString = "";
 
   if (newData.name) {
