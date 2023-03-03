@@ -18,7 +18,7 @@ routes.post(
 );
 routes.post("/users/login", loginUserController);
 
-routes.get("/users/:id", listUserController);
+routes.get("/user", listUserController);
 routes.get("/users", listAllUsersController);
 
 routes.patch("/users/update", authUser, updateUserController);

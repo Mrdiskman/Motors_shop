@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/GeneralComponents/Header";
 import Footer from "@/components/GeneralComponents/Footer";
+import { useForm } from "react-hook-form";
 
 import {
   Container,
@@ -12,8 +13,34 @@ import {
   DivInput,
   divContainer,
 } from "@/components/GeneralComponents";
+import { api } from "@/services/api";
+import { useState } from "react";
 
 export default function Home() {
+  const { register, handleSubmit } = useForm();
+  const [isSeller, isSetSeller]: any = useState(false);
+
+  const onSubmit = (data: any) => {
+    const {
+      cep,
+      state,
+      number,
+      city,
+      complement,
+      road,
+      confirm_password,
+      ...rest
+    } = data;
+    rest.address = { cep, state, number, city, complement };
+    rest.seller = isSeller;
+    api
+      .post("/users", rest)
+      .then((response) => {
+        window.location.href = "http://localhost:3000/login";
+        console.log(response);
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <>
       <Head>
@@ -37,20 +64,20 @@ export default function Home() {
         >
           <Title marginBottom="32px">Cadastro</Title>
           <Label>Informacoes Pessoais</Label>
-          <Form>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <Label>Nome</Label>
             <Input
               type="text"
               id="name"
-              name="name"
               required
+              {...register("name")}
               placeholder="Ex: Samuel Leao"
             ></Input>
             <Label>Email</Label>
             <Input
               type="email"
               id="email"
-              name="email"
+              {...register("email")}
               required
               placeholder="Ex: samuel@kenzie.com.br"
             ></Input>
@@ -58,7 +85,7 @@ export default function Home() {
             <Input
               type="text"
               id="cpf"
-              name="cpf"
+              {...register("cpf")}
               required
               placeholder="000.000.000-00"
             ></Input>
@@ -66,7 +93,7 @@ export default function Home() {
             <Input
               type="text"
               id="phone"
-              name="phone"
+              {...register("phone")}
               required
               placeholder="(DDD) 90000-0000"
             ></Input>
@@ -74,15 +101,15 @@ export default function Home() {
             <Input
               type="text"
               id="birthday"
-              name="birthday"
+              {...register("dateOfBirth")}
               required
               placeholder="00/00/00"
             ></Input>
             <Label>Descricao</Label>
             <Input
               type="text"
-              id="description"
-              name="description"
+              id="descripition"
+              {...register("descripition")}
               required
               placeholder="Digitar descricao"
             ></Input>
@@ -91,7 +118,7 @@ export default function Home() {
             <Input
               type="text"
               id="cep"
-              name="cep"
+              {...register("cep")}
               required
               placeholder="00000.000"
             ></Input>
@@ -103,7 +130,7 @@ export default function Home() {
                 <Input
                   type="text"
                   id="state"
-                  name="state"
+                  {...register("state")}
                   width="95%"
                   required
                   placeholder="Digitar Estado"
@@ -115,7 +142,7 @@ export default function Home() {
                   <Input
                     type="text"
                     id="city"
-                    name="city"
+                    {...register("city")}
                     width="95%"
                     required
                     placeholder="Digitar cidade"
@@ -127,7 +154,7 @@ export default function Home() {
             <Input
               type="text"
               id="road"
-              name="road"
+              {...register("road")}
               required
               placeholder="Digite sua rua"
             ></Input>
@@ -139,7 +166,7 @@ export default function Home() {
                     type="text"
                     id="number"
                     width="95%"
-                    name="number"
+                    {...register("number")}
                     required
                     placeholder="Digitar número"
                   ></Input>
@@ -153,7 +180,7 @@ export default function Home() {
                   type="text"
                   id="complement"
                   width="95%"
-                  name="complement"
+                  {...register("complement")}
                   required
                   placeholder="Ex: apart 307"
                 ></Input>
@@ -162,43 +189,89 @@ export default function Home() {
 
             <Label>Tipo de conta</Label>
             <DivInput>
-              <Button
-                width="152px"
-                margin="0px 11px 0px 0px"
-                backgroundColor="#4529E6"
-                borderRadius="4px"
-                border="1.5px solid #4529E6;"
-              >
-                Comprador
-              </Button>
-              <Button
-                width="152px"
-                color="#0B0D0D"
-                backgroundColor="#FDFDFD;"
-                borderRadius="4px"
-                border="1.5px solid #ADB5BD;"
-              >
-                Anuciante
-              </Button>
+              {isSeller ? (
+                <>
+                  <Button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      isSetSeller(false);
+                    }}
+                    width="152px"
+                    color="#0B0D0D"
+                    backgroundColor="#FDFDFD;"
+                    borderRadius="4px"
+                    margin="0px 11px 0px 0px"
+                    border="1.5px solid #ADB5BD;"
+                  >
+                    Comprador
+                  </Button>
+                  <Button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      isSetSeller(true);
+                    }}
+                    width="152px"
+                    backgroundColor="#4529E6"
+                    borderRadius="4px"
+                    border="1.5px solid #4529E6;"
+                  >
+                    Anuciante
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      isSetSeller(false);
+                    }}
+                    width="152px"
+                    margin="0px 11px 0px 0px"
+                    backgroundColor="#4529E6"
+                    borderRadius="4px"
+                    border="1.5px solid #4529E6;"
+                  >
+                    Comprador
+                  </Button>
+                  <Button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      isSetSeller(true);
+                    }}
+                    width="152px"
+                    color="#0B0D0D"
+                    backgroundColor="#FDFDFD;"
+                    borderRadius="4px"
+                    border="1.5px solid #ADB5BD;"
+                  >
+                    Anuciante
+                  </Button>
+                </>
+              )}
             </DivInput>
 
             <Label>Senha</Label>
             <Input
               type="password"
               id="password"
-              name="password"
+              {...register("password")}
               required
               placeholder="Digitar senha"
             ></Input>
             <Label>Confirmar Senha</Label>
             <Input
               type="password"
-              id="confirm-password"
-              name="confirm-password"
+              id="confirm_password"
+              {...register("confirm_password")}
               required
               placeholder="Digitar senha"
             ></Input>
             <Button
+              type="submit"
               width="100%"
               margin="0px 11px 0px 0px"
               backgroundColor="#4529E6"

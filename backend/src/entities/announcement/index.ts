@@ -20,7 +20,7 @@ export class Announcement {
   @Column({ length: 60 })
   model: string;
 
-  @Column({ length: 50 })
+  @Column({ length: 150 })
   type: string;
 
   @Column({ nullable: true })
@@ -49,7 +49,9 @@ export class Announcement {
   })
   user: User;
 
-  @OneToMany(() => Comment, (comments) => comments.user)
+  @OneToMany(() => Comment, (comments) => comments.annoucement, {
+    eager: true,
+  })
   comments: Comment[];
 
   constructor() {
