@@ -6,6 +6,8 @@ import CarouselComponent from "@/components/GeneralComponents/Carousel";
 import CardAuction from "@/components/GeneralComponents/CardAuction";
 import CardVehicle from "@/components/HomeComponents/CardVehicle";
 import { HomeStyles } from "./announcer/styles";
+import { api } from "@/services/api";
+import ListCards from "@/components/GeneralComponents/ListCards";
 
 export default function Home() {
   return (
@@ -36,58 +38,11 @@ export default function Home() {
               <h2 className="TitleHome" id="cars">
                 Carros
               </h2>
-              <CarouselComponent>
-                {/* {carsData.map((car, index) => ( */}
-                <CardVehicle
-                // key={index}
-                // img={car.img}
-                // title={car.title}
-                // descryption={car.descryption}
-                // announcer={car.announcer}
-                // km={car.km}
-                // year={car.year}
-                // price={car.price}
-                />
-                {/* ))} */}
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-              </CarouselComponent>
-
+              <ListCards tipo={"carro"} />
               <h2 className="TitleHome" id="motos">
                 Motos
               </h2>
-              <CarouselComponent>
-                {/* {motorcyclesData.map((moto, index) => ( */}
-                <CardVehicle
-                // key={index}
-                // img={moto.img}
-                // title={moto.title}
-                // descryption={moto.descryption}
-                // announcer={moto.announcer}
-                // km={moto.km}
-                // year={moto.year}
-                // price={moto.price}
-                />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                <CardVehicle />
-                {/* ))} */}
-              </CarouselComponent>
+              <ListCards tipo={"moto"} />
             </div>
           </HomeStyles>
         </Layout>
