@@ -37,7 +37,7 @@ export default function Home() {
       .post("/users", rest)
       .then((response) => {
         window.location.href = "http://localhost:3000/login";
-        console.log(response.data);
+        console.log(response);
       })
       .catch((err) => console.log(err));
   };
