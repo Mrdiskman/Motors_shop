@@ -8,6 +8,13 @@ const HeaderContextProvider = ({ children }: IProps) => {
   const [navMobile, setNavMobile] = useState(false);
   const [navDesktop, setNavDesktop] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function verifyIsLogged(token:any){
+    if(token){
+      setIsLoged(true)
+    }
+    else{setIsLoged(false)} 
+  }
   
   function handleOpenModal() {
     setIsModalOpen(true);
@@ -42,6 +49,7 @@ const HeaderContextProvider = ({ children }: IProps) => {
         toggleMobile,
         toggleDeskTop,
         setIsModalOpen,
+        verifyIsLogged,
         handleOpenModal,
         handleCloseModal,
         isModalOpen,

@@ -3,6 +3,7 @@ export interface IHeader {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   toggleMobile: () => void;
   toggleDeskTop: () => void;
+  verifyIsLogged: (token:any) => void;
   handleOpenModal: () => void;
   handleCloseModal: () => void;
   isModalOpen: boolean;
