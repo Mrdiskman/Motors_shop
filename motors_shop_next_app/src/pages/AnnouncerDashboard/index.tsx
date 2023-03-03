@@ -13,7 +13,7 @@ function AnnouncerDashboard() {
     <>
       <Header />
       <BackGround>
-        <AnnounceDescription></AnnounceDescription>
+        <AnnounceDescription owner={"Kalebe"}></AnnounceDescription>
         <h2 className="TitleHome auctions">Leilão</h2>
         <CarouselComponent>
           <CardAuction owner={"Kalebe"} />

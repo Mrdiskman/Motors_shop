@@ -1,6 +1,9 @@
 import styled from "styled-components";
+type Props = {
+  active?: boolean;
+};
 
-export const VehicleCard = styled.div`
+export const VehicleCard = styled.div<Props>`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap");
   display: flex;
   flex-direction: column;
@@ -11,6 +14,7 @@ export const VehicleCard = styled.div`
     .div_img {
       border: 3px solid #4529e6;
       border-radius: 5px;
+
       img {
         width: 90%;
       }
@@ -44,6 +48,7 @@ export const VehicleCard = styled.div`
     color: #495057;
   }
   .div_img {
+    border: 3px solid transparent;
     width: 312px;
     height: 154px;
     background-color: #e9ecef;
@@ -51,6 +56,26 @@ export const VehicleCard = styled.div`
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+    .div_active {
+      background-color: ${(props) => (props.active ? "#4529E6" : "#ADB5BD")};
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 51px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .active_title {
+        margin-top: 0px;
+        font-size: 14px;
+        font-family: "Inter";
+        font-weight: 500;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
     img {
       background-size: cover;
       width: 80%;

@@ -1,46 +1,26 @@
 import Header from "@/components/GeneralComponents/Header";
 import Footer from "@/components/GeneralComponents/Footer";
-import { DivStylesAnnounce, HomeStyles, TitleHome } from "./styles";
 import HomeNav from "@/components/HomeComponents/HomeNav";
 import CarouselComponent from "@/components/GeneralComponents/Carousel";
 import CardAuction from "@/components/GeneralComponents/CardAuction";
 import CardVehicle from "@/components/HomeComponents/CardVehicle";
-import { Layout } from "@/components/Layout";
-import { Container } from "@/components/GeneralComponents";
-import BuildAnnouncerCard from "@/components/AnnouncerComponents/BuildAnnouncerCard";
-import { database } from "@/database";
+import { BackGroundStyle } from "@/components/GeneralComponents/Background/styled";
+import AnnounceDescription from "@/components/AnnounceDashboardComponents/DetailUserComponents";
 import BackGround from "@/components/GeneralComponents/Background";
 
 function Announcer() {
   return (
-    
-    <Layout>
-      <HomeStyles>
-        <BackGround>
-          <DivStylesAnnounce>
-            <BuildAnnouncerCard
-              name={database.user.name}
-              seller={database.user.seller}
-              descripition={database.user.descripition}
-            />
-          </DivStylesAnnounce>
-        </BackGround>
-        <div className="container">
-      
-          <TitleHome>Leilão</TitleHome>
-          <CarouselComponent>
-            <CardAuction />
-            <CardAuction />
-            <CardAuction />
-            <CardAuction />
-          </CarouselComponent>
 
-          <TitleHome id="cars">
-            Carros
-          </TitleHome>
-          <CarouselComponent>
-            {/* {carsData.map((car, index) => ( */}
-            <CardVehicle
+    <>
+      <Header />
+      <BackGround>
+        <AnnounceDescription></AnnounceDescription>
+        <h2 className="TitleHome" id="cars">
+          Carros
+        </h2>
+        <CarouselComponent>
+          {/* {carsData.map((car, index) => ( */}
+          <CardVehicle
             // key={index}
             // img={car.img}
             // title={car.title}
@@ -49,22 +29,25 @@ function Announcer() {
             // km={car.km}
             // year={car.year}
             // price={car.price}
-            />
-            {/* ))} */}
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-          </CarouselComponent>
+            active={true}
+            owner={"Kalebe"}
+          />
+          {/* ))} */}
+          <CardVehicle active={true} owner={"Kalebe"} />
+          <CardVehicle active={false} owner={"Kalebe"} />
+          <CardVehicle active={true} owner={"Kalebe"} />
+          <CardVehicle active={false} owner={"Kalebe"} />
+          <CardVehicle active={true} owner={"Kalebe"} />
+          <CardVehicle active={false} owner={"Kalebe"} />
+          <CardVehicle active={true} owner={"Kalebe"} />
+        </CarouselComponent>
 
-          <TitleHome id="motos">
-            Motos
-          </TitleHome>
-          <CarouselComponent>
-            {/* {motorcyclesData.map((moto, index) => ( */}
-            <CardVehicle
+        <h2 className="TitleHome" id="motos">
+          Motos
+        </h2>
+        <CarouselComponent>
+          {/* {motorcyclesData.map((moto, index) => ( */}
+          <CardVehicle
             // key={index}
             // img={moto.img}
             // title={moto.title}
@@ -73,26 +56,28 @@ function Announcer() {
             // km={moto.km}
             // year={moto.year}
             // price={moto.price}
-            />
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            <CardVehicle/>
-            {/* ))} */}
-          </CarouselComponent>
-        </div>
-      </HomeStyles>
-    </Layout>
+            active={true}
+            owner={"Kalebe"}
+          />
+          <CardVehicle active={false} owner={"Kalebe"} />
+          <CardVehicle active={true} owner={"Kalebe"} />
+          <CardVehicle active={false} owner={"Kalebe"} />
+          <CardVehicle active={true} owner={"Kalebe"} />
+          <CardVehicle active={false} owner={"Kalebe"} />
+          <CardVehicle active={true} owner={"Kalebe"} />
+          <CardVehicle active={false} owner={"Kalebe"} />
+          <CardVehicle active={true} owner={"Kalebe"} />
+          <CardVehicle active={false} owner={"Kalebe"} />
+          <CardVehicle active={true} owner={"Kalebe"} />
+          <CardVehicle active={false} owner={"Kalebe"} />
+          <CardVehicle active={true} owner={"Kalebe"} />
+          <CardVehicle active={false} owner={"Kalebe"} />
+          {/* ))} */}
+        </CarouselComponent>
+      </BackGround>
 
+      <Footer />
+    </>
   );
 }
 export default Announcer;
