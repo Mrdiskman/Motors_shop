@@ -7,6 +7,6 @@ export interface IHeader {
   handleCloseModal: () => void;
   isModalOpen: boolean;
   navDesktop: boolean;
-  navMobile: boolean;
+  isNavMobile: boolean;
   isLoged:boolean
 }

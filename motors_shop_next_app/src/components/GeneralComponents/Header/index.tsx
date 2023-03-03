@@ -10,7 +10,7 @@ import NotLogged from "../NotLogged";
 
 function Header() {
 
-  const { toggleMobile, navDesktop, navMobile, isLoged } =
+  const { toggleMobile, isNavMobile, isLoged } =
     useContext(HeaderContext);
 
 
@@ -43,8 +43,8 @@ function Header() {
 
       </HeaderStyle>
 
-      { navDesktop && <MenuOptions /> }
-      { navMobile && <OptionsMenu /> }
+      { !isNavMobile && <MenuOptions /> }
+      { isNavMobile && <OptionsMenu /> }
     </>
   );
 }
