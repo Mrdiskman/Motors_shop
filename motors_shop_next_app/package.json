@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.21.0",
+    "@material-ui/core": "^4.12.4",
     "@trendyol-js/react-carousel": "^3.0.2",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "^18.14.2",
@@ -31,6 +32,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.3",
     "react-icons": "^4.7.1",
+    "react-is": "^18.2.0",
     "react-modal": "^3.16.1",
     "reflect-metadata": "^0.1.13",
     "styled-components": "^5.3.6",

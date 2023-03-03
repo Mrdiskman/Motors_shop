@@ -7,3 +7,7 @@ export interface IProps {
 export interface IPropsCarrousel {
   children: ReactNode[];
 }
+
+export interface IModal {
+  children: boolean;
+}

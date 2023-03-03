@@ -2,9 +2,15 @@ import { HeaderContext } from "@/contexts/header/HeaderContext";
 import { useContext } from "react";
 import ReactModal from "react-modal";
 import { Flex, Button, Container, Input, Label, TextArea } from "../..";
+import { useMediaQuery } from "@material-ui/core";
 function ModalEditProfile() {
   const { handleCloseModal, isModalOpen } = useContext(HeaderContext);
+
+  const displayMatches = useMediaQuery("(max-width: 768px)");
+
   const customStyles = {
+    position: "absolute",
+    zIndex: "10",
     content: {
       top: "5%",
       left: "50%",
@@ -12,11 +18,11 @@ function ModalEditProfile() {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, 0%)",
-      height: "1252px",
-      width: "520px",
+      height: displayMatches ? "926px" : "823px",
+      width: displayMatches ? "346px" : "520px",
     },
     overlay: {
-      backgroundColor: "rgba(0, 0, 0, 0.15)",
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
     },
   };
   return (
