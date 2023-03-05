@@ -15,8 +15,10 @@ import {
 } from "@/components/GeneralComponents";
 import { api } from "@/services/api";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   const { register, handleSubmit } = useForm();
   const [isSeller, isSetSeller]: any = useState(false);
 
@@ -36,8 +38,7 @@ export default function Home() {
     api
       .post("/users", rest)
       .then((response) => {
-        window.location.href = "http://localhost:3000/login";
-
+        router.push("/login");
       })
       .catch((err) => console.log(err));
   };
