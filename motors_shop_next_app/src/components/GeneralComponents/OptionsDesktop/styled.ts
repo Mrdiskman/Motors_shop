@@ -37,6 +37,4 @@ export const MenuOptionsStyled = styled.div`
       padding-bottom: 5px;
     }
   }
-  .modal-position {
-  }
 `;
