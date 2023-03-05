@@ -11,75 +11,80 @@ import { Layout } from "@/components/Layout";
 import { api } from "@/services/api";
 import { useEffect, useState } from "react";
 import { AnnounceDetailStyled } from "./styled";
+type announcement = {
+  id: string;
+  model: string;
+  type: string;
+  default_img: string;
+  images: string[];
+  title: string;
+  description: string;
+  announcer: string;
+  km: number;
+  year: number;
+  price: number;
+  user: user;
+  comments: IComments[];
+};
+type user = {
+  name: string;
+  abbreviation: string;
+  descripition: string;
+};
+type IComments = {
+  id: string;
+  text: string;
+  created_at: string;
+  user: user;
+};
 
 function AnnounceDetailPage() {
-  const [announceData, setAnnounceData] = useState({
-    id: "",
-    model: "",
-    description: "",
-    km: 0,
-    year: 0,
-    default_img: "",
-    images: [""],
-    price: 0,
-    isActive: false,
-    user: {
-			id: "",
-			name: "",
-			abbreviation: "",
-			email: "",
-			cpf: "",
-			phone: "",
-			dateOfBirth: "",
-			descripition: "",
-			seller: false,
-			password: "",
-			register: "",
-			address: {
-				id: "",
-				cep: "",
-				state: "",
-				city: "",
-				number: "",
-				complement: ""
-			}
-		},
-  });
+  const [announceData, setAnnounceData] = useState<null | announcement>(null);
 
-  useEffect(() => { 
-      api
-        .get("/announcements/1145b51c-ee1a-45f5-8b3c-b2660a9b9f4a")
-        .then((res: any) => {
-          setAnnounceData(res.data);
-        })
-        .catch((err: any) => console.log(err));
+  async function announcerData() {
+    const result = api
+      .get("/announcements/1808d3ec-bcfd-4ff9-b622-d97709685838")
+      .then((res: any) => {
+        setAnnounceData(res.data);
+      })
+      .catch((err: any) => console.log(err));
+  }
+  useEffect(() => {
+    announcerData();
   }, []);
- 
   return (
     <>
-      <Layout>
-        <BackGround>
-          <AnnounceDetailStyled>
-            <div className="upside">
-              <div className="left">
-                <PrimaryImage image={announceData.default_img}/>
-                <AnnounceData data={announceData} />
-                <AnnounceDescription description={announceData.description}/>
-                <div className="mobileFront">
-                  <MiniPictures images={announceData.images}/>
-                  <SellerData/>
+      {announceData ? (
+        <>
+          <Layout>
+            <BackGround>
+              <AnnounceDetailStyled>
+                <div className="upside">
+                  <div className="left">
+                    <PrimaryImage image={announceData.default_img} />
+                    <AnnounceData data={announceData} />
+                    <AnnounceDescription
+                      description={announceData.description}
+                    />
+                    <div className="mobileFront">
+                      <MiniPictures images={announceData.images} />
+                      <SellerData />
+                    </div>
+                    <Comments comments={announceData.comments} />
+                    <MakeComment />
+                  </div>
+                  <div className="deskTopFront">
+                    <MiniPicturesDesktop images={announceData.images} />
+                    <SellerData />
+                  </div>
                 </div>
-                <Comments />
-                <MakeComment />
-              </div>
-              <div className="deskTopFront">
-                <MiniPicturesDesktop images={announceData.images}/>
-                <SellerData/>
-              </div>
-            </div>
-          </AnnounceDetailStyled>
-        </BackGround>
-      </Layout>
+              </AnnounceDetailStyled>
+            </BackGround>
+          </Layout>
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
