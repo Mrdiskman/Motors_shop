@@ -39,7 +39,7 @@ const BuildAnnouncerCard = ({ name, seller, descripition }: any) => {
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.15)'
     }
-  };
+  }; 
  
   return (
     <AnnouncerCard>
