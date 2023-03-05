@@ -28,17 +28,15 @@ const ListCards = ({ tipo }: props) => {
   const [isAnnouncer, setIsAnnouncer] = useState<[] | announce[]>([]);
   async function announcerData() {
     const result = await api
-      .get("/announcements/")
+      .get("/announcements")
       .then((res: any) => {
         setIsAnnouncer(res.data);
       })
       .catch((err: any) => console.log(err));
   }
-
   useEffect(() => {
     announcerData();
   }, []);
-  console.log(isAnnouncer);
   return (
     <>
       <CarouselComponent>
