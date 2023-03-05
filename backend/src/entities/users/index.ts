@@ -19,25 +19,25 @@ export class User {
   @PrimaryColumn("uuid")
   readonly id: string;
 
-  @Column({ length: 24, nullable: false })
+  @Column({ length: 200, nullable: false })
   name: string;
 
   @Column({ length: 2, nullable: false })
   abbreviation: string;
 
-  @Column({ length: 20, unique: true, nullable: false })
+  @Column({ length: 200, unique: true, nullable: false })
   email: string;
 
-  @Column({ length: 11, unique: true })
+  @Column({ length: 50, unique: true })
   cpf: string;
 
-  @Column({ length: 11, nullable: false })
+  @Column({ length: 50, nullable: false })
   phone: string;
 
-  @Column({ length: 10, nullable: false })
+  @Column({ length: 50, nullable: false })
   dateOfBirth: string;
 
-  @Column({ length: 150, nullable: false })
+  @Column({ length: 200, nullable: false })
   descripition: string;
 
   @Column({ nullable: false })
@@ -48,6 +48,9 @@ export class User {
 
   @Column({ default: new Date() })
   register: Date;
+
+  @Column({length: 8, nullable:true})
+  resetCode: String;
 
   @OneToOne(() => Address, { eager: true })
   @JoinColumn()

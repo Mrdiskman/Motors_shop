@@ -57,6 +57,42 @@ export const ModalContainer = styled.div`
 
     color: #000000;
   }
+  @media screen and (min-width: 769px) {
+    .modal-box {
+      width: 520px;
+      height: 767px;
+      margin-top: 1px;
+      .modal-box-header {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 270px;
+        margin: 24px;
+        font-size: 16px;
+        font-family: "Inter", sans-serif;
+        .btn-close-modal {
+          background-color: #ffffff;
+          border: none;
+          color: rgba(173, 181, 189, 1);
+          font-size: 25px;
+        }
+      }
+    }
+    h2 {
+      width: 100%;
+      height: 24px;
+      margin-left: 24px;
+      top: 74px;
+      margin-bottom: 24px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: bolder;
+      font-size: 14px;
+      line-height: 24px;
+      color: #000000;
+    }
+  }
 `;
 
 export const EditProfileForm = styled.form`
@@ -143,6 +179,34 @@ export const EditProfileForm = styled.form`
       font-weight: 400;
       font-size: 16px;
       line-height: 28px;
+    }
+    .btn-delete-profile {
+      width: 192px;
+      color: rgba(255, 255, 255, 1);
+      border: 1.5px solid #dee2e6;
+      border-radius: 4px;
+      background-color: red;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    height: 100%;
+    input {
+      width: 466px;
+    }
+
+    textarea {
+      max-width: 466px;
+    }
+
+    .btns-div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
   }
 `;

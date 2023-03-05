@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MakeCommentStyled = styled.div`
+export const MakeCommentStyled = styled.form`
   margin-top: 30px;
   width: 95vw;
   min-height: 440px;

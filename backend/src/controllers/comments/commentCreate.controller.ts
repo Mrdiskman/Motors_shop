@@ -1,11 +1,10 @@
-import { instanceToPlain } from "class-transformer";
 import { Request, Response } from "express";
 import commentCreateService from "../../services/comments/commentCreate.service";
 
 const commentCreateController = async (req: Request, res: Response) => {
-  const { text, user, announcement } = req.body;
-
-  const newComment = await commentCreateService(text, user, announcement);
+  const { text, annoucement } = req.body;
+  const userId = req.idUser;
+  const newComment = await commentCreateService(text, userId, annoucement);
 
   return res.status(201).send(newComment);
 };

@@ -7,15 +7,16 @@ import { Announcement } from "../../entities/announcement";
 const commentCreateService = async (
   text: string,
   userId: string,
-  announcementId: string
+  annoucement: string
 ) => {
   const commentRepository = AppDataSource.getRepository(Comment);
   const announcementRepository = AppDataSource.getRepository(Announcement);
   const userRepository = AppDataSource.getRepository(User);
 
   const getAnnouncement = await announcementRepository.findOneBy({
-    id: announcementId,
+    id: annoucement,
   });
+
   const getUser = await userRepository.findOneBy({ id: userId });
   if (!getUser) {
     throw new AppError(404, "User not found.");

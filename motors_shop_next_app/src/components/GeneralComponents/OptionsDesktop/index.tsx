@@ -8,8 +8,8 @@ const MenuOptions = () => {
 
   const logOut = () => {
     window.localStorage.removeItem("@TOKEN");
-    window.location.href = "http://localhost:3000/"
-  }  
+    window.location.href = "http://localhost:3000/";
+  };
 
   return (
     <>
@@ -19,11 +19,14 @@ const MenuOptions = () => {
             <button className="option" onClick={handleOpenModal}>
               Editar Perfil
             </button>
-            <ModalEditProfile />
+
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
-            <button className="option + for" onClick={()=>logOut()}>Sair</button>
+            <button className="option + for" onClick={() => logOut()}>
+              Sair
+            </button>
           </div>
+          <ModalEditProfile />
         </MenuOptionsStyled>
       ) : (
         <MenuOptionsStyled>
@@ -33,7 +36,9 @@ const MenuOptions = () => {
             </button>
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
-            <button className="option + for" onClick={()=>logOut()} >Sair</button>
+            <button className="option + for" onClick={() => logOut()}>
+              Sair
+            </button>
           </div>
         </MenuOptionsStyled>
       )}
