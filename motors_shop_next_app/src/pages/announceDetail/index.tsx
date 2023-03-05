@@ -43,7 +43,7 @@ function AnnounceDetailPage() {
 
   async function announcerData() {
     const result = api
-      .get("/announcements/1808d3ec-bcfd-4ff9-b622-d97709685838")
+      .get("/announcements/00e04bf1-f82b-423b-80f6-282792aba91b")
 
       .then((res: any) => {
         setAnnounceData(res.data);
