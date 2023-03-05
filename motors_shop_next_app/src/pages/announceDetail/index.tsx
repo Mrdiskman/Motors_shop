@@ -43,7 +43,7 @@ function AnnounceDetailPage() {
 
   async function announcerData() {
     const result = api
-      .get("/announcements/c5ecaa56-d761-45f3-8d42-7b5bb6d98100")
+      .get("/announcements/347c8388-6302-4347-88bc-8cd435c08203")
 
       .then((res: any) => {
         setAnnounceData(res.data);
@@ -72,7 +72,7 @@ function AnnounceDetailPage() {
                       <SellerData />
                     </div>
                     <Comments comments={announceData.comments} />
-                    <MakeComment/>
+                    <MakeComment />
                   </div>
                   <div className="deskTopFront">
                     <MiniPicturesDesktop images={announceData.images} />
