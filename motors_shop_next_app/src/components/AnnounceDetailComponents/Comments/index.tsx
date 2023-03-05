@@ -1,7 +1,7 @@
 import { CommentsStyled } from "./styled";
 
-function Comments() {
-
+function Comments({annoucements}:any) {
+  
   return (
     <CommentsStyled>
       <ul className="containerListComments">

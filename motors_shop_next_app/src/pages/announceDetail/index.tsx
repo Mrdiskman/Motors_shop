@@ -24,37 +24,65 @@ function AnnounceDetailPage() {
     price: 0,
     isActive: false,
     user: {
-			id: "",
-			name: "",
-			abbreviation: "",
-			email: "",
-			cpf: "",
-			phone: "",
-			dateOfBirth: "",
-			descripition: "",
-			seller: false,
-			password: "",
-			register: "",
-			address: {
-				id: "",
-				cep: "",
-				state: "",
-				city: "",
-				number: "",
-				complement: ""
-			}
-		},
+      id: "",
+      name: "",
+      abbreviation: "",
+      email: "",
+      cpf: "",
+      phone: "",
+      dateOfBirth: "",
+      descripition: "",
+      seller: false,
+      password: "",
+      register: "",
+      address: {
+        id: "",
+        cep: "",
+        state: "",
+        city: "",
+        number: "",
+        complement: "",
+      },
+    },
+    comments: [
+      {
+        id: "",
+        text: "",
+        created_at: "",
+        user: {
+          id: "",
+          name: "",
+          abbreviation: "",
+          email: "",
+          cpf: "",
+          phone: "",
+          dateOfBirth: "",
+          descripition: "",
+          seller: false,
+          password: "",
+          register: "",
+          address: {
+            id: "",
+            cep: "",
+            state: "",
+            city: "",
+            number: "",
+            complement: "",
+          },
+        },
+      },
+    ],
   });
 
-  useEffect(() => { 
-      api
-        .get("/announcements/1145b51c-ee1a-45f5-8b3c-b2660a9b9f4a")
-        .then((res: any) => {
-          setAnnounceData(res.data);
-        })
-        .catch((err: any) => console.log(err));
+  useEffect(() => {
+    api
+      .get("/announcements/00e04bf1-f82b-423b-80f6-282792aba91b")
+      .then((res: any) => {
+        setAnnounceData(res.data);
+      })
+      .catch((err: any) => console.log(err));
   }, []);
- 
+  console.log(announceData.comments)
   return (
     <>
       <Layout>
@@ -62,19 +90,19 @@ function AnnounceDetailPage() {
           <AnnounceDetailStyled>
             <div className="upside">
               <div className="left">
-                <PrimaryImage image={announceData.default_img}/>
+                <PrimaryImage image={announceData.default_img} />
                 <AnnounceData data={announceData} />
-                <AnnounceDescription description={announceData.description}/>
+                <AnnounceDescription description={announceData.description} />
                 <div className="mobileFront">
-                  <MiniPictures images={announceData.images}/>
-                  <SellerData/>
+                  <MiniPictures images={announceData.images} />
+                  <SellerData />
                 </div>
-                <Comments />
-                <MakeComment />
+                <Comments comments={announceData.comments}/>
+                <MakeComment/>
               </div>
               <div className="deskTopFront">
-                <MiniPicturesDesktop images={announceData.images}/>
-                <SellerData/>
+                <MiniPicturesDesktop images={announceData.images} />
+                <SellerData />
               </div>
             </div>
           </AnnounceDetailStyled>
