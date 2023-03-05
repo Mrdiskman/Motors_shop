@@ -180,6 +180,18 @@ export const EditProfileForm = styled.form`
       font-size: 16px;
       line-height: 28px;
     }
+    .btn-delete-profile {
+      width: 192px;
+      color: rgba(255, 255, 255, 1);
+      border: 1.5px solid #dee2e6;
+      border-radius: 4px;
+      background-color: red;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+    }
   }
   @media screen and (min-width: 769px) {
     height: 100%;
