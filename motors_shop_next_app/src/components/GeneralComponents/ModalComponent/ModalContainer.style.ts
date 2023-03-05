@@ -186,9 +186,11 @@ export const EditProfileForm = styled.form`
     input {
       width: 466px;
     }
+
     textarea {
       max-width: 466px;
     }
+
     .btns-div {
       display: flex;
       align-items: center;
