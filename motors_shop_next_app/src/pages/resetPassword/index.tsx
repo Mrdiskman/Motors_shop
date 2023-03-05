@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 function resetPassowrd() {
-  const router = useRouter()
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -18,49 +18,45 @@ function resetPassowrd() {
   const [codeSend, setCodeSend] = useState(false);
   const [passwordSend, setPasswordSend] = useState(false);
   function onSubmit(data: any) {
-      if(data.email){
-        handleEmail(data)
-      }
-      if(data.code){
-        handleCode(data)
-      }
-
-      if(data.password){
-        handlePassword(data)
-      }
+    if (data.email) {
+      handleEmail(data);
+    }
+    if (data.code) {
+      handleCode(data);
     }
 
+    if (data.password) {
+      handlePassword(data);
+    }
+  }
 
-  const handleEmail = async(data:object) => {
-     await api.post("/users/reset", data
-      ).then((res:any)=>{
+  const handleEmail = async (data: object) => {
+    await api
+      .post("/users/reset", data)
+      .then((res: any) => {
         setEmailSend(true);
-      }
-      ).catch((err:any)=>console.log(err))
+      })
+      .catch((err: any) => console.log(err));
   };
 
-  const handleCode = async(data:object) => {
-    await api.post("/users/reset", data
-    ).then((res:any)=>{
-      setCodeSend(true);
-    }
-    ).catch((err:any)=>console.log(err))
-    
+  const handleCode = async (data: object) => {
+    await api
+      .post("/users/reset", data)
+      .then((res: any) => {
+        setCodeSend(true);
+      })
+      .catch((err: any) => console.log(err));
   };
 
-  const handlePassword = async(data:object) => {
-    await api.post("/users/reset", data
-    ).then((res:any)=>{
-      setPasswordSend(true);
-      setTimeout(() => {
-        router.push("/login")
-      }, 3000)
-    }
-    ).catch((err:any)=>console.log(err))
-    
+  const handlePassword = async (data: object) => {
+    await api
+      .post("/users/reset", data)
+      .then((res: any) => {
+        setPasswordSend(true);
+        router.push("/login");
+      })
+      .catch((err: any) => console.log(err));
   };
-
-
 
   return (
     <>

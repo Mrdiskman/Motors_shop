@@ -1,12 +1,16 @@
+import { useEffect, useState } from "react";
 import { CommentsStyled } from "./styled";
 
-
 function Comments({ comments }: any) {
-
+  
+  const [listOfComments, setListOfComments] = useState([])
+  useEffect(() => {
+    setListOfComments(comments)
+  }, [listOfComments]);
   return (
     <CommentsStyled>
       <ul className="containerListComments">
-        {comments.map((item: any, index: number) => (
+        {listOfComments.map((item: any, index: number) => (
           <li className="comments" key={index}>
             <div className="dataComments">
               <p className="abreviationNameComment">{item.user.abbreviation}</p>
