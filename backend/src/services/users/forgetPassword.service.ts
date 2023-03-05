@@ -1,18 +1,16 @@
 import { AppDataSource } from "../../data-source";
 import { User } from "../../entities/users";
-import { AppError } from "../../errors/appError";
 
-const forgetPasswordService = async (email:string, newPassword:string) => {
-    const usersRepository = AppDataSource.getRepository(User);
-    const user = await usersRepository.findOneBy({ email });
-    if(!user){
-        throw new AppError(404, "Not Found")
-    }
-    user.password = newPassword;
-    const updatedUser = await usersRepository.update(user.id, {...user} );
+const updatePasswordService = async (email: string, newPassword: string) => {
+  const usersRepository = AppDataSource.getRepository(User);
+  const user = await usersRepository.findOne({ where: { email } });
 
-    //const userRes = await usersRepository.findOneBy({ email });
-    return updatedUser //userRes
-}   
+  if (!user) {
+    throw new Error("Usuário não encontrado");
+  }
 
-export default forgetPasswordService
+  user.password = newPassword;
+  return usersRepository.save(user);
+};
+
+export default updatePasswordService;

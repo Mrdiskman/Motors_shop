@@ -48,7 +48,7 @@ function AnnounceDetailPage() {
 
   useEffect(() => { 
       api
-        .get("/announcements/e511d1ba-c203-45ee-bfb7-5c3656bbde5e")
+        .get("/announcements/1145b51c-ee1a-45f5-8b3c-b2660a9b9f4a")
         .then((res: any) => {
           setAnnounceData(res.data);
         })

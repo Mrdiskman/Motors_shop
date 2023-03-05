@@ -31,6 +31,10 @@ export interface IUserLogin {
   password: string;
 }
 
+export interface IUserResetPassword {
+  password: string;
+}
+
 export interface IUserUpdate {
   name?: string;
   email?: string;

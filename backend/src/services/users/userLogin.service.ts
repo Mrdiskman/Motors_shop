@@ -8,7 +8,7 @@ import jwt from "jsonwebtoken";
 const loginUserService = async ({ email, password }: IUserLogin) => {
   const userRepository = AppDataSource.getRepository(User);
   const userFound = await userRepository.findOneBy({ email });
-
+ 
   if (!userFound) {
     throw new AppError(403, "Wrong Email or Password");
   }
@@ -17,7 +17,7 @@ const loginUserService = async ({ email, password }: IUserLogin) => {
     throw new AppError(403, "Wrong Email or Password");
   }
   const token = jwt.sign(
-    { id: userFound!.id },
+    { id: userFound.id },
     String(process.env.JWT_SECRET),
     { expiresIn: "1d" }
   );

@@ -3,6 +3,7 @@ import Header from "@/components/GeneralComponents/Header";
 import { api } from "@/services/api";
 import { useForm } from "react-hook-form";
 import { LoginStyled } from "./styled";
+import Link from 'next/link'
 
 function Login() {
   const {register, handleSubmit, formState:{errors}} = useForm()
@@ -34,12 +35,16 @@ async function login(data:any){
           <input type="text" placeholder="Digitar Usuário" {...register("email")}/>
           <label>Senha</label>
           <input type="password" placeholder="Digitar Senha" {...register("password")} />
-          <button className="forgetPassword" type="button">Esqueci minha senha</button>
+          <button className="forgetPassword" type="button">
+            <Link href="/resetPassword">
+              Esqueci minha senha
+            </Link>
+          </button>
           <button type="submit" className="send">
             Entrar
           </button>
           <p className="dontHaveAcc">Ainda não possui uma conta?</p>
-          <button className="register" type="button">Cadastrar</button>
+          <button className="register" type="button" onClick={()=>window.location.href = "http://localhost:3000/register"}>Cadastrar</button>
         </form>
       </LoginStyled>
       <Footer />
