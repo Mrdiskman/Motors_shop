@@ -13,7 +13,7 @@ function MakeComment() {
     abbreviation: "",
     id: "",
     name: "",
-  })
+  });
 
   function registerComment(data: any) {
     const token = JSON.parse(localStorage.getItem("@TOKEN") || "");
@@ -30,7 +30,7 @@ function MakeComment() {
   function onSubmit(data: any) {
     const commentData = {
       text: String(data.text),
-      annoucement: "c5ecaa56-d761-45f3-8d42-7b5bb6d98100",
+      annoucement: "347c8388-6302-4347-88bc-8cd435c08203",
     };
     registerComment(commentData);
   }
@@ -38,7 +38,8 @@ function MakeComment() {
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("@TOKEN") || "");
     if (token) {
-      api.get("/user", { headers: { Authorization: `Bearer ${token}` }})
+      api
+        .get("/user", { headers: { Authorization: `Bearer ${token}` } })
         .then((res) => setUserDataApi(res.data))
         .catch((err) => console.log(err));
     }
