@@ -2,14 +2,15 @@ import { database } from "@/database";
 import BuildAnnouncerCard from "../announcerComponent/announcerCard";
 import { DivStylesAnnounce } from "./styled";
 
-function AnnounceDescription({ owner }: any) {
+function AnnounceDescription({ owner, name, abbreviation, descripition }: any) {
   return (
-    <DivStylesAnnounce className="joao">
+    <DivStylesAnnounce>
       <BuildAnnouncerCard
-        name={"kalebe sampaio"}
+        name={name}
         seller={true}
-        descripition={"skdakdkas"}
+        descripition={descripition}
         owner={owner}
+        abbreviation={abbreviation}
       />
     </DivStylesAnnounce>
   );

@@ -2,7 +2,7 @@ import CardVehicle from "@/components/HomeComponents/CardVehicle";
 import { api } from "@/services/api";
 import { useEffect, useState } from "react";
 import CarouselComponent from "../Carousel";
-type announce = {
+export type announce = {
   id?: string;
   model?: string;
   type?: string;

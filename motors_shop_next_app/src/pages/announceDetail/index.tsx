@@ -11,7 +11,7 @@ import { Layout } from "@/components/Layout";
 import { api } from "@/services/api";
 import { useEffect, useState } from "react";
 import { AnnounceDetailStyled } from "./styled";
-type announcement = {
+export type announcement = {
   id: string;
   model: string;
   type: string;
@@ -21,6 +21,7 @@ type announcement = {
   description: string;
   announcer: string;
   km: number;
+  isActive: boolean;
   year: number;
   price: number;
   user: user;
