@@ -8,8 +8,9 @@ import MiniPicturesDesktop from "@/components/AnnounceDetailComponents/MiniPictu
 import SellerData from "@/components/AnnounceDetailComponents/SellerData";
 import BackGround from "@/components/GeneralComponents/Background";
 import { Layout } from "@/components/Layout";
+import AnnounceContextProvider, { AnnounceContext } from "@/contexts/announce/announceContext";
 import { api } from "@/services/api";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AnnounceDetailStyled } from "./styled";
 type announcement = {
   id: string;
@@ -40,10 +41,11 @@ type IComments = {
 
 function AnnounceDetailPage() {
   const [announceData, setAnnounceData] = useState<null | announcement>(null);
-
+  const {announceId} = useContext(AnnounceContext);
+ 
   async function announcerData() {
     const result = api
-      .get("/announcements/347c8388-6302-4347-88bc-8cd435c08203")
+      .get(`/announcements/${announceId}`)
 
       .then((res: any) => {
         setAnnounceData(res.data);
@@ -52,11 +54,12 @@ function AnnounceDetailPage() {
   }
   useEffect(() => {
     announcerData();
-  }, []);
+    console.log(announceId)
+  }, [announceId]);
   return (
     <>
       {announceData ? (
-        <>
+        <AnnounceContextProvider>
           <Layout>
             <BackGround>
               <AnnounceDetailStyled>
@@ -82,7 +85,7 @@ function AnnounceDetailPage() {
               </AnnounceDetailStyled>
             </BackGround>
           </Layout>
-        </>
+        </AnnounceContextProvider>
       ) : (
         <></>
       )}

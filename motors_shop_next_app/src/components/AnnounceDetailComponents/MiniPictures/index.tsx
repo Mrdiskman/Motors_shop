@@ -11,7 +11,7 @@ function MiniPictures({images}:any) {
     <MiniPicturesContainer>
       <h2 className="titlePhotos">Fotos</h2>
       <ul className="ulListImages">
-        {otherImages.map((elem, index) => (
+        {otherImages?.map((elem, index) => (
           <li key={index} className="listImages">
             <img src={elem} alt="fotos dos carros" className="miniPictures" />
           </li>
