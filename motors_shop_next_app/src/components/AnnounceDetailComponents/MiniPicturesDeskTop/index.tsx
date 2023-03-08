@@ -10,7 +10,7 @@ function MiniPicturesDesktop({images}:any) {
     <MiniPicturesDesktopContainer>
       <h2 className="titlePhotos">Fotos</h2>
       <ul className="ulListImages">
-        {otherImages.map((elem, index):any => (
+        {otherImages?.map((elem, index):any => (
           <li key={index} className="listImages">
             <img src={elem} alt="fotos dos carros" className="miniPictures" />
           </li>

@@ -1,6 +1,7 @@
 import CardVehicle from "@/components/HomeComponents/CardVehicle";
+import { AnnounceContext } from "@/contexts/announce/announceContext";
 import { api } from "@/services/api";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CarouselComponent from "../Carousel";
 export type announce = {
   id?: string;
@@ -25,6 +26,7 @@ type props = {
 };
 
 const ListCards = ({ tipo }: props) => {
+  const {setAnnounceId} = useContext(AnnounceContext);
   const [isAnnouncer, setIsAnnouncer] = useState<[] | announce[]>([]);
   async function announcerData() {
     const result = await api
@@ -44,17 +46,22 @@ const ListCards = ({ tipo }: props) => {
           isAnnouncer.map((announcer, index) => {
             if (announcer.type == tipo) {
               return (
-                <CardVehicle
-                  key={index}
-                  img={announcer.default_img}
-                  title={announcer.model}
-                  descryption={announcer.description}
-                  announcer={announcer.user?.name}
-                  abbreviation={announcer.user?.abbreviation}
-                  km={announcer.km}
-                  year={announcer.year}
-                  price={announcer.price}
-                />
+                <button
+                  onClick={() => setAnnounceId(`${announcer.id}`)}
+                  key={announcer.id}
+                >
+                  <CardVehicle
+                    key={index}
+                    img={announcer.default_img}
+                    title={announcer.model}
+                    descryption={announcer.description}
+                    announcer={announcer.user?.name}
+                    abbreviation={announcer.user?.abbreviation}
+                    km={announcer.km}
+                    year={announcer.year}
+                    price={announcer.price}
+                  />
+                </button>
               );
             }
           })

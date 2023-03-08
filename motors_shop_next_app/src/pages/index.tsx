@@ -6,6 +6,7 @@ import CarouselComponent from "@/components/GeneralComponents/Carousel";
 import CardAuction from "@/components/GeneralComponents/CardAuction";
 import { HomeStyles } from "./announcer/styles";
 import ListCards from "@/components/GeneralComponents/ListCards";
+import AnnounceContextProvider from "@/contexts/announce/announceContext";
 
 export default function Home() {
   return (
@@ -21,29 +22,31 @@ export default function Home() {
       </Head>
 
       <HeaderContextProvider>
-        <Layout>
-          <HomeStyles>
-            <HomeNav cars={"cars"} motos={"motos"} />
-            <div className="container">
-              <h2 className="TitleHome">Leilão</h2>
-              <CarouselComponent>
-                <CardAuction />
-                <CardAuction />
-                <CardAuction />
-                <CardAuction />
-              </CarouselComponent>
+        <AnnounceContextProvider>
+          <Layout>
+            <HomeStyles>
+              <HomeNav cars={"cars"} motos={"motos"} />
+              <div className="container">
+                <h2 className="TitleHome">Leilão</h2>
+                <CarouselComponent>
+                  <CardAuction />
+                  <CardAuction />
+                  <CardAuction />
+                  <CardAuction />
+                </CarouselComponent>
 
-              <h2 className="TitleHome" id="cars">
-                Carros
-              </h2>
-              <ListCards tipo={"carro"} />
-              <h2 className="TitleHome" id="motos">
-                Motos
-              </h2>
-              <ListCards tipo={"moto"} />
-            </div>
-          </HomeStyles>
-        </Layout>
+                <h2 className="TitleHome" id="cars">
+                  Carros
+                </h2>
+                <ListCards tipo={"carro"} />
+                <h2 className="TitleHome" id="motos">
+                  Motos
+                </h2>
+                <ListCards tipo={"moto"} />
+              </div>
+            </HomeStyles>
+          </Layout>
+        </AnnounceContextProvider>
       </HeaderContextProvider>
     </>
   );
