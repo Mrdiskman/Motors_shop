@@ -1,5 +1,6 @@
 import CardVehicle from "@/components/HomeComponents/CardVehicle";
 import { api } from "@/services/api";
+import Link from "next/dist/client/link";
 import { useEffect, useState } from "react";
 import CarouselComponent from "../Carousel";
 export type announce = {
@@ -44,17 +45,19 @@ const ListCards = ({ tipo }: props) => {
           isAnnouncer.map((announcer, index) => {
             if (announcer.type == tipo) {
               return (
-                <CardVehicle
-                  key={index}
-                  img={announcer.default_img}
-                  title={announcer.model}
-                  descryption={announcer.description}
-                  announcer={announcer.user?.name}
-                  abbreviation={announcer.user?.abbreviation}
-                  km={announcer.km}
-                  year={announcer.year}
-                  price={announcer.price}
-                />
+                <Link href={`/announceDetail/${announcer.id}`} key={index}>
+                  <CardVehicle
+                    key={index}
+                    img={announcer.default_img}
+                    title={announcer.model}
+                    descryption={announcer.description}
+                    announcer={announcer.user?.name}
+                    abbreviation={announcer.user?.abbreviation}
+                    km={announcer.km}
+                    year={announcer.year}
+                    price={announcer.price}
+                  />
+                </Link>
               );
             }
           })

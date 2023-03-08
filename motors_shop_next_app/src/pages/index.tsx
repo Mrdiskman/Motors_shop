@@ -4,8 +4,8 @@ import HeaderContextProvider from "@/contexts/header/HeaderContext";
 import HomeNav from "@/components/HomeComponents/HomeNav";
 import CarouselComponent from "@/components/GeneralComponents/Carousel";
 import CardAuction from "@/components/GeneralComponents/CardAuction";
-import { HomeStyles } from "./announcer/styles";
 import ListCards from "@/components/GeneralComponents/ListCards";
+import { HomeStyles } from "./AnnouncerDashboard/styled";
 
 export default function Home() {
   return (
