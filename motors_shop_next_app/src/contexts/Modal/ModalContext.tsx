@@ -45,8 +45,6 @@ const ModalProvider = ({ children }: ContextsProps) => {
   const [modal, setModal] = useState(false);
   const [type, settype] = useState();
 
-  // CreatAnnouncement
-
   const formSchema = yup.object().shape({
     typeAd: yup.string().required("Tipo obrigratório"),
     title: yup.string().required("Título obrigatório"),
