@@ -3,6 +3,7 @@ import { AnnounceContext } from "@/contexts/announce/announceContext";
 import { api } from "@/services/api";
 import { useContext, useEffect, useState } from "react";
 import CarouselComponent from "../Carousel";
+import { useNavigate } from "react-router-dom";
 type announce = {
   id?: string;
   model?: string;
@@ -26,8 +27,11 @@ type props = {
 };
 
 const ListCards = ({ tipo }: props) => {
-  const {setAnnounceId} = useContext(AnnounceContext);
+  const { setAnnounceId } = useContext(AnnounceContext);
   const [isAnnouncer, setIsAnnouncer] = useState<[] | announce[]>([]);
+
+  const navigate = useNavigate();
+
   async function announcerData() {
     const result = await api
       .get("/announcements")
@@ -47,7 +51,10 @@ const ListCards = ({ tipo }: props) => {
             if (announcer.type == tipo) {
               return (
                 <button
-                  onClick={() => setAnnounceId(`${announcer.id}`)}
+                  onClick={() => {
+                    setAnnounceId(`${announcer.id}`);
+                    navigate("/announceDetail");
+                  }}
                   key={announcer.id}
                 >
                   <CardVehicle
