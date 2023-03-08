@@ -31,7 +31,7 @@ const CardVehicle = ({
       <div className="div_img">
         {owner ? (
           <div className="div_active">
-            <p>{active ? "Ativo" : "Inativo"}</p>
+            <p className="active_title">{active ? "Ativo" : "Inativo"}</p>
           </div>
         ) : (
           <></>

@@ -14,7 +14,9 @@ export const VehicleCard = styled.div<Props>`
     .div_img {
       border: 3px solid #4529e6;
       border-radius: 5px;
-
+      .div_active {
+        display: none;
+      }
       img {
         width: 90%;
       }
@@ -61,7 +63,7 @@ export const VehicleCard = styled.div<Props>`
       background-color: ${(props) => (props.active ? "#4529E6" : "#ADB5BD")};
       position: absolute;
       top: 0%;
-      left: 0%;
+      left: 2%;
       width: 51px;
       height: 24px;
       display: flex;
@@ -166,6 +168,15 @@ export const VehiclePrice = styled.div`
   margin-top: 20px;
   align-items: center;
   font-weight: bolder;
+  .price {
+    font-family: "Lexend";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #212529;
+    height: 32px;
+    text-align: center;
+  }
   .divItens {
     display: flex;
     width: 50%;
@@ -173,13 +184,7 @@ export const VehiclePrice = styled.div`
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    .price {
-      font-family: "Lexend", sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 20px;
-      color: #212529;
-    }
+
     .numbers {
       font-family: "Inter", sans-serif;
       font-weight: 500;
@@ -191,7 +196,7 @@ export const VehiclePrice = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 50px;
+      max-width: 200px;
       height: 32px;
       border-radius: 4px;
       background-color: #edeafd;

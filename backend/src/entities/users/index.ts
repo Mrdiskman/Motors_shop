@@ -14,7 +14,7 @@ import { Comment } from "../comments/comment.entity";
 @Entity()
 export class User {
   update(password: string) {
-      throw new Error("Method not implemented.");
+    throw new Error("Method not implemented.");
   }
   @PrimaryColumn("uuid")
   readonly id: string;
@@ -49,7 +49,7 @@ export class User {
   @Column({ default: new Date() })
   register: Date;
 
-  @Column({length: 8, nullable:true})
+  @Column({ length: 8, nullable: true })
   resetCode: String;
 
   @OneToOne(() => Address, { eager: true })

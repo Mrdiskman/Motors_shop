@@ -1,34 +1,11 @@
 import styled from "styled-components";
 
-export const HomeStyles = styled.div`
-  width: 99vw;
-  height: 100%;
-  .container {
-    margin-left: 45px;
-    .TitleHome {
-      margin-bottom: 40px;
-      font-weight: 600;
-      font-size: 24px;
-      color: #0b0d0d;
-      margin-top: 13%;
-      margin-left: 3%;
-      font-family: "Lexend", sans-serif;
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 30px;
-    }
-    .auctions {
-      margin-top: 10%;
-    }
-  }
-`;
-
 export const TitleHome = styled.h2`
   margin-bottom: 40px;
   font-weight: 600;
   font-size: 24px;
   color: #0b0d0d;
-  margin-top: 13%;
+  margin-top: 5%;
   margin-left: 3%;
   font-family: "Lexend", sans-serif;
   font-weight: 600;
