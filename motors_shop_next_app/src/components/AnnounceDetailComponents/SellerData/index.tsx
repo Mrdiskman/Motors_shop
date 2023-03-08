@@ -1,7 +1,7 @@
 import { database } from "@/database";
 import { SellerDataStyled } from "./styled";
 
-function SellerData() {
+function SellerData({ data }: any) {
   return (
     <SellerDataStyled>
       <p className="sellerNameAbreviation">JS</p>

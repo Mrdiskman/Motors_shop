@@ -2,10 +2,10 @@ import { database } from "@/database";
 import { useEffect, useState } from "react";
 import { MiniPicturesContainer } from "./styled";
 
-function MiniPictures({images}:any) {
-  const [otherImages, setOtherImages] = useState([])
+function MiniPictures({ images }: any) {
+  const [otherImages, setOtherImages] = useState([]);
   useEffect(() => {
-    setOtherImages(images)
+    setOtherImages(images);
   }, [images]);
   return (
     <MiniPicturesContainer>

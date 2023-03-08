@@ -25,10 +25,11 @@ export type announcement = {
   isActive: boolean;
   year: number;
   price: number;
-  user: user;
+  user: IUser;
   comments: IComments[];
 };
-type user = {
+export type IUser = {
+  id: string;
   name: string;
   abbreviation: string;
   descripition: string;
@@ -37,7 +38,7 @@ type IComments = {
   id: string;
   text: string;
   created_at: string;
-  user: user;
+  user: IUser;
 };
 
 function AnnounceDetailPage() {
@@ -74,7 +75,7 @@ function AnnounceDetailPage() {
                     />
                     <div className="mobileFront">
                       <MiniPictures images={announceData.images} />
-                      <SellerData />
+                      <SellerData data={announceData} />
                     </div>
                     <Comments comments={announceData.comments} />
                     <MakeComment />
