@@ -9,12 +9,7 @@ import { authUser } from "../../middlewares/users/authUser.middleware";
 
 const announcementsRoutes = Router();
 
-announcementsRoutes.post(
-  "/announcements",
-  //authUser,
-  //add "isSeller" middleware
-  registerAnnouncementController
-);
+announcementsRoutes.post("/announcements", registerAnnouncementController);
 
 announcementsRoutes.get("/announcements", getAnnouncementsController);
 
@@ -22,17 +17,12 @@ announcementsRoutes.get("/announcements/:id", getAnnouncementByIdController);
 
 announcementsRoutes.patch(
   "/announcements/update/:id",
-  //authUser,
-  //add "isSeller" middleware
-  //add "isAnnouncementOwner" middleware
   updateAnnouncementController
 );
 
 announcementsRoutes.delete(
   "/announcements/delete/:id",
   authUser,
-  //add "isSeller" middleware
-  //add "isAnnouncementOwner" middleware
   deleteAnnouncementController
 );
 

@@ -1,12 +1,16 @@
 import { HeaderContext } from "@/contexts/header/HeaderContext";
 import { useContext } from "react";
 import ModalEditProfile from "../ModalComponent/modalComponent";
-
+import { useRouter } from "next/navigation";
 import { NavBar } from "./styled";
 
 function OptionsMenu() {
   const { handleOpenModal, isModalOpen } = useContext(HeaderContext);
-
+  const router = useRouter();
+  const logOut = () => {
+    window.localStorage.removeItem("@TOKEN");
+    router.push("/");
+  };
   return (
     <>
       {isModalOpen == true ? (
@@ -23,7 +27,7 @@ function OptionsMenu() {
             <ModalEditProfile />
             <button className="option">Editar endereço</button>
             <button className="option">Meus Anúncios</button>
-            <button onClick={() => {}} className="option">
+            <button onClick={() => logOut()} className="option">
               Sair
             </button>
           </div>
