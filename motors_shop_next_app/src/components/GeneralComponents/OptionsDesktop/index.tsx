@@ -1,14 +1,15 @@
 import { HeaderContext } from "@/contexts/header/HeaderContext";
+import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import ModalEditProfile from "../ModalComponent/modalComponent";
 import { MenuOptionsStyled } from "./styled";
 
 const MenuOptions = () => {
   const { handleOpenModal, isModalOpen } = useContext(HeaderContext);
-
+  const router = useRouter();
   const logOut = () => {
     window.localStorage.removeItem("@TOKEN");
-    window.location.href = "http://localhost:3000/";
+    router.push("/");
   };
 
   return (
