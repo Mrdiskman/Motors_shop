@@ -1,6 +1,7 @@
 import CardVehicle from "@/components/HomeComponents/CardVehicle";
 import { AnnounceContext } from "@/contexts/announce/announceContext";
 import { api } from "@/services/api";
+import Link from "next/dist/client/link";
 import { useContext, useEffect, useState } from "react";
 import CarouselComponent from "../Carousel";
 export type announce = {
@@ -26,7 +27,7 @@ type props = {
 };
 
 const ListCards = ({ tipo }: props) => {
-  const {setAnnounceId} = useContext(AnnounceContext);
+  const { setAnnounceId } = useContext(AnnounceContext);
   const [isAnnouncer, setIsAnnouncer] = useState<[] | announce[]>([]);
   async function announcerData() {
     const result = await api
@@ -46,10 +47,7 @@ const ListCards = ({ tipo }: props) => {
           isAnnouncer.map((announcer, index) => {
             if (announcer.type == tipo) {
               return (
-                <button
-                  onClick={() => setAnnounceId(`${announcer.id}`)}
-                  key={announcer.id}
-                >
+                <Link href={`/announceDetail/${announcer.id}`} key={index}>
                   <CardVehicle
                     key={index}
                     img={announcer.default_img}
@@ -61,7 +59,7 @@ const ListCards = ({ tipo }: props) => {
                     year={announcer.year}
                     price={announcer.price}
                   />
-                </button>
+                </Link>
               );
             }
           })

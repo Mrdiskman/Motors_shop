@@ -9,7 +9,7 @@ import AnnounceDescription from "@/components/AnnounceDashboardComponents/Detail
 import BackGround from "@/components/GeneralComponents/Background";
 import { useEffect, useState } from "react";
 import { api } from "@/services/api";
-import { announcement } from "../announceDetail";
+import { announcement } from "../announceDetail/[id]";
 import { TitleHome } from "./styles";
 type user = {
   name: string;
@@ -65,7 +65,6 @@ function Announcer() {
           ) : (
             <></>
           )}
-          <CardVehicle active={false} owner={"Kalebe"} />
         </CarouselComponent>
 
         <TitleHome>Motos</TitleHome>
@@ -93,8 +92,6 @@ function Announcer() {
           ) : (
             <></>
           )}
-
-          <CardVehicle active={false} owner={"Kalebe"} />
         </CarouselComponent>
       </BackGround>
 
