@@ -23,7 +23,7 @@ function Comments({ comments }: any) {
   return (
     <CommentsStyled>
       <ul className="containerListComments">
-        {listOfComments.map((item: any, index: number) => (
+        {listOfComments?.map((item: any, index: number) => (
           <li className="comments" key={index}>
             <div className="dataComments">
               <p className="abreviationNameComment">{item.user.abbreviation}</p>

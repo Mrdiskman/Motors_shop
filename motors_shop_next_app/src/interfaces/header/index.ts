@@ -3,11 +3,16 @@ export interface IHeader {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   toggleMobile: () => void;
   toggleDeskTop: () => void;
-  verifyIsLogged: (token:any) => void;
+  verifyIsLogged: (token: any) => void;
   handleOpenModal: () => void;
   handleCloseModal: () => void;
   isModalOpen: boolean;
   navDesktop: boolean;
   isNavMobile: boolean;
-  isLoged:boolean
+  isLoged: boolean;
+}
+
+export interface IAnnouce {
+  setAnnounceId: React.Dispatch<React.SetStateAction<string>>;
+  announceId: string;
 }

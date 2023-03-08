@@ -1,7 +1,8 @@
 import CardVehicle from "@/components/HomeComponents/CardVehicle";
+import { AnnounceContext } from "@/contexts/announce/announceContext";
 import { api } from "@/services/api";
 import Link from "next/dist/client/link";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CarouselComponent from "../Carousel";
 export type announce = {
   id?: string;
@@ -26,6 +27,7 @@ type props = {
 };
 
 const ListCards = ({ tipo }: props) => {
+  const { setAnnounceId } = useContext(AnnounceContext);
   const [isAnnouncer, setIsAnnouncer] = useState<[] | announce[]>([]);
   async function announcerData() {
     const result = await api
