@@ -1,8 +1,9 @@
+import { ModalContext } from "@/contexts/Modal/ModalContext";
 import { useContext } from "react";
-import { ModalContext } from "../../contexts/ModalContext";
-import Button from "../Button";
-import Input from "../Input";
-
+import { Button, Input } from "..";
+//import { ModalContext } from "../../contexts/ModalContext";
+//import Button from "../Button";
+//import Input from "../Input";
 export interface IProps {
   title:
     | "Sucesso!"
@@ -10,10 +11,8 @@ export interface IProps {
     | "Editar perfil"
     | "Excluir anúncio";
 }
-
 const ModalRequest = ({ title }: IProps): JSX.Element => {
   const { setModal } = useContext(ModalContext);
-
   switch (title) {
     case "Sucesso!":
       return (
@@ -46,45 +45,45 @@ const ModalRequest = ({ title }: IProps): JSX.Element => {
         <>
           <h2 className="title edit">Infomações pessoais</h2>
           <Input
-            labelFor="Name"
+            //labelFor="Name"
             placeholder="Name"
-            size="small"
-            fieldName="name"
+            //size="small"
+            //fieldName="name"
             type="text"
           ></Input>
           <Input
-            labelFor="Email"
+            //labelFor="Email"
             placeholder="Email"
-            size="small"
-            fieldName="email"
+            //size="small"
+            //fieldName="email"
             type="text"
           ></Input>
           <Input
-            labelFor="CPF"
+            //labelFor="CPF"
             placeholder="900.880.090-00"
-            size="small"
-            fieldName="cpf"
+            //size="small"
+            //fieldName="cpf"
             type="number"
           ></Input>
           <Input
-            labelFor="Celular"
+            //labelFor="Celular"
             placeholder="(084) 90909-9092"
-            size="small"
-            fieldName="number"
+            //size="small"
+            //fieldName="number"
             type="text"
           ></Input>
           <Input
-            labelFor="Data de nascimento"
+            //labelFor="Data de nascimento"
             placeholder="09/12/99"
-            size="small"
-            fieldName="birthdate"
+            //size="small"
+            //fieldName="birthdate"
             type="number"
           ></Input>
           <Input
-            labelFor="Descrição"
+            //labelFor="Descrição"
             placeholder="Escreva aqui sua descrição"
-            size="big"
-            fieldName="description"
+            //size="big"
+            //fieldName="description"
             type="textarea"
           ></Input>
           <div className="edit select">
@@ -125,5 +124,4 @@ const ModalRequest = ({ title }: IProps): JSX.Element => {
       );
   }
 };
-
 export default ModalRequest;

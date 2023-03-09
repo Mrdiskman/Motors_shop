@@ -1,3 +1,4 @@
+import { IProps } from "@/interfaces/generaInterfaces";
 import {
   Dispatch,
   SetStateAction,
@@ -6,14 +7,12 @@ import {
   ReactNode,
   useEffect,
 } from "react";
-import { ContextsProps } from "../interfaces/ContextsProps";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UseFormHandleSubmit } from "react-hook-form";
 import { UseFormRegister } from "react-hook-form";
 import { FieldErrors } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-
 export interface IRequest {
   typeAd: string;
   title: string;
@@ -24,7 +23,6 @@ export interface IRequest {
   vehicleType: "Carro" | "Moto";
   coverImg: string;
 }
-
 interface IModalContext {
   modal: boolean;
   setModal: Dispatch<SetStateAction<boolean>>;
@@ -36,15 +34,24 @@ interface IModalContext {
     | "Conta criada com sucesso!"
     | "Editar perfil"
     | "Excluir anúncio";
-  settype: Dispatch<SetStateAction<string>>;
+  settype: Dispatch<
+    SetStateAction<
+      | "Sucesso!"
+      | "Conta criada com sucesso!"
+      | "Editar perfil"
+      | "Excluir anúncio"
+    >
+  >;
 }
-
 export const ModalContext = createContext<IModalContext>({} as IModalContext);
-
-const ModalProvider = ({ children }: ContextsProps) => {
-  const [modal, setModal] = useState(false);
-  const [type, settype] = useState();
-
+const ModalProvider = ({ children }: IProps) => {
+  const [modal, setModal] = useState<boolean>(false);
+  const [type, settype] = useState<
+    | "Sucesso!"
+    | "Conta criada com sucesso!"
+    | "Editar perfil"
+    | "Excluir anúncio"
+  >("Sucesso!");
   const formSchema = yup.object().shape({
     typeAd: yup.string().required("Tipo obrigratório"),
     title: yup.string().required("Título obrigatório"),
@@ -55,7 +62,6 @@ const ModalProvider = ({ children }: ContextsProps) => {
     vehicleType: yup.string().required("Tipo do veículo obrigatório"),
     coverImg: yup.string().required("Url da imagem obrigatória"),
   });
-
   const {
     register,
     handleSubmit,
@@ -63,13 +69,12 @@ const ModalProvider = ({ children }: ContextsProps) => {
   } = useForm<IRequest>({
     resolver: yupResolver(formSchema),
   });
-
   useEffect(() => {
-    modal
-      ? (document.querySelector("body").style.overflow = "hidden")
-      : (document.querySelector("body").style.overflow = "scroll");
+    const body = document.querySelector("body");
+    if (body) {
+      body.style.overflow = modal ? "hidden" : "scroll";
+    }
   }, [modal]);
-
   return (
     <ModalContext.Provider
       value={{
@@ -86,5 +91,4 @@ const ModalProvider = ({ children }: ContextsProps) => {
     </ModalContext.Provider>
   );
 };
-
 export default ModalProvider;

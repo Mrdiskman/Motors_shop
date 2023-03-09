@@ -9,7 +9,6 @@ function SellerData({ data }: any) {
       setSellerData(data);
     }
   }, [data]);
-  console.log(sellerData);
 
   return (
     <SellerDataStyled>

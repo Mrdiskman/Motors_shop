@@ -11,7 +11,7 @@ const loginUserService = async ({ email, password }: IUserLogin) => {
     where: {
       email: email,
     },
-    select: ["password"],
+    select: ["password", "id"],
   });
 
   if (!userFound) {

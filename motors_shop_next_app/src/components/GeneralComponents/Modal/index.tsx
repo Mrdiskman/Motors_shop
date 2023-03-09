@@ -1,13 +1,14 @@
 import { Container, OverWindow } from "./style";
 import { RiCloseLine } from "react-icons/Ri";
-import Button from "../Button";
+import { Button } from "..";
 import { useContext } from "react";
-import { ModalContext } from "../../contexts/Modal/ModalContext";
+import { ModalContext } from "@/contexts/Modal/ModalContext";
 
 import ModalRequest, { IProps } from "./modalRequest";
 
 const Modal = ({ title }: IProps): JSX.Element => {
   const { modal, setModal } = useContext(ModalContext);
+  console.log(setModal);
 
   return (
     <>

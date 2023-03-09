@@ -1,11 +1,13 @@
 import { timeDifference } from "@/utils/timeDifference";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { string } from "yup";
 import { CommentsStyled } from "./styled";
 import { AiFillEdit } from "react-icons/ai";
 import { FiTrash2 } from "react-icons/fi";
+import { ModalContext } from "@/contexts/Modal/ModalContext";
 
 function Comments({ comments }: any) {
+  const { modal, setModal } = useContext(ModalContext);
   const [listOfComments, setListOfComments] = useState([]);
   useEffect(() => {
     setListOfComments(comments);
@@ -21,7 +23,7 @@ function Comments({ comments }: any) {
               <p className="nameComment">{item.user.name}</p>
               <p className="timeString">{timeDifference(item.created_at)}</p>
               <div className="containerOptions">
-                <AiFillEdit className="edit" />
+                <AiFillEdit className="edit" onClick={() => setModal(true)} />
                 <FiTrash2 className="remove" />
               </div>
             </div>

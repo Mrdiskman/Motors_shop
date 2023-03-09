@@ -7,10 +7,12 @@ import MiniPictures from "@/components/AnnounceDetailComponents/MiniPictures";
 import MiniPicturesDesktop from "@/components/AnnounceDetailComponents/MiniPicturesDeskTop";
 import SellerData from "@/components/AnnounceDetailComponents/SellerData";
 import BackGround from "@/components/GeneralComponents/Background";
+import Modal from "@/components/GeneralComponents/Modal";
 import { Layout } from "@/components/Layout";
+import { ModalContext } from "@/contexts/Modal/ModalContext";
 import { api } from "@/services/api";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AnnounceDetailStyled } from "./styled";
 export type announcement = {
   id: string;
@@ -52,6 +54,7 @@ type IComments = {
 
 function AnnounceDetailPage() {
   const [announceData, setAnnounceData] = useState<null | announcement>(null);
+  const { modal, setModal } = useContext(ModalContext);
   const { query } = useRouter();
 
   async function announcerData() {
@@ -74,6 +77,7 @@ function AnnounceDetailPage() {
         <>
           <Layout>
             <BackGround>
+              <Modal title="Sucesso!" />
               <AnnounceDetailStyled>
                 <div className="upside">
                   <div className="left">
