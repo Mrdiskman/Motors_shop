@@ -1,4 +1,8 @@
+import { IUser } from "@/pages/announceDetail/[id]";
+
 export interface IAnnouce {
-    setAnnounceId: React.Dispatch<React.SetStateAction<string>>;
-    announceId:string
-  }
+  setSellerData: React.Dispatch<React.SetStateAction<IUser | null>> 
+  setAnnounceId: React.Dispatch<React.SetStateAction<string>>;
+  announceId: string;
+  sellerData: IUser | null;
+}

@@ -25,19 +25,29 @@ export type announcement = {
   isActive: boolean;
   year: number;
   price: number;
-  user: user;
+  user: IUser;
   comments: IComments[];
 };
-type user = {
+export type IUser = {
+  id: string;
   name: string;
   abbreviation: string;
   descripition: string;
+  email: string;
+  cpf: string;
+  phone: string;
+  dateOfBirth: string;
+  seller: boolean;
+  password: string;
+  register: string;
+  resetCode: string | null;
+  address: object;
 };
 type IComments = {
   id: string;
   text: string;
   created_at: string;
-  user: user;
+  user: IUser;
 };
 
 function AnnounceDetailPage() {
@@ -74,7 +84,9 @@ function AnnounceDetailPage() {
                     />
                     <div className="mobileFront">
                       <MiniPictures images={announceData.images} />
-                      <SellerData />
+                      {announceData.user ? (
+                        <SellerData data={announceData.user} />
+                      ) : null}
                     </div>
                     <Comments comments={announceData.comments} />
                     <MakeComment />
