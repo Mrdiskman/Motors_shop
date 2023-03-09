@@ -24,7 +24,7 @@ const MenuOptions = () => {
             <button className="option">Editar endereço</button>
             <button
               className="option"
-              onClick={() => router.push("/AnnouncerDashboard")}
+              onClick={() => router.push("/announcer")}
             >
               Meus Anúncios
             </button>
@@ -43,7 +43,7 @@ const MenuOptions = () => {
             <button className="option">Editar endereço</button>
             <button
               className="option"
-              onClick={() => router.push("/AnnouncerDashboard")}
+              onClick={() => router.push("/announcer")}
             >
               Meus Anúncios
             </button>
