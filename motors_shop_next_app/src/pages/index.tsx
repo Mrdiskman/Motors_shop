@@ -7,8 +7,10 @@ import CardAuction from "@/components/GeneralComponents/CardAuction";
 import ListCards from "@/components/GeneralComponents/ListCards";
 import { HomeStyles } from "./AnnouncerDashboard/styled";
 import AnnounceContextProvider from "@/contexts/announce/announceContext";
+import { useState } from "react";
 
 export default function Home() {
+
   return (
     <>
       <Head>

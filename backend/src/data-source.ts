@@ -4,8 +4,9 @@ import { User } from "./entities/users";
 import { Announcement } from "./entities/announcement";
 import { Address } from "./entities/address";
 import { Comment } from "./entities/comments/comment.entity";
-import { initialMigration1678047752977 } from "./migrations/1678047752977-initialMigration";
-import { createMigrations1678047774868 } from "./migrations/1678047774868-createMigrations";
+import { initialMigration1678375517535 } from "./migrations/1678375517535-initialMigration";
+import { createMigrations1678375535283 } from "./migrations/1678375535283-createMigrations";
+
 
 export const AppDataSource =
   process.env.NODE_ENV === "test"
@@ -23,5 +24,5 @@ export const AppDataSource =
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DB,
         entities: [User, Address, Announcement, Comment],
-        migrations: [initialMigration1678047752977, createMigrations1678047774868],
+        migrations: [initialMigration1678375517535, createMigrations1678375535283],
       });

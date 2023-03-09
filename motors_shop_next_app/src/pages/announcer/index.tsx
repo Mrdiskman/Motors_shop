@@ -64,7 +64,8 @@ function Announcer() {
             })
           ) : (
             <></>
-          )}
+          )}{" "}
+          <h1>Você ainda não possuí anúncios desta categoria.</h1>
         </CarouselComponent>
 
         <TitleHome>Motos</TitleHome>
@@ -92,6 +93,7 @@ function Announcer() {
           ) : (
             <></>
           )}
+          <h1>Você ainda não possuí anúncios desta categoria.</h1>
         </CarouselComponent>
       </BackGround>
 

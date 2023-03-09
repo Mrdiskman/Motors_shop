@@ -66,6 +66,7 @@ const ListCards = ({ tipo }: props) => {
         ) : (
           <></>
         )}
+        <h1 className="alert-empty">Infelizmente não possuímos anúncios desta categoria no momento.</h1>
       </CarouselComponent>
     </>
   );

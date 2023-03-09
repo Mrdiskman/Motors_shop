@@ -4,8 +4,10 @@ export const HomeStyles = styled.nav`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
   width: 99vw;
   height: 100%;
+
   .container {
     margin-left: 45px;
+
     .TitleHome {
       margin-bottom: 40px;
       font-weight: 600;
@@ -22,4 +24,14 @@ export const HomeStyles = styled.nav`
       margin-top: 10%;
     }
   }
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #ffa500;
+    font-size: 30px;
+    font-family: "Lexend", sans-serif;
+  }
+
 `;
