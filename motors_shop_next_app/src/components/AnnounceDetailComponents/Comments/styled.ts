@@ -67,6 +67,29 @@ export const CommentsStyled = styled.section`
     color: #868e96;
     font-size: 12px;
   }
+  .containerOptions {
+    margin-left: 10%;
+  }
+
+  .edit {
+    color: black;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  .remove {
+    color: black;
+    cursor: pointer;
+  }
+
+  .edit:hover {
+    color: yellow;
+    transition: 0.5s;
+  }
+  .remove:hover {
+    color: red;
+    transition: 0.5s;
+  }
+
   @media (min-width: 769px) {
     width: 40vw;
   }
