@@ -25,8 +25,10 @@ export interface IRequest {
 }
 interface IModalContext {
   modal: boolean;
+  commentId: string;
   setModal: Dispatch<SetStateAction<boolean>>;
   errors: FieldErrors<IRequest>;
+  setCommentId: Dispatch<SetStateAction<string>>;
   register: UseFormRegister<IRequest>;
   handleSubmit: UseFormHandleSubmit<IRequest>;
   type:
@@ -46,6 +48,7 @@ interface IModalContext {
 export const ModalContext = createContext<IModalContext>({} as IModalContext);
 const ModalProvider = ({ children }: IProps) => {
   const [modal, setModal] = useState<boolean>(false);
+  const [commentId, setCommentId] = useState<string>("");
   const [type, settype] = useState<
     | "Sucesso!"
     | "Conta criada com sucesso!"
@@ -85,6 +88,8 @@ const ModalProvider = ({ children }: IProps) => {
         register,
         handleSubmit,
         errors,
+        setCommentId,
+        commentId,
       }}
     >
       {children}

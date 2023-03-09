@@ -56,7 +56,7 @@ export const Container = styled.div`
     }
 
     .icon-close {
-      color: #ADB5BD;
+      color: #adb5bd;
       font-size: 2.5vh;
 
       :hover {
@@ -68,6 +68,7 @@ export const Container = styled.div`
 
   .title {
     font: "500 16px/20px 'Lexend', sans-serif";
+    color: #495057;
   }
 
   .subtitle {
@@ -96,9 +97,9 @@ export const Container = styled.div`
 
     width: 50%;
 
-    color: #CD2B31;
+    color: #cd2b31;
 
-    background: #FDD8D8;
+    background: #fdd8d8;
     border: none;
 
     padding: 0;
@@ -130,8 +131,8 @@ export const Container = styled.div`
     gap: 10px;
 
     .save {
-      background: #4529E6;
-      color: #FFFFFF;
+      background: #4529e6;
+      color: #ffffff;
       :hover {
         border: 0.5px solid #b0a6f0;
       }

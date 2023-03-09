@@ -9,7 +9,9 @@ export interface IProps {
     | "Sucesso!"
     | "Conta criada com sucesso!"
     | "Editar perfil"
-    | "Excluir anúncio";
+    | "Excluir anúncio"
+    | "Editar Comentário"
+    | "Excluir Comentário";
 }
 const ModalRequest = ({ title }: IProps): JSX.Element => {
   const { setModal } = useContext(ModalContext);
@@ -119,6 +121,52 @@ const ModalRequest = ({ title }: IProps): JSX.Element => {
               Cancelar
             </Button>
             <Button className="select left">Sim, excluir anúncio</Button>
+          </div>
+        </>
+      );
+    case "Editar Comentário":
+      return (
+        <>
+          <Input
+            //labelFor="Descrição"
+            placeholder="Carro muito confortável, foi uma ótima experiência de compra..."
+            //size="big"
+            //fieldName="description"
+            type="textarea"
+          ></Input>
+          <div className="edit select">
+            <Button
+              className="select right"
+              onClick={() => {
+                setModal(false);
+              }}
+            >
+              Cancelar
+            </Button>
+            <Button className="select left save">Salvar alterações</Button>
+          </div>
+        </>
+      );
+    case "Excluir Comentário":
+      return (
+        <>
+          <h2 className="title excluir ">
+            Tem certeza que deseja remover este comentário?
+          </h2>
+          <span className="subtitle excluir">
+            Essa ação não pode ser desfeita. Isso excluirá permanentemente seu
+            comentário.
+          </span>
+          <div className="delete right">
+            <Button
+              className="select cancel"
+              onClick={() => {
+                setModal(false);
+              }}
+            >
+              Cancelar
+            </Button>
+            <Button className="select left">Sim, excluir comentário</Button>
           </div>
         </>
       );

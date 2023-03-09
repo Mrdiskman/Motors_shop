@@ -8,6 +8,7 @@ import MiniPicturesDesktop from "@/components/AnnounceDetailComponents/MiniPictu
 import SellerData from "@/components/AnnounceDetailComponents/SellerData";
 import BackGround from "@/components/GeneralComponents/Background";
 import Modal from "@/components/GeneralComponents/Modal";
+import { IProps } from "@/components/GeneralComponents/Modal/modalRequest";
 import { Layout } from "@/components/Layout";
 import { ModalContext } from "@/contexts/Modal/ModalContext";
 import { api } from "@/services/api";
@@ -51,11 +52,11 @@ type IComments = {
   created_at: string;
   user: IUser;
 };
-
 function AnnounceDetailPage() {
   const [announceData, setAnnounceData] = useState<null | announcement>(null);
-  const { modal, setModal } = useContext(ModalContext);
+  const { modal, setModal, setCommentId } = useContext(ModalContext);
   const { query } = useRouter();
+  const [isModal, setIsModel] = useState<IProps>({ title: "Sucesso!" });
 
   async function announcerData() {
     const result = api
@@ -75,9 +76,9 @@ function AnnounceDetailPage() {
     <>
       {announceData ? (
         <>
+          <Modal title={isModal.title} />
           <Layout>
             <BackGround>
-              <Modal title="Sucesso!" />
               <AnnounceDetailStyled>
                 <div className="upside">
                   <div className="left">
@@ -92,7 +93,10 @@ function AnnounceDetailPage() {
                         <SellerData data={announceData.user} />
                       ) : null}
                     </div>
-                    <Comments comments={announceData.comments} />
+                    <Comments
+                      comments={announceData.comments}
+                      setIsModel={setIsModel}
+                    />
                     <MakeComment />
                   </div>
                   <div className="deskTopFront">
