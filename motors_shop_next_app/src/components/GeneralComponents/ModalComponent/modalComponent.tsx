@@ -3,7 +3,7 @@ import { EditProfileForm, ModalContainer } from "./ModalContainer.style";
 import { IoMdClose } from "react-icons/io";
 import { HeaderContext } from "@/contexts/header/HeaderContext";
 import { useForm } from "react-hook-form";
-import { api } from "@/services/api";
+import { api } from "services/api";
 
 interface FormData {
   name: string;
@@ -108,7 +108,11 @@ const ModalEditProfile = () => {
             <button type="submit" className="btn-submit">
               Salvar alterações
             </button>
-            <button type="button" className="btn-delete-profile" onClick={deleteProfile}>
+            <button
+              type="button"
+              className="btn-delete-profile"
+              onClick={deleteProfile}
+            >
               Excluir minha conta
             </button>
           </div>

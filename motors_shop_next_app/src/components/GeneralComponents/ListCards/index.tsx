@@ -1,9 +1,8 @@
 import CardVehicle from "@/components/HomeComponents/CardVehicle";
 import { AnnounceContext } from "@/contexts/announce/announceContext";
-import { api } from "@/services/api";
+import { api } from "services/api";
 import { useContext, useEffect, useState } from "react";
 import CarouselComponent from "../Carousel";
-import { useNavigate } from "react-router-dom";
 type announce = {
   id?: string;
   model?: string;
@@ -22,15 +21,13 @@ type user = {
   abbreviation: string;
 };
 
-type props = {
-  tipo?: string;
+type IProps = {
+  type?: string;
 };
 
-const ListCards = ({ tipo }: props) => {
+const ListCards = ({ type }: IProps) => {
   const { setAnnounceId } = useContext(AnnounceContext);
   const [isAnnouncer, setIsAnnouncer] = useState<[] | announce[]>([]);
-
-  const navigate = useNavigate();
 
   async function announcerData() {
     const result = await api
@@ -48,27 +45,19 @@ const ListCards = ({ tipo }: props) => {
       <CarouselComponent>
         {isAnnouncer ? (
           isAnnouncer.map((announcer, index) => {
-            if (announcer.type == tipo) {
+            if (announcer.type == type) {
               return (
-                <button
-                  onClick={() => {
-                    setAnnounceId(`${announcer.id}`);
-                    navigate("/announceDetail");
-                  }}
-                  key={announcer.id}
-                >
-                  <CardVehicle
-                    key={index}
-                    img={announcer.default_img}
-                    title={announcer.model}
-                    descryption={announcer.description}
-                    announcer={announcer.user?.name}
-                    abbreviation={announcer.user?.abbreviation}
-                    km={announcer.km}
-                    year={announcer.year}
-                    price={announcer.price}
-                  />
-                </button>
+                <CardVehicle
+                  key={index}
+                  img={announcer.default_img}
+                  title={announcer.model}
+                  description={announcer.description}
+                  announcer={announcer.user?.name}
+                  abbreviation={announcer.user?.abbreviation}
+                  km={announcer.km}
+                  year={announcer.year}
+                  price={announcer.price}
+                />
               );
             }
           })

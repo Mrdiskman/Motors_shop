@@ -5,5 +5,7 @@ import app from "./app";
   await AppDataSource.initialize().catch((err) => {
     console.error("Error during Data Source initialization", err);
   });
-  app.listen(3001, () => console.log("Running at http://localhost:3001"));
+  app.listen(process.env.PORT || 3001, () =>
+    console.log(`Running at http://localhost${process.env.PORT}`)
+  );
 })();

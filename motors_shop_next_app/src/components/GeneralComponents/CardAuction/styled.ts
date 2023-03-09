@@ -1,176 +1,143 @@
 import styled from "styled-components";
 
-export const CardAuctionStyle = styled.div`
-  cursor: pointer;
+type ISectionProps = {
+  img?: string;
+};
+
+export const Card = styled.li`
   width: 602px;
-  .sectionMainCard {
-    :hover {
-      background-image: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.7) 0%,
-          #000000 100%
-        ),
-        url("https://media.istockphoto.com/id/1150931120/pt/foto/3d-illustration-of-generic-compact-white-car-front-side-view.jpg?b=1&s=612x612&w=0&k=20&c=S9ogRwOFZeUrZisH4_sh56OMQB19qplp958cRde8Jx0=");
-    }
-    border-radius: 5px 5px 0px 0px;
-    padding: 32px;
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.29) 0%,
-        #000000 100%
-      ),
-      url("https://media.istockphoto.com/id/1150931120/pt/foto/3d-illustration-of-generic-compact-white-car-front-side-view.jpg?b=1&s=612x612&w=0&k=20&c=S9ogRwOFZeUrZisH4_sh56OMQB19qplp958cRde8Jx0=");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 602px;
-    height: 345px;
-    .divTime {
-      background-color: #ffffff;
-      border: 1px solid #ffffff;
-      border-radius: 32px;
-      margin-bottom: 30px;
-      display: flex;
-      align-items: center;
-      padding: 5px;
-      justify-content: space-between;
-      width: 100px;
-      height: 30px;
-      p {
-        font-size: 15px;
-        font-weight: 600;
-        color: #212529;
-      }
-      svg {
-        font-size: 23px;
-      }
-    }
-    .titleCard {
-      font-weight: 600;
-      font-size: 20px;
-      color: #fdfdfd;
-      margin-bottom: 20px;
-    }
-    .descriptionCard {
-      font-size: 16px;
-      color: #ced4da;
-    }
-    .sectionUser {
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-      max-height: 32px;
-      img {
-        width: 32px;
-        height: 32px;
-        border-radius: 150px;
-      }
-      p {
-        font-size: 14px;
-        color: #ffffff;
-        margin-left: 5px;
-      }
-    }
-    .containerInfo {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .info {
-        margin-top: 20px;
-        display: flex;
-        .divInfo {
-          margin-right: 15px;
-          width: 45px;
-          height: 28px;
-          border: 1px solid transparent;
-          border-radius: 5px;
-          background-color: #ffffff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          p {
-            color: #4529e6;
-            font-size: 15px;
-          }
-        }
-      }
-      p {
-        color: #ffffff;
-        font-size: 16px;
-      }
-    }
-  }
-  .containerPageButton {
-    border: 1px solid transparent;
-    border-radius: 0px 0px 5px 5px;
-    padding: 32px;
-    max-width: 602px;
-    max-height: 10px;
-    background: #4529e6;
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    .button_edit {
-      border: 1.5px solid #fdfdfd;
-      background-color: transparent;
-      cursor: pointer;
-      border-radius: 4px;
-      width: 80px;
-      height: 38px;
-      color: #ffffff;
-      font-family: "Inter";
-      :hover {
-        background-color: #fdfdfd;
-        color: #0b0d0d;
-      }
-    }
-  }
-  .containerPage {
-    border: 1px solid transparent;
-    border-radius: 0px 0px 5px 5px;
-    padding: 32px;
-    max-width: 602px;
-    max-height: 10px;
-    background: #4529e6;
+
+  .card.link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    h3 {
-      font-size: 18px;
-      color: #ffffff;
+
+    width: 100%;
+    height: 62px;
+
+    padding: 24px 36px;
+
+    background-color: var(--brand1);
+
+    border: none;
+
+    color: var(--whiteFixed);
+
+    border-radius: 0 0 10px 10px;
+
+    .text {
+      font: var(--button-big-text);
     }
-    svg {
+
+    .link {
       font-size: 30px;
-      margin-right: 10px;
     }
   }
-  @media only screen and (max-width: 655px) {
-    width: 80vw;
-    height: 600px;
-    margin-right: 60px;
-    .sectionMainCard {
-      width: 100%;
-      height: 390px;
-      background-size: contain;
-      .divTime {
-        margin-bottom: 20px;
-      }
-      .containerInfo {
-        display: block;
-        .info {
-          display: block;
-          .divInfo {
-            margin-top: 10px;
-            text-align: center;
-          }
-        }
-        p {
-          margin-top: 10px;
-        }
-      }
+`;
+
+export const CardInfo = styled.div<ISectionProps>`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  width: 100%;
+  height: 326px;
+
+  padding: 20px;
+
+  /* background-image: url(${({ img }) => img});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
+  background-color: black;
+
+  border-radius: 10px 10px 0 0;
+
+  .card.info.time {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    width: 123px;
+
+    padding: 5px;
+
+    border-radius: 40px;
+
+    background-color: var(--whiteFixed);
+    .clock {
+      font: var(--Heading-7-500);
     }
-    .containerPage {
-      width: 100%;
+    .icon.clock {
+      color: var(--brand1);
+    }
+  }
+
+  .card.desctiption {
+    width: 100%;
+    .card.desctiption.title {
+      font: var(--Heading-6-600);
+      color: var(--grey10);
+    }
+
+    .card.desctiption.sub {
+      font: var(--body-1-400);
+      color: var(--grey5);
+    }
+  }
+
+  .card.owner {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    .card.owner.inicials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 32px;
+      height: 32px;
+
+      background-color: var(--brand1);
+      border-radius: 150px;
+
+      font: var(--body-2-500);
+      color: var(--whiteFixed);
+    }
+
+    .card.owner.name {
+      font: var(--body-2-500);
+      color: var(--grey2);
+    }
+  }
+
+  .card.info.rotation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .info {
+      display: flex;
+
+      gap: 10px;
+
+      color: var(--whiteFixed);
+
+      font: var(--body-2-500);
+      .box {
+        display: flex;
+        align-items: center;
+
+        padding: 4px 8px;
+
+        background-color: var(--brand4);
+
+        border-radius: 4px;
+
+        color: var(--brand1);
+      }
     }
   }
 `;

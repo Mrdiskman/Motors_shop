@@ -1,11 +1,12 @@
-import { VehiclePrice, VehicleCard } from "./styled";
+import { Card, CardImg, CardInfo } from "./styled";
 type Props = {
+  id?: string;
   edit?: boolean;
   active?: boolean;
   owner?: string;
   img?: string;
   title?: string;
-  descryption?: string;
+  description?: string;
   announcer?: string;
   km?: number;
   year?: number;
@@ -14,12 +15,13 @@ type Props = {
 };
 
 const CardVehicle = ({
+  id,
   edit,
   active,
   owner,
   img,
   title,
-  descryption,
+  description,
   announcer,
   km,
   year,
@@ -27,44 +29,39 @@ const CardVehicle = ({
   abbreviation,
 }: Props) => {
   return (
-    <VehicleCard active={active}>
-      <div className="div_img">
-        {owner ? (
-          <div className="div_active">
-            <p>{active ? "Ativo" : "Inativo"}</p>
-          </div>
-        ) : (
-          <></>
-        )}
-
-        <img src={img} alt={title} />
-      </div>
-      <h2 className="titleCarrousel">{title}</h2>
-      <p className="descriptionCarrousel">{descryption}</p>
-      <div className="divAnnouncer">
-        <p className="miniatureCarrousel">{abbreviation}</p>
-        <span className="nameAnnouncer">{announcer}</span>
-      </div>
-      <VehiclePrice>
-        <div className="divItens">
-          <div className="km_div">
-            <h3 className="numbers">{km} KM</h3>
-          </div>
-          <div className="year_div">
-            <h3 className="numbers">{year}</h3>
-          </div>
+    <Card
+      active={active}
+      className="card"
+      id={id}
+      onClick={() => console.log("click")}
+    >
+      <CardImg className="card img" img={img} />
+      <CardInfo className="card info">
+        <h3 className="card title">Product title stays here - max 1 line</h3>
+        <p className="card description">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem...
+        </p>
+        {/* <h3 className="card title">{title}</h3>
+        <p className="card description">{description}</p> */}
+        <div className="card owner">
+          <span className="card owner inicials">T A</span>
+          <span className="card owner name">Tiago Almeida</span>
+          {/* <span className="card owner inicials">{abbreviation}</span> */}
+          {/* <span className="card owner name">{owner}</span> */}
         </div>
-        <p className="price">R$ {price},00</p>
-      </VehiclePrice>
-      {edit ? (
-        <div className="div_edit">
-          <button className="button_edit">Editar</button>
-          <button className="button_edit">Ver como</button>
+        <div className="card info rotation">
+          <div className="info">
+            <span className="info box km">0 KM</span>
+            <span className="info box year">2019</span>
+            {/* <span className="info km">{`${km} KM`}</span>
+            <span className="info year">{year}</span> */}
+          </div>
+          <span className="info price">R$ 00.000,00</span>
+          {/* <span className="info price">{`R$ ${price},00`}</span> */}
         </div>
-      ) : (
-        <></>
-      )}
-    </VehicleCard>
+      </CardInfo>
+    </Card>
   );
 };
 

@@ -1,5 +1,5 @@
 import { HeaderContext } from "@/contexts/header/HeaderContext";
-import { api } from "@/services/api";
+import { api } from "services/api";
 import { useContext, useEffect, useState } from "react";
 import { UserdataStyle } from "./styles";
 
@@ -14,7 +14,8 @@ const UserData = () => {
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("@TOKEN") || "");
     if (token) {
-      api.get("/user", { headers: { Authorization: `Bearer ${token}` }})
+      api
+        .get("/user", { headers: { Authorization: `Bearer ${token}` } })
         .then((res) => setUserDataApi(res.data))
         .catch((err) => console.log(err));
     }

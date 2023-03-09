@@ -3,9 +3,9 @@ import { ScrollingCarousel } from "@trendyol-js/react-carousel";
 
 import { CarouselStyles } from "./styled";
 
-const CarouselComponent = ({ children } : any) => {
+const CarouselComponent = ({ children }: any) => {
   return (
-    <CarouselStyles>
+    <CarouselStyles className="carrossel">
       <ScrollingCarousel>{children}</ScrollingCarousel>
     </CarouselStyles>
   );

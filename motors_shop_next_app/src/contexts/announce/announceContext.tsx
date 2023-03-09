@@ -1,6 +1,6 @@
 import { IAnnouce } from "@/interfaces/announce";
 import { IProps } from "@/interfaces/generaInterfaces";
-import { api } from "@/services/api";
+import { api } from "services/api";
 import { createContext, useEffect, useState } from "react";
 
 type user = {
