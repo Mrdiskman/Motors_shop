@@ -8,8 +8,22 @@ export const HeaderStyle = styled.header`
   justify-content: center;
   align-items: center;
   gap: 35%;
-  background-color: #FDFDFD;
-
+  background-color: #fdfdfd;
+  li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 22px;
+  }
+  li:hover {
+    transition: 0.5s;
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+  }
   .navBar {
     display: none;
   }
@@ -46,6 +60,7 @@ export const HeaderStyle = styled.header`
     align-items: center;
     gap: 0px;
     li {
+      cursor: pointer;
       list-style: none;
       font-family: "Inter", sans-serif;
       font-size: 16px;

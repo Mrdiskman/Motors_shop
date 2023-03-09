@@ -1,7 +1,7 @@
 import { HeaderContext } from "@/contexts/header/HeaderContext";
 import { useContext } from "react";
 import ModalEditProfile from "../ModalComponent/modalComponent";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { NavBar } from "./styled";
 
 function OptionsMenu() {
@@ -9,7 +9,7 @@ function OptionsMenu() {
   const router = useRouter();
   const logOut = () => {
     window.localStorage.removeItem("@TOKEN");
-    router.push("/");
+    router.reload();
   };
   return (
     <>

@@ -25,9 +25,9 @@ export default function Home() {
         <AnnounceContextProvider>
           <Layout>
             <HomeStyles>
-              <HomeNav cars={"cars"} motos={"motos"} />
+              <HomeNav cars={"cars"} motos={"bikes"} />
               <div className="container">
-                <h2 className="TitleHome">Leilão</h2>
+                <h2 className="TitleHome" id="auctions">Leilão</h2>
                 <CarouselComponent>
                   <CardAuction />
                   <CardAuction />
@@ -39,7 +39,7 @@ export default function Home() {
                   Carros
                 </h2>
                 <ListCards tipo={"carro"} />
-                <h2 className="TitleHome" id="motos">
+                <h2 className="TitleHome" id="bikes">
                   Motos
                 </h2>
                 <ListCards tipo={"moto"} />

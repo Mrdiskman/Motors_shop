@@ -33,6 +33,15 @@ export type IUser = {
   name: string;
   abbreviation: string;
   descripition: string;
+  email: string;
+  cpf: string;
+  phone: string;
+  dateOfBirth: string;
+  seller: boolean;
+  password: string;
+  register: string;
+  resetCode: string | null;
+  address: object;
 };
 type IComments = {
   id: string;
@@ -75,7 +84,9 @@ function AnnounceDetailPage() {
                     />
                     <div className="mobileFront">
                       <MiniPictures images={announceData.images} />
-                      <SellerData data={announceData} />
+                      {announceData.user ? (
+                        <SellerData data={announceData.user} />
+                      ) : null}
                     </div>
                     <Comments comments={announceData.comments} />
                     <MakeComment />
