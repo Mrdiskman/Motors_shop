@@ -13,6 +13,7 @@ import { UseFormRegister } from "react-hook-form";
 import { FieldErrors } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { api } from "@/services/api";
 export interface IRequest {
   typeAd: string;
   title: string;
@@ -31,6 +32,8 @@ interface IModalContext {
   setCommentId: Dispatch<SetStateAction<string>>;
   register: UseFormRegister<IRequest>;
   handleSubmit: UseFormHandleSubmit<IRequest>;
+  editComment: (data: any) => void;
+  deleteComment: () => void;
   type:
     | "Sucesso!"
     | "Conta criada com sucesso!"
@@ -78,6 +81,28 @@ const ModalProvider = ({ children }: IProps) => {
       body.style.overflow = modal ? "hidden" : "scroll";
     }
   }, [modal]);
+  const deleteComment = () => {
+    const token = JSON.parse(localStorage.getItem("@TOKEN") || "");
+    if (token) {
+      api
+        .delete(`/comments/${commentId}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => window.location.reload())
+        .catch((err) => console.log(err));
+    }
+  };
+  const editComment = (data: any) => {
+    const token = JSON.parse(localStorage.getItem("@TOKEN") || "");
+    if (token) {
+      api
+        .patch(`/comments/${commentId}`, data, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => window.location.reload())
+        .catch((err) => console.log(err));
+    }
+  };
   return (
     <ModalContext.Provider
       value={{
@@ -90,6 +115,8 @@ const ModalProvider = ({ children }: IProps) => {
         errors,
         setCommentId,
         commentId,
+        editComment,
+        deleteComment,
       }}
     >
       {children}

@@ -8,7 +8,6 @@ import ModalRequest, { IProps } from "./modalRequest";
 
 const Modal = ({ title }: IProps): JSX.Element => {
   const { modal, setModal } = useContext(ModalContext);
-  console.log(setModal);
 
   return (
     <>

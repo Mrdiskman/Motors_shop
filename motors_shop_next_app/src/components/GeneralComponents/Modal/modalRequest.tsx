@@ -1,6 +1,7 @@
 import { ModalContext } from "@/contexts/Modal/ModalContext";
 import { useContext } from "react";
 import { Button, Input } from "..";
+import { useForm } from "react-hook-form";
 //import { ModalContext } from "../../contexts/ModalContext";
 //import Button from "../Button";
 //import Input from "../Input";
@@ -14,7 +15,15 @@ export interface IProps {
     | "Excluir Comentário";
 }
 const ModalRequest = ({ title }: IProps): JSX.Element => {
-  const { setModal } = useContext(ModalContext);
+  const { setModal, editComment, deleteComment } = useContext(ModalContext);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data: any) => {
+    editComment(data);
+  };
   switch (title) {
     case "Sucesso!":
       return (
@@ -126,13 +135,14 @@ const ModalRequest = ({ title }: IProps): JSX.Element => {
       );
     case "Editar Comentário":
       return (
-        <>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <Input
             //labelFor="Descrição"
             placeholder="Carro muito confortável, foi uma ótima experiência de compra..."
             //size="big"
             //fieldName="description"
             type="textarea"
+            {...register("text")}
           ></Input>
           <div className="edit select">
             <Button
@@ -143,9 +153,11 @@ const ModalRequest = ({ title }: IProps): JSX.Element => {
             >
               Cancelar
             </Button>
-            <Button className="select left save">Salvar alterações</Button>
+            <Button className="select left save" type="submit">
+              Salvar alterações
+            </Button>
           </div>
-        </>
+        </form>
       );
     case "Excluir Comentário":
       return (
@@ -157,16 +169,18 @@ const ModalRequest = ({ title }: IProps): JSX.Element => {
             Essa ação não pode ser desfeita. Isso excluirá permanentemente seu
             comentário.
           </span>
-          <div className="delete right">
+          <div className="edit select">
             <Button
-              className="select cancel"
+              className="select right"
               onClick={() => {
                 setModal(false);
               }}
             >
               Cancelar
             </Button>
-            <Button className="select left">Sim, excluir comentário</Button>
+            <Button className="select left" onClick={() => deleteComment()}>
+              Sim, excluir comentário
+            </Button>
           </div>
         </>
       );

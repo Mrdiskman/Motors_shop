@@ -34,6 +34,7 @@ function Comments({ comments, setIsModel }: any) {
                 <FiTrash2
                   className="remove"
                   onClick={() => {
+                    setCommentId(item.id);
                     setIsModel({ title: "Excluir Comentário" });
                     setModal(true);
                   }}

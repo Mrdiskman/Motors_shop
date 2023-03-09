@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { api } from "@/services/api";
 import { announcement } from "../announceDetail/[id]";
 import { TitleHome } from "./styles";
+import { useRouter } from "next/router";
 type user = {
   name: string;
   abbreviation: string;
@@ -19,18 +20,21 @@ type user = {
 };
 
 function Announcer() {
+  const { query } = useRouter();
   const [isAnnouncer, setIsAnnouncer] = useState<null | user>(null);
   async function announcerData() {
     const result = await api
-      .get("/user/121292e2-749b-4ce2-8a98-ee687f6e78f0")
+      .get(`/user/${query.id}`)
       .then((res: any) => {
         setIsAnnouncer(res.data);
       })
       .catch((err: any) => console.log(err));
   }
   useEffect(() => {
-    announcerData();
-  }, []);
+    if (query.id) {
+      announcerData();
+    }
+  }, [query]);
   return (
     <>
       <Header />
