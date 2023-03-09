@@ -1,3 +1,4 @@
+import { Exclude } from "class-transformer";
 import {
   Entity,
   Column,
@@ -43,16 +44,16 @@ export class User {
   @Column({ nullable: false })
   seller: boolean;
 
-  @Column({ length: 150, nullable: false })
+  @Column({ length: 150, nullable: false, select: false })
   password: string;
-
+  @Exclude()
   @Column({ default: new Date() })
   register: Date;
 
-  @Column({ length: 8, nullable: true })
+  @Column({ length: 8, nullable: true, select: false })
   resetCode: String;
 
-  @OneToOne(() => Address, { eager: true })
+  @OneToOne(() => Address)
   @JoinColumn()
   address: Address;
 

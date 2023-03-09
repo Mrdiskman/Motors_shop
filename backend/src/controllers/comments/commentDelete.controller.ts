@@ -6,7 +6,7 @@ const commentDeleteController = async (req: Request, res: Response) => {
   const commentId = req.params.id;
   const deletedComment = await commentDeleteService(commentId);
 
-  return res.status(201).send(instanceToPlain(deletedComment));
+  return res.status(200).send(instanceToPlain(deletedComment));
 };
 
 export default commentDeleteController;

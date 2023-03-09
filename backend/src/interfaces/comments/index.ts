@@ -3,3 +3,6 @@ export interface IComment {
   user: string;
   announcement: string;
 }
+export interface ICommentUpdate {
+  text?: string;
+}
