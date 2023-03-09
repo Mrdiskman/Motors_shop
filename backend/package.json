@@ -18,9 +18,8 @@
     "dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
     "build": "tsc",
     "typeorm": "typeorm-ts-node-commonjs",
-    "generateMigrations": "yarn typeorm migration:generate src/migrations/createMigrations -d src/data-source.ts",
-    "runMigrations": "yarn typeorm migration:run -d src/data-source.ts",
-    "createMigrations": "yarn typeorm migration:create src/migrations/initialMigration"
+    "generatemigrations": "yarn typeorm migration:generate src/migrations/createMigrations -d src/data-source.ts",
+    "runMigrations": "yarn typeorm migration:run -d src/data-source.ts"
   },
   "dependencies": {
     "@types/cors": "^2.8.13",

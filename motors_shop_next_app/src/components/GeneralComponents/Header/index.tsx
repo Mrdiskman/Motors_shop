@@ -7,11 +7,14 @@ import { HeaderContext } from "@/contexts/header/HeaderContext";
 import MenuOptions from "../OptionsDesktop";
 import OptionsMenu from "../OptionsMobile";
 import NotLogged from "../NotLogged";
+import { useRouter } from "next/navigation";
 
 function Header() {
   const { toggleMobile, isNavMobile, isLoged, verifyIsLogged, navDesktop } =
 
     useContext(HeaderContext);
+    const router = useRouter();
+    
   if (typeof window !== "undefined") {
     const token = window.localStorage.getItem("@TOKEN");
   }
@@ -35,8 +38,8 @@ function Header() {
 
         <nav className="navBar">
           <ul className="containerList">
-            <li>Carros</li>
-            <li>Motos</li>
+            <li onClick={()=> router.push("/#cars")}>Carros</li>
+            <li onClick={()=> router.push("/#motos")}>Motos</li>
             <li>Leilao</li>
           </ul>
         </nav>

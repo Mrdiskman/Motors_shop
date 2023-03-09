@@ -15,11 +15,16 @@ export const CommentsStyled = styled.section`
   padding-bottom: 10px;
   padding-right: 5px;
 
+  .containerListComments {
+    width: 100%;
+    height: 100%;
+  }
+
   .comments {
     margin-top: 40px;
     margin-bottom: 50px;
   }
-  
+
   button {
     cursor: pointer;
   }
@@ -56,6 +61,11 @@ export const CommentsStyled = styled.section`
     font-size: 14px;
     line-height: 24px;
     color: #495057;
+  }
+  .timeString {
+    font-family: "Inter", sans-serif;
+    color: #868e96;
+    font-size: 12px;
   }
   @media (min-width: 769px) {
     width: 40vw;

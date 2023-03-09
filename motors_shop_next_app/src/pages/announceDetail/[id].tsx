@@ -9,9 +9,10 @@ import SellerData from "@/components/AnnounceDetailComponents/SellerData";
 import BackGround from "@/components/GeneralComponents/Background";
 import { Layout } from "@/components/Layout";
 import { api } from "@/services/api";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { AnnounceDetailStyled } from "./styled";
-type announcement = {
+export type announcement = {
   id: string;
   model: string;
   type: string;
@@ -21,6 +22,7 @@ type announcement = {
   description: string;
   announcer: string;
   km: number;
+  isActive: boolean;
   year: number;
   price: number;
   user: user;
@@ -40,10 +42,11 @@ type IComments = {
 
 function AnnounceDetailPage() {
   const [announceData, setAnnounceData] = useState<null | announcement>(null);
+  const { query } = useRouter();
 
   async function announcerData() {
     const result = api
-      .get("/announcements/00e04bf1-f82b-423b-80f6-282792aba91b")
+      .get(`/announcements/${query.id}`)
 
       .then((res: any) => {
         setAnnounceData(res.data);
@@ -51,8 +54,10 @@ function AnnounceDetailPage() {
       .catch((err: any) => console.log(err));
   }
   useEffect(() => {
-    announcerData();
-  }, []);
+    if (query.id) {
+      announcerData();
+    }
+  }, [query]);
   return (
     <>
       {announceData ? (

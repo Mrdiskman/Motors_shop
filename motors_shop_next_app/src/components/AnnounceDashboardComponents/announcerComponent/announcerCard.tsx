@@ -9,34 +9,17 @@ import {
   Title,
 } from "@/components/GeneralComponents/index";
 
-const BuildAnnouncerCard = ({ name, seller, descripition, owner }: any) => {
-  const CompleteNameSplit = name.split(" ");
-  const surname = CompleteNameSplit[1];
-  const surnameSplit = surname.split("");
-  const nameSplit = name.split("");
-  const nameAbreviation =
-    nameSplit[0].toUpperCase() + surnameSplit[0].toUpperCase();
-
-  const customStyles = {
-    content: {
-      top: "5%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, 0%)",
-      minHeight: "1252px",
-      width: "90vw",
-    },
-    overlay: {
-      backgroundColor: "rgba(0, 0, 0, 0.15)",
-    },
-  };
-
+const BuildAnnouncerCard = ({
+  name,
+  seller,
+  owner,
+  abbreviation,
+  descripition,
+}: any) => {
   return (
     <AnnouncerCard>
       <div className="containerDiv">
-        <p className="sellerNameAbreviation">{nameAbreviation}</p>
+        <p className="sellerNameAbreviation">{abbreviation?.toUpperCase()}</p>
         <div className="dataContainerAnnouncer">
           <p className="sellerName">{name}</p>
           <p className="sellerRole">Anunciante</p>
