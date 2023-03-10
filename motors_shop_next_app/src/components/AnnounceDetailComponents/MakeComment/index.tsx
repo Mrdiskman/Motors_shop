@@ -1,9 +1,11 @@
 import { api } from "@/services/api";
+import { useRouter } from "next/dist/client/router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { MakeCommentStyled } from "./styled";
 
 function MakeComment() {
+  const { query } = useRouter();
   const {
     register,
     handleSubmit,
@@ -30,7 +32,7 @@ function MakeComment() {
   function onSubmit(data: any) {
     const commentData = {
       text: String(data.text),
-      annoucement: "347c8388-6302-4347-88bc-8cd435c08203",
+      annoucement: query.id,
     };
     registerComment(commentData);
   }

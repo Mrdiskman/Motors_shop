@@ -6,7 +6,8 @@ const loginUserController = async (req: Request, res: Response) => {
   try {
     const loginData = req.body;
     const token = await loginUserService(loginData);
-    return res.status(200).send({token});
+
+    return res.status(200).send({ token });
   } catch (err) {
     if (err instanceof AppError) {
       handleError(err, res);

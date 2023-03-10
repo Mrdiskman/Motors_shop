@@ -1,8 +1,8 @@
-import { database } from "@/database";
 import BuildAnnouncerCard from "../announcerComponent/announcerCard";
 import { DivStylesAnnounce } from "./styled";
 
-function AnnounceDescription({ owner, name, abbreviation, descripition }: any) {
+function AnnounceDescription({ owner, name, abbreviation, descripition,setIsModal }: any) {
+  
   return (
     <DivStylesAnnounce>
       <BuildAnnouncerCard
@@ -11,6 +11,7 @@ function AnnounceDescription({ owner, name, abbreviation, descripition }: any) {
         descripition={descripition}
         owner={owner}
         abbreviation={abbreviation}
+        setIsModal={setIsModal}
       />
     </DivStylesAnnounce>
   );

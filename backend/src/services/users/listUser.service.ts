@@ -4,7 +4,15 @@ import { AppError } from "../../errors/appError";
 
 const listUserService = async (id: string) => {
   const userRepository = AppDataSource.getRepository(User);
-  const user = await userRepository.findOneBy({ id });
+  const user = await userRepository.findOne({
+    where: {
+      id: id,
+    },
+    relations: {
+      address: true,
+      announcements: true,
+    },
+  });
   if (!user) {
     throw new AppError(404, "User Not Found");
   }

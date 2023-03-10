@@ -39,8 +39,8 @@ function Header() {
         <nav className="navBar">
           <ul className="containerList">
             <li onClick={()=> router.push("/#cars")}>Carros</li>
-            <li onClick={()=> router.push("/#motos")}>Motos</li>
-            <li>Leilao</li>
+            <li onClick={()=> router.push("/#bikes")}>Motos</li>
+            <li onClick={()=> router.push("/#auctions")}>Leilao</li>
           </ul>
         </nav>
 

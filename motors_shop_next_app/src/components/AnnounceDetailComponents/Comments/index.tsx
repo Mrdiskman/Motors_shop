@@ -1,24 +1,17 @@
-import { useEffect, useState } from "react";
+import { timeDifference } from "@/utils/timeDifference";
+import { useContext, useEffect, useState } from "react";
 import { string } from "yup";
 import { CommentsStyled } from "./styled";
+import { AiFillEdit } from "react-icons/ai";
+import { FiTrash2 } from "react-icons/fi";
+import { ModalContext } from "@/contexts/Modal/ModalContext";
 
-function Comments({ comments }: any) {
+function Comments({ comments, setIsModel }: any) {
+  const { modal, setModal, setCommentId } = useContext(ModalContext);
   const [listOfComments, setListOfComments] = useState([]);
   useEffect(() => {
     setListOfComments(comments);
   }, [listOfComments]);
-  const days = (created_at: string) => {
-    const today = new Date();
-    const time = new Date(created_at.slice(0, 10));
-    const result = (today - time) / (1000 * 60 * 60 * 24);
-    if (result < 1) {
-      return "hoje";
-    }
-    if (result < 30) {
-      return `há ${result.toString()[0]} dias`;
-    }
-    return `há ${result.toString()[0]} mês`;
-  };
 
   return (
     <CommentsStyled>
@@ -28,9 +21,29 @@ function Comments({ comments }: any) {
             <div className="dataComments">
               <p className="abreviationNameComment">{item.user.abbreviation}</p>
               <p className="nameComment">{item.user.name}</p>
-              <p className="timeString">{days(item.created_at)}</p>
+              <p className="timeString">{timeDifference(item.created_at)}</p>
+              <div className="containerOptions">
+                <AiFillEdit
+                  className="edit"
+                  onClick={() => {
+                    setCommentId(item.id);
+                    setIsModel({ title: "Editar Comentário" });
+                    setModal(true);
+                  }}
+                />
+                <FiTrash2
+                  className="remove"
+                  onClick={() => {
+                    setCommentId(item.id);
+                    setIsModel({ title: "Excluir Comentário" });
+                    setModal(true);
+                  }}
+                />
+              </div>
             </div>
             <p className="descriptionComment">{item.text}</p>
+
+            <button></button>
           </li>
         ))}
       </ul>

@@ -1,13 +1,28 @@
-import { database } from "@/database";
+import { AnnounceContext } from "@/contexts/announce/announceContext";
+import { useContext, useEffect, useState } from "react";
 import { SellerDataStyled } from "./styled";
+import { useRouter } from "next/navigation";
 
-function SellerData() {
+function SellerData({ data }: any) {
+  const { setSellerData, sellerData } = useContext(AnnounceContext);
+  const router = useRouter();
+  useEffect(() => {
+    if (data !== undefined) {
+      setSellerData(data);
+    }
+  }, [data]);
+
   return (
     <SellerDataStyled>
-      <p className="sellerNameAbreviation">JS</p>
-      <p className="sellerName">Joao Silva</p>
-      <p className="sellerDescription">{database.user.descripition}</p>
-      <button className="seeAnnounces">Ver todos anúncios</button>
+      <p className="sellerNameAbreviation">{sellerData?.abbreviation}</p>
+      <p className="sellerName">{sellerData?.name}</p>
+      <p className="sellerDescription">{sellerData?.descripition}</p>
+      <button
+        className="seeAnnounces"
+        onClick={() => router.push(`/announcer/${sellerData?.id}`)}
+      >
+        Veja todos os anuncios
+      </button>
     </SellerDataStyled>
   );
 }
