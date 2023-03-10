@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: '',
     //path: `${basePath}/_next/image`,
+  },
+  compiler: {
+    styledComponents: true,
   }
 }
 

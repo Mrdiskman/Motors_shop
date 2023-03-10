@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import { IUser } from "@/interfaces/IUser";
@@ -26,6 +26,10 @@ const UserIcon = ({ user, isNav, auction }: IUserIcon) => {
     closed: { opacity: 0, x: "-100%" },
   };
 
+  useEffect(() => {
+    console.log("reload");
+  }, [isOpen]);
+
   const renderConditional = () => {
     if (user) {
       if (user.userImage) {
@@ -49,6 +53,7 @@ const UserIcon = ({ user, isNav, auction }: IUserIcon) => {
             : transformUserName("nome usuário")}
         </span>
       </StyledUserIcon>
+
       {isNav && (
         <motion.ul
           className="user-dropDown"

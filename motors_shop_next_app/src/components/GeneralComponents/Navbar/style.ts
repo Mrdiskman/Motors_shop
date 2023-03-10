@@ -15,8 +15,10 @@ export const StyledNav = styled.div`
   }
 `;
 
+export const NavComponent = styled.div``;
+
 export const StyledDesktopNav = styled.div`
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -87,6 +89,10 @@ export const StyledDesktopNav = styled.div`
     button {
       margin-left: 45px;
     }
+  }
+
+  @media screen and (min-width: 684px) {
+    display: flex;
   }
 `;
 

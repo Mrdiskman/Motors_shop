@@ -6,6 +6,7 @@ import Image from "next/image";
 import Logo from "../../../assets/logo.svg";
 import UserIcon from "../UserIcon";
 import Button from "../Button";
+import { useEffect } from "react";
 
 const DesktopNavbar = ({ isAuthenticated }: INavbar) => {
   return (

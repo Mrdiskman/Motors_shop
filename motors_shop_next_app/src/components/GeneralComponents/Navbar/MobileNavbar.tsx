@@ -7,7 +7,7 @@ import MenuButton from "../MenuButton";
 import Logo from "../../../assets/logo.svg";
 
 import { INavbar } from ".";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { DropDownMenu, StyledMobileNav, StyledNav } from "./style";
 
@@ -54,7 +54,7 @@ const MobileNavbar = ({ isAuthenticated }: INavbar) => {
           <Link href="#landing_section">
             <Image alt="brand logo" src={Logo} />
           </Link>
-          <div onClick={toggleMenu}>
+          <div onClick={toggleMenu} className="mobile">
             <MenuButton
               isOpen={isOpen}
               onClick={() => setIsOpen(!isOpen)}
