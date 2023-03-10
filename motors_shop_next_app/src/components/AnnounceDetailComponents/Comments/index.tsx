@@ -1,11 +1,13 @@
 import { timeDifference } from "@/utils/timeDifference";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { string } from "yup";
 import { CommentsStyled } from "./styled";
 import { AiFillEdit } from "react-icons/ai";
 import { FiTrash2 } from "react-icons/fi";
+import { ModalContext } from "@/contexts/Modal/ModalContext";
 
-function Comments({ comments }: any) {
+function Comments({ comments, setIsModel }: any) {
+  const { modal, setModal, setCommentId } = useContext(ModalContext);
   const [listOfComments, setListOfComments] = useState([]);
   useEffect(() => {
     setListOfComments(comments);
@@ -21,8 +23,22 @@ function Comments({ comments }: any) {
               <p className="nameComment">{item.user.name}</p>
               <p className="timeString">{timeDifference(item.created_at)}</p>
               <div className="containerOptions">
-                <AiFillEdit className="edit" />
-                <FiTrash2 className="remove" />
+                <AiFillEdit
+                  className="edit"
+                  onClick={() => {
+                    setCommentId(item.id);
+                    setIsModel({ title: "Editar Comentário" });
+                    setModal(true);
+                  }}
+                />
+                <FiTrash2
+                  className="remove"
+                  onClick={() => {
+                    setCommentId(item.id);
+                    setIsModel({ title: "Excluir Comentário" });
+                    setModal(true);
+                  }}
+                />
               </div>
             </div>
             <p className="descriptionComment">{item.text}</p>

@@ -64,7 +64,7 @@ const ListCards = ({ tipo }: props) => {
             }
           })
         ) : (
-          <></>
+          <p>Nao ha anuncios de carros :(</p>
         )}
       </CarouselComponent>
     </>

@@ -20,7 +20,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
   const { register, handleSubmit } = useForm();
-  const [isSeller, isSetSeller]: any = useState(false);
+  const [isSeller, isSetSeller] = useState(false);
 
   const onSubmit = (data: any) => {
     const {

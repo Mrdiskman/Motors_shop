@@ -5,8 +5,8 @@ import HomeNav from "@/components/HomeComponents/HomeNav";
 import CarouselComponent from "@/components/GeneralComponents/Carousel";
 import CardAuction from "@/components/GeneralComponents/CardAuction";
 import ListCards from "@/components/GeneralComponents/ListCards";
-import { HomeStyles } from "./AnnouncerDashboard/styled";
 import AnnounceContextProvider from "@/contexts/announce/announceContext";
+import { HomeStyles } from "./AnnouncerDashboard/styled";
 
 export default function Home() {
   return (
@@ -27,7 +27,9 @@ export default function Home() {
             <HomeStyles>
               <HomeNav cars={"cars"} motos={"bikes"} />
               <div className="container">
-                <h2 className="TitleHome" id="auctions">Leilão</h2>
+                <h2 className="TitleHome" id="auctions">
+                  Leilão
+                </h2>
                 <CarouselComponent>
                   <CardAuction />
                   <CardAuction />

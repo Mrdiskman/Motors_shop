@@ -1,3 +1,14 @@
+import { IProps } from "@/components/GeneralComponents/Modal/modalRequest";
+import { ModalContext } from "@/contexts/Modal/ModalContext";
+import {
+  Dispatch,
+  SetStateAction,
+  createContext,
+  useState,
+  ReactNode,
+  useEffect,
+  useContext,
+} from "react";
 import { VehiclePrice, VehicleCard } from "./styled";
 type Props = {
   edit?: boolean;
@@ -11,6 +22,8 @@ type Props = {
   year?: number;
   price?: number;
   abbreviation?: string;
+  id?: string
+  setIsModal?: Dispatch<SetStateAction<IProps>>;
 };
 
 const CardVehicle = ({
@@ -25,7 +38,11 @@ const CardVehicle = ({
   year,
   price,
   abbreviation,
+  setIsModal,
+  id
 }: Props) => {
+  const { modal, setModal, setAnnounceId } = useContext(ModalContext);
+
   return (
     <VehicleCard active={active}>
       <div className="div_img">
@@ -58,7 +75,16 @@ const CardVehicle = ({
       </VehiclePrice>
       {edit ? (
         <div className="div_edit">
-          <button className="button_edit">Editar</button>
+          <button
+            className="button_edit"
+            onClick={() => {
+              setAnnounceId(id!)
+              setIsModal!({ title: "Editar anúncio" });
+              setModal(true)
+            }}
+          >
+            Editar
+          </button>
           <button className="button_edit">Ver como</button>
         </div>
       ) : (

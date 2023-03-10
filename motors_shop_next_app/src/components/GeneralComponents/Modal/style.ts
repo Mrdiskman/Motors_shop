@@ -56,7 +56,7 @@ export const Container = styled.div`
     }
 
     .icon-close {
-      color: var(--grey4);
+      color: #adb5bd;
       font-size: 2.5vh;
 
       :hover {
@@ -67,11 +67,13 @@ export const Container = styled.div`
   }
 
   .title {
-    font: var(--Heading-7-500);
+    font: "500 16px/20px 'Lexend', sans-serif";
+    color: #495057;
   }
 
   .subtitle {
-    font: var(--body-1-400);
+    font: "400 12px/28px 'Inter', sans-serif";
+    color: #212529;
   }
 
   .container {
@@ -80,7 +82,7 @@ export const Container = styled.div`
   }
 
   .right {
-    color: var(--grey-2);
+    color: #495057;
 
     background: #dee2e6;
 
@@ -96,9 +98,9 @@ export const Container = styled.div`
 
     width: 50%;
 
-    color: var(--alert1);
+    color: #cd2b31;
 
-    background: var(--alert2);
+    background: #fdd8d8;
     border: none;
 
     padding: 0;
@@ -130,8 +132,8 @@ export const Container = styled.div`
     gap: 10px;
 
     .save {
-      background: var(--brand1);
-      color: var(--whiteFixed);
+      background: #4529e6;
+      color: #ffffff;
       :hover {
         border: 0.5px solid #b0a6f0;
       }

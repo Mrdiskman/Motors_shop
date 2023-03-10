@@ -8,6 +8,8 @@ import {
   OverflowY,
   Title,
 } from "@/components/GeneralComponents/index";
+import { useContext } from "react";
+import { ModalContext } from "@/contexts/Modal/ModalContext";
 
 const BuildAnnouncerCard = ({
   name,
@@ -15,7 +17,9 @@ const BuildAnnouncerCard = ({
   owner,
   abbreviation,
   descripition,
+  setIsModal,
 }: any) => {
+  const { modal, setModal } = useContext(ModalContext);
   return (
     <AnnouncerCard>
       <div className="containerDiv">
@@ -27,7 +31,15 @@ const BuildAnnouncerCard = ({
         <p className="sellerDescription">{descripition}</p>
       </div>
       {owner ? (
-        <Button height={"108px"} width={"108px"} borderRadius={"4px"}>
+        <Button
+          height={"108px"}
+          width={"108px"}
+          borderRadius={"4px"}
+          onClick={() => {
+            setIsModal({title: "Criar anúncio"})
+            setModal(true)
+          }}
+        >
           <p>Criar anúncio</p>
         </Button>
       ) : (

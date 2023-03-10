@@ -31,6 +31,7 @@ export const CommentsStyled = styled.section`
   .dataComments {
     display: flex;
     gap: 10px;
+    width: 300px;
     margin-bottom: 10px;
     align-items: center;
   }

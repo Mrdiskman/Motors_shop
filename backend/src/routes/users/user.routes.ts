@@ -23,7 +23,7 @@ routes.post("/users/login", loginUserController);
 routes.post("/users/reset", userNotFoundMiddleware, forgetPasswordController);
 
 routes.get("/user", authUser, listUserController);
-routes.get("/user/:id", authUser, listUserIdController);
+routes.get("/user/:id", listUserIdController);
 routes.get("/users", listAllUsersController);
 
 routes.patch("/users/update", authUser, updateUserController);

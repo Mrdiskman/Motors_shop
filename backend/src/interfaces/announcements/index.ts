@@ -19,7 +19,7 @@ export interface IAnnouncementCreate {
   km: number;
   year: number;
   price: number;
-  user: string;
+  user?: string;
   default_img: string;
   images: string[];
 }

@@ -7,7 +7,9 @@ import registerAnnouncementService from "../../services/announcements/registerAn
 const registerAnnouncementController = async (req: Request, res: Response) => {
   try {
     const announcementData: IAnnouncementCreate = req.body;
-    const newAnnouncement = await registerAnnouncementService(announcementData);
+    const id = req.idUser
+
+    const newAnnouncement = await registerAnnouncementService(announcementData, id);
     return res.status(201).json(newAnnouncement);
   } catch (err) {
     if (err instanceof AppError) {

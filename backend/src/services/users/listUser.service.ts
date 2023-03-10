@@ -10,6 +10,7 @@ const listUserService = async (id: string) => {
     },
     relations: {
       address: true,
+      announcements: true,
     },
   });
   if (!user) {
