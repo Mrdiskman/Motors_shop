@@ -9,6 +9,7 @@ import AnnounceContextProvider from "@/contexts/announce/announceContext";
 import { HomeStyles } from "./AnnouncerDashboard/styled";
 
 export default function Home() {
+
   return (
     <>
       <Head>
