@@ -49,8 +49,8 @@ function AnnouncerDashboard() {
         ></AnnounceDescription>
         <TitleHome>Carros</TitleHome>
         <CarouselComponent>
-          {isAnnouncer ? (
-            isAnnouncer.announcements.map((announcer, index) => {
+          {isAnnouncer?.announcements.find((elem) => elem.type == "carro") ? (
+            isAnnouncer?.announcements.map((announcer, index) => {
               if (announcer.type == "carro") {
                 return (
                   <CardVehicle
@@ -72,14 +72,14 @@ function AnnouncerDashboard() {
               }
             })
           ) : (
-            <></>
+            <h1>Nao ha anuncios de carros</h1>
           )}
         </CarouselComponent>
 
         <TitleHome>Motos</TitleHome>
         <CarouselComponent>
-          {isAnnouncer ? (
-            isAnnouncer.announcements.map((announcer, index) => {
+        {isAnnouncer?.announcements.find((elem) => elem.type == "moto") ?(
+            isAnnouncer?.announcements.map((announcer, index) => {
               if (announcer.type == "moto") {
                 return (
                   <CardVehicle
@@ -101,7 +101,7 @@ function AnnouncerDashboard() {
               }
             })
           ) : (
-            <p>Nao ha anuncios de motos :(</p>
+            <h1>Não ha anuncios de motos</h1>
           )}
         </CarouselComponent>
       </BackGround>
