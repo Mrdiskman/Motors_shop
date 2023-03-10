@@ -72,7 +72,8 @@ export const Container = styled.div`
   }
 
   .subtitle {
-    font: "400 16px/28px 'Inter', sans-serif";
+    font: "400 12px/28px 'Inter', sans-serif";
+    color: #212529;
   }
 
   .container {

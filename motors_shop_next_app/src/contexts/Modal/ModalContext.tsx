@@ -27,13 +27,18 @@ export interface IRequest {
 interface IModalContext {
   modal: boolean;
   commentId: string;
-  setModal: Dispatch<SetStateAction<boolean>>;
+  announceId: string;
   errors: FieldErrors<IRequest>;
-  setCommentId: Dispatch<SetStateAction<string>>;
+  setModal: Dispatch<SetStateAction<boolean>>;
   register: UseFormRegister<IRequest>;
+  setCommentId: Dispatch<SetStateAction<string>>;
   handleSubmit: UseFormHandleSubmit<IRequest>;
   editComment: (data: any) => void;
   deleteComment: () => void;
+  createAnnouncement: (data: any) => void;
+  editAnnouncement: (data: any) => void;
+  deleteAnnouncement: () => void;
+  setAnnounceId: Dispatch<SetStateAction<string>>;
   type:
     | "Sucesso!"
     | "Conta criada com sucesso!"
@@ -52,6 +57,7 @@ export const ModalContext = createContext<IModalContext>({} as IModalContext);
 const ModalProvider = ({ children }: IProps) => {
   const [modal, setModal] = useState<boolean>(false);
   const [commentId, setCommentId] = useState<string>("");
+  const [announceId, setAnnounceId] = useState<string>("");
   const [type, settype] = useState<
     | "Sucesso!"
     | "Conta criada com sucesso!"
@@ -103,20 +109,64 @@ const ModalProvider = ({ children }: IProps) => {
         .catch((err) => console.log(err));
     }
   };
+
+  const deleteAnnouncement = () => {
+    const token = JSON.parse(localStorage.getItem("@TOKEN") || "");
+    if (token) {
+      api
+        .delete(`/announcements/delete/${announceId}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => window.location.reload())
+        .catch((err) => console.log(err));
+    }
+  };
+
+  const editAnnouncement = (data: any) => {
+    const token = JSON.parse(localStorage.getItem("@TOKEN") || "");
+    if (token) {
+      api
+        .patch(`/announcements/update/${announceId}`, data, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => window.location.reload())
+        .catch((err) => console.log(err));
+    }
+  };
+
+  const createAnnouncement = (data: any) => {
+    const token = JSON.parse(localStorage.getItem("@TOKEN") || "");
+    //pegar ID from TOKEN
+    //adicionar ID no DATA
+    if (token) {
+      api
+        .post(`/announcements`, data, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => window.location.reload())
+        .catch((err) => console.log(err));
+    }
+  };
+
   return (
     <ModalContext.Provider
       value={{
-        modal,
-        setModal,
         type,
-        settype,
-        register,
-        handleSubmit,
+        modal,
         errors,
-        setCommentId,
         commentId,
+        announceId,
+        settype,
+        setModal,
+        register,
         editComment,
+        handleSubmit,
+        setCommentId,
         deleteComment,
+        setAnnounceId,
+        editAnnouncement,
+        createAnnouncement,
+        deleteAnnouncement,
       }}
     >
       {children}

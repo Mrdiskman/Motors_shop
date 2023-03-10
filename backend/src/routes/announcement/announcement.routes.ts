@@ -9,7 +9,7 @@ import { authUser } from "../../middlewares/users/authUser.middleware";
 
 const announcementsRoutes = Router();
 
-announcementsRoutes.post("/announcements", registerAnnouncementController);
+announcementsRoutes.post("/announcements", authUser,registerAnnouncementController);
 
 announcementsRoutes.get("/announcements", getAnnouncementsController);
 

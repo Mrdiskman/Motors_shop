@@ -7,11 +7,18 @@ import CardVehicle from "@/components/HomeComponents/CardVehicle";
 import { BackGroundStyle } from "@/components/GeneralComponents/Background/styled";
 import AnnounceDescription from "@/components/AnnounceDashboardComponents/DetailUserComponents";
 import BackGround from "@/components/GeneralComponents/Background";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { user } from "../announcer/[id]";
 import { api } from "@/services/api";
+import { TitleHome } from "../announcer/styles";
+import { ModalContext } from "@/contexts/Modal/ModalContext";
+import Modal from "@/components/GeneralComponents/Modal";
+import { IProps } from "@/components/GeneralComponents/Modal/modalRequest";
 
 function AnnouncerDashboard() {
+  const { modal, setModal, setAnnounceId } = useContext(ModalContext);
+  const [isModal, setIsModal] = useState<IProps>({ title: "Sucesso!" });
+
   const [isAnnouncer, setIsAnnouncer] = useState<null | user>(null);
   async function announcerData(token: string) {
     const result = await api
@@ -27,75 +34,75 @@ function AnnouncerDashboard() {
       announcerData(token);
     }
   }, []);
-  console.log(isAnnouncer);
+
   return (
     <>
+      <Modal title={isModal.title} />
       <Header />
       <BackGround>
-        <AnnounceDescription owner={"Kalebe"}></AnnounceDescription>
-        <h2 className="TitleHome auctions">Leilão</h2>
+        <AnnounceDescription
+          name={isAnnouncer?.name}
+          abbreviation={isAnnouncer?.abbreviation}
+          descripition={isAnnouncer?.descripition}
+          owner={isAnnouncer?.name}
+          setIsModal={setIsModal}
+        ></AnnounceDescription>
+        <TitleHome>Carros</TitleHome>
         <CarouselComponent>
-          <CardAuction owner={"Kalebe"} />
-          <CardAuction owner={"Kalebe"} />
-          <CardAuction owner={"Kalebe"} />
-          <CardAuction owner={"Kalebe"} />
-        </CarouselComponent>
-        <h2 className="TitleHome" id="cars">
-          Carros
-        </h2>
-        <CarouselComponent>
-          {/* {carsData.map((car, index) => ( */}
-          <CardVehicle
-            // key={index}
-            // img={car.img}
-            // title={car.title}
-            // descryption={car.descryption}
-            // announcer={car.announcer}
-            // km={car.km}
-            // year={car.year}
-            // price={car.price}
-            edit={true}
-          />
-          {/* ))} */}
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
+          {isAnnouncer ? (
+            isAnnouncer.announcements.map((announcer, index) => {
+              if (announcer.type == "carro") {
+                return (
+                  <CardVehicle
+                    key={index}
+                    img={announcer.default_img}
+                    title={announcer.model}
+                    descryption={announcer.description}
+                    announcer={announcer.user?.name}
+                    abbreviation={announcer.user?.abbreviation}
+                    km={announcer.km}
+                    year={announcer.year}
+                    price={announcer.price}
+                    active={announcer.isActive}
+                    setIsModal={setIsModal}
+                    id={announcer.id}
+                    edit={true}
+                  />
+                );
+              }
+            })
+          ) : (
+            <></>
+          )}
         </CarouselComponent>
 
-        <h2 className="TitleHome" id="motos">
-          Motos
-        </h2>
+        <TitleHome>Motos</TitleHome>
         <CarouselComponent>
-          {/* {motorcyclesData.map((moto, index) => ( */}
-          <CardVehicle
-            // key={index}
-            // img={moto.img}
-            // title={moto.title}
-            // descryption={moto.descryption}
-            // announcer={moto.announcer}
-            // km={moto.km}
-            // year={moto.year}
-            // price={moto.price}
-            edit={true}
-          />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          <CardVehicle edit={true} />
-          {/* ))} */}
+          {isAnnouncer ? (
+            isAnnouncer.announcements.map((announcer, index) => {
+              if (announcer.type == "moto") {
+                return (
+                  <CardVehicle
+                    key={index}
+                    img={announcer.default_img}
+                    title={announcer.model}
+                    descryption={announcer.description}
+                    announcer={announcer.user?.name}
+                    abbreviation={announcer.user?.abbreviation}
+                    km={announcer.km}
+                    year={announcer.year}
+                    price={announcer.price}
+                    setIsModal={setIsModal}
+                    id={announcer.id}
+                    active={announcer.isActive}
+                    edit={true}
+                  />
+                );
+              }
+            })
+          ) : (
+            <p>Nao ha anuncios de motos :(</p>
+          )}
         </CarouselComponent>
       </BackGround>
 

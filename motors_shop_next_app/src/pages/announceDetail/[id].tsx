@@ -56,7 +56,7 @@ function AnnounceDetailPage() {
   const [announceData, setAnnounceData] = useState<null | announcement>(null);
   const { modal, setModal, setCommentId } = useContext(ModalContext);
   const { query } = useRouter();
-  const [isModal, setIsModel] = useState<IProps>({ title: "Sucesso!" });
+  const [isModal, setIsModal] = useState<IProps>({ title: "Sucesso!" });
 
   async function announcerData() {
     const result = api
@@ -95,7 +95,7 @@ function AnnounceDetailPage() {
                     </div>
                     <Comments
                       comments={announceData.comments}
-                      setIsModel={setIsModel}
+                      setIsModel={setIsModal}
                     />
                     <MakeComment />
                   </div>

@@ -14,10 +14,9 @@ const registerAnnouncementService = async ({
   km,
   year,
   price,
-  user: id,
   default_img,
   images,
-}: IAnnouncementCreate): Promise<IAnnouncement> => {
+}: IAnnouncementCreate, id:string): Promise<IAnnouncement> => {
   const announcementRepository = AppDataSource.getRepository(Announcement);
   const userRepository = AppDataSource.getRepository(User);
   const getUser = await userRepository.findOneBy({ id });
