@@ -7,8 +7,27 @@ import CardVehicle from "@/components/HomeComponents/CardVehicle";
 import { BackGroundStyle } from "@/components/GeneralComponents/Background/styled";
 import AnnounceDescription from "@/components/AnnounceDashboardComponents/DetailUserComponents";
 import BackGround from "@/components/GeneralComponents/Background";
+import { useEffect, useState } from "react";
+import { user } from "../announcer/[id]";
+import { api } from "@/services/api";
 
 function AnnouncerDashboard() {
+  const [isAnnouncer, setIsAnnouncer] = useState<null | user>(null);
+  async function announcerData(token: string) {
+    const result = await api
+      .get(`/user`, { headers: { Authorization: `Bearer ${token}` } })
+      .then((res: any) => {
+        setIsAnnouncer(res.data);
+      })
+      .catch((err: any) => console.log(err));
+  }
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("@TOKEN") || "");
+    if (token) {
+      announcerData(token);
+    }
+  }, []);
+  console.log(isAnnouncer);
   return (
     <>
       <Header />

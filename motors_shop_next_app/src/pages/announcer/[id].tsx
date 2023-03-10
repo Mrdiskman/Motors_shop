@@ -12,7 +12,7 @@ import { api } from "@/services/api";
 import { announcement } from "../announceDetail/[id]";
 import { TitleHome } from "./styles";
 import { useRouter } from "next/router";
-type user = {
+export type user = {
   name: string;
   abbreviation: string;
   descripition: string;
